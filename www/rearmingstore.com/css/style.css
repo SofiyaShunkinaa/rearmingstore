@@ -3528,8 +3528,13 @@ input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus{
     outline: none !important;
 }
 
-.cartPage .form-group label:last-of-type {
+.cartPage .form-group label.terms {
     padding-bottom: 15px;
+}
+
+.img-thumbnail{
+    background-color: transparent;
+    border: none;
 }
 
 @keyframes stickySlideDown {
