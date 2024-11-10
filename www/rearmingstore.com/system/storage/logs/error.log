@@ -1,0 +1,16 @@
+2024-01-18 23:13:45 - Error:  Cannot assign an empty string to a string offset in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/catalog/model/account/customer.php on line 166
+2024-01-18 23:14:03 - Error:  Cannot assign an empty string to a string offset in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/catalog/model/account/customer.php on line 166
+2024-01-18 23:46:16 - Error:  Call to undefined method Cart\Customer::getPassword() in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/catalog/controller/account/password.php on line 109
+2024-01-18 23:47:04 - Exception:  Error: Could not call registry key model_account_customer! in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/system/engine/controller.php on line 24
+2024-01-19 00:00:15 - Exception:  Error: Could not call registry key model_account_customer! in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/system/engine/controller.php on line 24
+2024-01-19 00:02:26 - PHP Warning:  Undefined array key "old_password" in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/catalog/controller/account/password.php on line 68
+2024-01-19 00:02:26 - Exception:  Error: Could not call registry key model_account_customer! in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/system/engine/controller.php on line 24
+2024-01-19 00:03:38 - PHP Warning:  Undefined array key "password" in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/catalog/controller/account/password.php on line 75
+2024-01-19 00:03:38 - PHP Unknown:  html_entity_decode(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/catalog/controller/account/password.php on line 75
+2024-01-19 00:06:28 - Error:  Call to undefined method Cart\Customer::getPassword() in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/catalog/controller/account/password.php on line 117
+2024-01-19 00:09:02 - Error:  Call to undefined method Cart\Customer::getPassword() in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/catalog/controller/account/password.php on line 117
+2024-01-28 11:47:42 - PHP Warning:  Undefined array key "order_id" in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/catalog/controller/account/order.php on line 65
+2024-01-28 11:47:42 - TypeError:  ModelAccountOrder::getOptions(): Argument #1 ($order_id) must be of type int, null given, called in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/system/engine/loader.php on line 243 in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/catalog/model/account/order.php on line 129
+2024-01-28 11:48:08 - Exception:  Error: Could not call registry key model_catalog_product! in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/system/engine/controller.php on line 24
+2024-01-28 12:00:02 - PHP Warning:  Undefined array key "tag" in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/catalog/controller/account/order.php on line 86
+2024-01-28 12:07:26 - Exception:  Error: Could not call registry key model_catalog_category! in /var/www/rearm_vsegda_usr/data/www/rearm.vsegda-eda.com.ua/system/engine/controller.php on line 24
