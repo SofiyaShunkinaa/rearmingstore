@@ -1,0 +1,5823 @@
+2024-02-08 16:22:49 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.17) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 643
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 10
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: (sub modification) admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+2024-04-07 07:48:29 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.17) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 643
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 10
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: (sub modification) admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 33
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+2024-04-12 18:32:40 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: CSS code
+
+FILE: catalog/controller/common/header.php
+CODE: $data['title'] = $this->document->getTitle();
+LINE: 57
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 84
+
+FILE: catalog/controller/common/footer.php
+CODE: $data['scripts'] = $this->document->getScripts('footer');
+LINE: 100
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 562
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.17) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 643
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 10
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: (sub modification) admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 98
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 33
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+2024-04-12 18:36:34 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: CSS code
+
+FILE: catalog/controller/common/header.php
+CODE: $data['title'] = $this->document->getTitle();
+LINE: 57
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 84
+
+FILE: catalog/controller/common/footer.php
+CODE: $data['scripts'] = $this->document->getScripts('footer');
+LINE: 100
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 562
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.17) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 643
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 10
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: (sub modification) admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 98
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 33
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+2024-04-12 18:36:35 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: CSS code
+
+FILE: catalog/controller/common/header.php
+CODE: $data['title'] = $this->document->getTitle();
+LINE: 57
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 84
+
+FILE: catalog/controller/common/footer.php
+CODE: $data['scripts'] = $this->document->getScripts('footer');
+LINE: 100
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 562
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.17) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 643
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 10
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: (sub modification) admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 98
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 33
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+2024-04-12 18:36:52 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.17) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 643
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 10
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: (sub modification) admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 33
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+2024-04-12 18:37:04 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.17) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 643
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 10
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: (sub modification) admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 33
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+2024-04-12 18:38:49 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.17) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 643
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 10
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: (sub modification) admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 33
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-04-18 21:16:00 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 33
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-04-18 21:16:22 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 33
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-04-18 21:16:41 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 33
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-04-19 17:42:56 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 33
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-05-20 13:28:47 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-05-20 13:28:49 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-05-20 13:28:54 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-05-20 13:29:59 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-05-20 15:42:24 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-07-13 08:24:46 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-07-13 08:33:37 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-07-13 08:54:21 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-07-13 10:00:26 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-07-13 10:03:15 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-07-13 10:06:12 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-07-13 16:14:20 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-07-13 18:37:38 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-07-13 18:56:55 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-10-09 08:03:17 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-10-09 08:03:21 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-10-10 21:41:45 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-10-10 21:41:50 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-10-10 21:42:11 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-10-11 06:33:13 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-10-11 06:33:17 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-04 19:22:39 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+MOD: Упрощенный заказ [Custom Quick Checkout]
+
+FILE: catalog/controller/checkout/cart.php
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/setting/extension.php
+CODE: SELECT * FROM " . DB_PREFIX . "extension WHERE `type` =
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+2024-11-04 19:36:22 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+MOD: Упрощенный заказ [Custom Quick Checkout]
+
+FILE: catalog/controller/checkout/cart.php
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/setting/extension.php
+CODE: SELECT * FROM " . DB_PREFIX . "extension WHERE `type` =
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+2024-11-04 19:43:25 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 340
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 355
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 84
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 508
+
+FILE: (sub modification) admin/controller/marketplace/install.php
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 516
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/header.twig
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+MOD: Упрощенный заказ [Custom Quick Checkout]
+
+FILE: catalog/controller/checkout/cart.php
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/setting/extension.php
+CODE: SELECT * FROM " . DB_PREFIX . "extension WHERE `type` =
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+2024-11-04 21:04:30 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 340
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 355
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 84
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 508
+
+FILE: (sub modification) admin/controller/marketplace/install.php
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 516
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/header.twig
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+MOD: Упрощенный заказ [Custom Quick Checkout]
+
+FILE: catalog/controller/checkout/cart.php
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/setting/extension.php
+CODE: SELECT * FROM " . DB_PREFIX . "extension WHERE `type` =
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+2024-11-04 21:05:08 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 340
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 355
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 84
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 508
+
+FILE: (sub modification) admin/controller/marketplace/install.php
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 516
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/header.twig
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+MOD: Упрощенный заказ [Custom Quick Checkout]
+
+FILE: catalog/controller/checkout/cart.php
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/setting/extension.php
+CODE: SELECT * FROM " . DB_PREFIX . "extension WHERE `type` =
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+2024-11-04 21:21:31 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 340
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 355
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 84
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 508
+
+FILE: (sub modification) admin/controller/marketplace/install.php
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 516
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/header.twig
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+MOD: Упрощенный заказ [Custom Quick Checkout]
+
+FILE: catalog/controller/checkout/cart.php
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/setting/extension.php
+CODE: SELECT * FROM " . DB_PREFIX . "extension WHERE `type` =
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+2024-11-05 06:59:03 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-05 07:03:26 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-05 22:10:28 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-06 01:49:14 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-06 02:10:34 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-06 02:16:44 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-06 04:37:53 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-06 04:56:09 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 340
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 355
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 84
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 508
+
+FILE: (sub modification) admin/controller/marketplace/install.php
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 516
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/header.twig
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-06 06:42:32 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 340
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 355
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 84
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 508
+
+FILE: (sub modification) admin/controller/marketplace/install.php
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 516
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/header.twig
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-06 06:43:38 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 340
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 355
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 84
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 508
+
+FILE: (sub modification) admin/controller/marketplace/install.php
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 516
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/header.twig
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-06 06:43:40 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 340
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 355
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 84
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 508
+
+FILE: (sub modification) admin/controller/marketplace/install.php
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 516
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/header.twig
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-06 20:08:27 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 340
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 355
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 84
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 508
+
+FILE: (sub modification) admin/controller/marketplace/install.php
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 516
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/header.twig
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 90
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-08 08:38:36 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 340
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 355
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 84
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 508
+
+FILE: (sub modification) admin/controller/marketplace/install.php
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 516
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/header.twig
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 91
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 102
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------
+2024-11-08 09:01:20 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 65
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 80
+LINE: 152
+LINE: 167
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 51
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 60
+LINE: 66
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 17
+----------------------------------------------------------------
+MOD: DEV-OPENCART.COM — Автозаполнение SEO URL
+
+FILE: admin/view/template/common/footer.twig
+CODE: </body>
+LINE: 12
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: name="product_description[{{ language.language_id }}][name]"
+LINE: 54
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: name="category_description[{{ language.language_id }}][name]"
+LINE: 46
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: name="name"
+LINE: 36
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: name="information_description[{{ language.language_id }}][title]"
+LINE: 46
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 340
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 355
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 84
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 508
+
+FILE: (sub modification) admin/controller/marketplace/install.php
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 516
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/common/header.twig
+CODE: </header>
+LINE: 76
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Pavo Megamenu
+
+FILE: admin/controller/common/column_left.php
+CODE: // Catalog
+LINE: 46
+----------------------------------------------------------------
+MOD: Trustpilot review module
+
+FILE: catalog/controller/checkout/success.php
+CODE: <?php
+LINE: 3
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: <?php
+LINE: 4
+CODE: public function index() {
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/startup/permission.php
+CODE: $extension = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 91
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: </head>
+LINE: 38
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 42
+LINE: 77
+----------------------------------------------------------------
+MOD: W3 Creators - Custom Codes 
+
+FILE: admin/controller/setting/setting.php
+CODE: if (isset($this->request->post['config_comment'])) {
+LINE: 340
+
+FILE: admin/view/template/setting/setting.twig
+CODE: <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+LINE: 42
+CODE: <div class="tab-content">
+LINE: 72
+
+FILE: (sub modification) catalog/controller/common/header.php
+CODE: return $this->load->view('common/header', $data);
+LINE: 105
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 102
+
+FILE: catalog/controller/common/footer.php
+CODE: return $this->load->view('common/footer', $data);
+LINE: 107
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 561
+----------------------------------------------------------------

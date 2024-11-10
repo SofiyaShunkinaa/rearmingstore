@@ -1,0 +1,43 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+@import url("https://fonts.googleapis.com/css?family=Roboto:400");
+@font-face {
+  font-family: "Graphik LCG-Regular";
+  src: url("https://anima-uploads.s3.amazonaws.com/5c518bb24fe4f300099ea290/GraphikLCG-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Graphik LCG-Bold";
+  src: url("https://anima-uploads.s3.amazonaws.com/5c651612a4a494000d1cf191/GraphikLCG-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Graphik LCG-Medium";
+  src: url("https://anima-uploads.s3.amazonaws.com/5c518bb24fe4f300099ea290/GraphikLCG-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Graphik LCG-Black";
+  src: url("https://anima-uploads.s3.amazonaws.com/5c75494048a283000c04360a/GraphikLCG-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Graphik LCG-Semibold";
+  src: url("https://anima-uploads.s3.amazonaws.com/5c518bb24fe4f300099ea290/GraphikLCG-Semibold.otf") format("opentype");
+}

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+    integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/css/jquery-ui.css">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js"
+    integrity="sha512-RtZU3AyMVArmHLiW0suEZ9McadTdegwbgtiQl5Qqo9kunkVg1ofwueXD8/8wv3Af8jkME3DDe3yLfR8HSJfT2g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+    integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+  <script src="/js/jquery.scrollbar.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+  <style>
+    body {
+      background: #F9F9F9;
+      /*background-image: url(/page2.jpg);*/
+      background-position: top center;
+    }
+
+    .frame {
+      overflow: hidden;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div style="overflow: hidden;">
+    <section class="topNav topNavPage">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <a href="#"><img src="img/Category_2.svg" /></a>
+          </div>
+          <div class="col-md-6">
+            <a href="/" class="REARMBOX"><span class="text-wrapper">Rearm</span><span class="span">ing</span></a>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <a href="#" class="topNavI">
+                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M21.0419 6.75799C23.7519 5.04465 27.3519 4.57132 30.4619 5.56799C37.2269 7.74965 39.3269 15.1247 37.4486 20.993C34.5502 30.2097 22.1719 37.0847 21.6469 37.373C21.4602 37.4763 21.2536 37.528 21.0469 37.528C20.8402 37.528 20.6352 37.478 20.4486 37.3763C19.9269 37.0913 7.63857 30.318 4.64357 20.9947L4.6419 20.993C2.7619 15.123 4.85524 7.74632 11.6136 5.56799C14.7869 4.54132 18.2452 4.99299 21.0419 6.75799ZM12.3802 7.94799C6.9119 9.71132 5.53857 15.593 7.02357 20.2313C9.36024 27.5013 18.5919 33.3797 21.0452 34.8347C23.5069 33.3647 32.8052 27.4213 35.0669 20.238C36.5519 15.5947 35.1736 9.71299 29.6969 7.94799C27.0436 7.09632 23.9486 7.61465 21.8119 9.26799C21.3652 9.61132 20.7452 9.61799 20.2952 9.27799C18.0319 7.57632 15.0752 7.07799 12.3802 7.94799Z"
+                    fill="#0F0F0F" />
+                </svg>
+              </a>
+              <a href="#" class="topNavI">
+                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M19.7909 3.36011C24.1473 3.36011 27.7462 6.67954 28.1899 10.925L28.3137 10.9264C30.7304 10.9264 33.6687 12.5314 34.6604 17.0331L35.9754 27.2114C36.4471 30.4964 35.8571 33.1314 34.2187 35.0214C32.5887 36.9014 30.0087 37.8964 26.7571 37.8964H12.8437C9.27206 37.8964 6.78372 37.0214 5.23539 35.2231C3.68039 33.4198 3.16039 30.7148 3.69039 27.1848L4.98372 17.1414C5.83372 12.5364 8.94205 10.9264 11.3487 10.9264C11.5565 9.01057 12.4204 7.18794 13.7909 5.82177C15.3659 4.25677 17.5376 3.36011 19.7559 3.36011H19.7909ZM28.3137 13.4264H11.3487C10.6137 13.4264 8.15705 13.7231 7.45205 17.5298L6.16539 27.5298C5.74705 30.3348 6.07039 32.3648 7.12872 33.5931C8.17372 34.8064 10.0437 35.3964 12.8437 35.3964H26.7571C28.5037 35.3964 30.8887 35.0481 32.3287 33.3848C33.4721 32.0664 33.8654 30.1031 33.4987 27.5481L32.2004 17.4614C31.6471 14.9764 30.1871 13.4264 28.3137 13.4264ZM19.7859 5.86011H19.7609C18.1926 5.86011 16.6642 6.49177 15.5559 7.59344C14.6531 8.49222 14.0626 9.67377 13.8716 10.9257L25.6704 10.9261C25.2421 8.0624 22.7657 5.86011 19.7859 5.86011Z"
+                    fill="#0F0F0F" />
+                </svg>
+              </a>
+            </div>
+            <div>
+              <a href="#" class="topNavI" data-bs-toggle="modal" data-bs-target="#login">
+                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                  <path
+                    d="M20.8949 25.5525C28.1259 25.5525 34.2282 26.7275 34.2282 31.2609C34.2282 35.7959 28.0859 36.9293 20.8949 36.9293C13.6655 36.9293 7.56152 35.7543 7.56152 31.2209C7.56152 26.6858 13.7038 25.5525 20.8949 25.5525ZM20.8949 3.59595C25.7934 3.59595 29.7182 7.51932 29.7182 12.4144C29.7182 17.3094 25.7934 21.2345 20.8949 21.2345C15.998 21.2345 12.0715 17.3094 12.0715 12.4144C12.0715 7.51932 15.998 3.59595 20.8949 3.59595Z"
+                    fill="#32B46F" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="head_bg"></div>
+    <section class="cartPage">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="pagetitle">
+              <h1 class="titlepage">Cart</h1>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="sp">Your order</div>
+            <div class="chekedItems">
+              <div class="cItem">
+                <img src="/img/Rectangle67.jpg" alt="">
+                <div class="ccssw">
+                  <div class="cItemT">Dragon Power</div>
+                  <div class="p_c_t_count" data-cur="1" data-min="1" data-max="999">
+                    <span class="minus"><img src="/img/Frame9.svg"></span>
+                    <span class="current">1</span>
+                    <span class="plus"><img src="/img/Frame63.svg"></span>
+                  </div>
+                  <div class="cItemP">$70</div>
+                </div>
+                <div class="cItemRm"><img src="/img/Frame64.svg" alt=""></div>
+              </div>
+            </div>
+            <div class="totalsCart">Total: $70</div>
+          </div>
+          <div class="col-md-6">
+            <div class="spForm">
+              <div class="sp"><strong>Your details</strong></div>
+              <form action="" class="loginform">
+                <div class="formCh">
+                  <div class="form-group">
+                    <div class="controls">
+                      <label for="email2">Your email</label>
+                      <input type="text" id="email2" name="email" value="" placeholder="example@mail.com"
+                        class="form-control" />
+                      <span class="error_name"></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="controls">
+                      <label for="email3">Skype</label>
+                      <input type="text" id="email3" name="email" value="" placeholder="skypelogin"
+                        class="form-control" />
+                      <span class="error_name"></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="controls">
+                      <label for="email4">Discord</label>
+                      <input type="text" id="email4" name="email" value="" placeholder="dascordname#1234"
+                        class="form-control" />
+                      <span class="error_name"></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="controls">
+                      <label for="email4">Nickname</label>
+                      <input type="text" id="email4" name="email" value="" placeholder="Name" class="form-control" />
+                      <span class="error_name"></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="controls">
+                      <label for="email4">Server</label>
+                      <input type="text" id="email4" name="email" value="" placeholder="2763876374534"
+                        class="form-control" />
+                      <span class="error_name"></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="controls">
+                      <label for="email4">Battletag</label>
+                      <input type="text" id="email4" name="email" value="" placeholder="#15153" class="form-control" />
+                      <span class="error_name"></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="controls">
+                      <div class="subtitlePayment">Payment method</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                      value="option1" checked>
+                    <label class="form-check-label" for="inlineRadio1">Credit card (Visa,
+                      Mastercard)</label>
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                      value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Bitcoin</label>
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                      value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Stripe</label>
+                  </div>
+                </div>
+                <div class="formCh">
+
+                  <div class="form-group">
+                    <div class="controls">
+                      <button type="submit" class="btn btn-primary">Place order</button>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <p class="REARMBOX-2"><span class="text-wrapper">Rearm</span><span class="span">ing</span></p>
+            <p>
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                  fill="none">
+                  <path
+                    d="M21.4354 2.58198C20.9352 2.0686 20.1949 1.87734 19.5046 2.07866L3.408 6.75952C2.6797 6.96186 2.16349 7.54269 2.02443 8.28055C1.88237 9.0315 2.37858 9.98479 3.02684 10.3834L8.0599 13.4768C8.57611 13.7939 9.24238 13.7144 9.66956 13.2835L15.4329 7.4843C15.723 7.18231 16.2032 7.18231 16.4934 7.4843C16.7835 7.77623 16.7835 8.24935 16.4934 8.55134L10.72 14.3516C10.2918 14.7814 10.2118 15.4508 10.5269 15.9702L13.6022 21.0538C13.9623 21.6577 14.5826 22 15.2628 22C15.3429 22 15.4329 22 15.513 21.9899C16.2933 21.8893 16.9135 21.3558 17.1436 20.6008L21.9156 4.52479C22.1257 3.84028 21.9356 3.09537 21.4354 2.58198Z"
+                    fill="#5199EE" />
+                </svg></a>
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                  fill="none">
+                  <path
+                    d="M12.0126 9C10.3556 9 9 10.3481 9 11.9987C9 13.6494 10.3556 15 12.0126 15C13.6695 15 15 13.6494 15 11.9987C15 10.3481 13.6695 9 12.0126 9Z"
+                    fill="url(#paint0_radial_132_3020)" />
+                  <path
+                    d="M12.0126 9C10.3556 9 9 10.3481 9 11.9987C9 13.6494 10.3556 15 12.0126 15C13.6695 15 15 13.6494 15 11.9987C15 10.3481 13.6695 9 12.0126 9Z"
+                    fill="url(#paint1_radial_132_3020)" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M16.3402 2C19.7302 2 22.0002 4.38 22.0002 7.92V16.09C22.0002 19.62 19.7302 22 16.3402 22H7.67024C4.28024 22 2.00024 19.62 2.00024 16.09V7.92C2.00024 4.38 4.28024 2 7.67024 2H16.3402ZM18.3838 4.39258C17.7238 4.39258 17.1838 4.93158 17.1838 5.59158C17.1838 6.25158 17.7238 6.79158 18.3838 6.79158C19.0438 6.79158 19.5738 6.25158 19.5738 5.59158C19.5738 4.93158 19.0438 4.39258 18.3838 4.39258ZM6.38379 11.8903C6.38379 8.86403 8.86914 6.39258 11.9068 6.39258C14.9445 6.39258 17.3838 8.86403 17.3838 11.8903C17.3838 14.9165 14.9445 17.3926 11.9068 17.3926C8.86914 17.3926 6.38379 14.9165 6.38379 11.8903Z"
+                    fill="url(#paint2_radial_132_3020)" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M16.3402 2C19.7302 2 22.0002 4.38 22.0002 7.92V16.09C22.0002 19.62 19.7302 22 16.3402 22H7.67024C4.28024 22 2.00024 19.62 2.00024 16.09V7.92C2.00024 4.38 4.28024 2 7.67024 2H16.3402ZM18.3838 4.39258C17.7238 4.39258 17.1838 4.93158 17.1838 5.59158C17.1838 6.25158 17.7238 6.79158 18.3838 6.79158C19.0438 6.79158 19.5738 6.25158 19.5738 5.59158C19.5738 4.93158 19.0438 4.39258 18.3838 4.39258ZM6.38379 11.8903C6.38379 8.86403 8.86914 6.39258 11.9068 6.39258C14.9445 6.39258 17.3838 8.86403 17.3838 11.8903C17.3838 14.9165 14.9445 17.3926 11.9068 17.3926C8.86914 17.3926 6.38379 14.9165 6.38379 11.8903Z"
+                    fill="url(#paint3_radial_132_3020)" />
+                  <defs>
+                    <radialGradient id="paint0_radial_132_3020" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                      gradientTransform="translate(18.9002 24.7) rotate(-115.776) scale(27.2737 40.5665)">
+                      <stop offset="0.24392" stop-color="#FF1B90" />
+                      <stop offset="0.436673" stop-color="#F80261" />
+                      <stop offset="0.688476" stop-color="#ED00C0" />
+                      <stop offset="0.776787" stop-color="#C500E9" />
+                      <stop offset="0.893155" stop-color="#7017FF" />
+                    </radialGradient>
+                    <radialGradient id="paint1_radial_132_3020" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                      gradientTransform="translate(9.25025 21.31) rotate(-57.4396) scale(11.8174 12.2918)">
+                      <stop stop-color="#FFD600" />
+                      <stop offset="0.484375" stop-color="#FF6930" />
+                      <stop offset="0.734375" stop-color="#FE3B36" />
+                      <stop offset="1" stop-color="#FE3B36" stop-opacity="0" />
+                    </radialGradient>
+                    <radialGradient id="paint2_radial_132_3020" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                      gradientTransform="translate(18.9002 24.7) rotate(-115.776) scale(27.2737 40.5665)">
+                      <stop offset="0.24392" stop-color="#FF1B90" />
+                      <stop offset="0.436673" stop-color="#F80261" />
+                      <stop offset="0.688476" stop-color="#ED00C0" />
+                      <stop offset="0.776787" stop-color="#C500E9" />
+                      <stop offset="0.893155" stop-color="#7017FF" />
+                    </radialGradient>
+                    <radialGradient id="paint3_radial_132_3020" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                      gradientTransform="translate(9.25025 21.31) rotate(-57.4396) scale(11.8174 12.2918)">
+                      <stop stop-color="#FFD600" />
+                      <stop offset="0.484375" stop-color="#FF6930" />
+                      <stop offset="0.734375" stop-color="#FE3B36" />
+                      <stop offset="1" stop-color="#FE3B36" stop-opacity="0" />
+                    </radialGradient>
+                  </defs>
+                </svg></a>
+            </p>
+            <div class="text-wrapper-34">2023. All rights reserved</div>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li>
+                <div class="text-wrapper-31">Information</div>
+              </li>
+              <li><a href="#">Leveling</a></li>
+              <li><a href="#">PvP-warrior</a></li>
+              <li><a href="#">Raids</a></li>
+              <li><a href="#">Gearing</a></li>
+              <li><a href="#">Professions</a></li>
+              <li><a href="#">Top ways to top</a></li>
+            </ul>
+            <ul>
+              <li>
+                <div class="text-wrapper-31">Catalog</div>
+              </li>
+              <li><a href="#">Warranty and Returns</a></li>
+              <li><a href="#">Purchase Terms</a></li>
+              <li><a href="#">Payment</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contacts</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <div class="div-28">
+              <img class="img-2" src="img/calling.svg" />
+              <a href="tel:+79999999999" class="text-wrapper-36">+7 (999) 999-99-99</a>
+            </div>
+            <div class="div-28">
+              <img class="img-2" src="img/message.svg" />
+              <a href="mailto:rearmbox@store" class="text-wrapper-36">rearmbox@store</a>
+            </div>
+            <div class="div-wrapper-7">
+              <a href="#" class="text-wrapper-35">Service support</a>
+            </div>
+          </div>
+        </div>
+        <div class="row not_desctop">
+          <div class="col-6">
+            <div class="div-wrapper-7">
+              <a href="#" class="text-wrapper-35">Service support</a>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="text-wrapper-34">2023. All rights reserved</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- Modal -->
+  <!--<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">-->
+  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="loginForm">
+            <form action="">
+              <div class="formTitle">Login</div>
+              <div class="form-group">
+                <div class="controls">
+                  <input type="email" id="12" name="email" value="" placeholder="Email" class="form-control" />
+                  <span class="error_name"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <input type="password" id="32" name="password" value="" placeholder="Password" class="form-control" />
+                  <span class="error_name"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <button type="submit" class="btn btn-primary">Sing in</button>
+                </div>
+              </div>
+            </form>
+            <div class="forgotpass"><a href="#" data-bs-toggle="modal" data-bs-target="#forgot">Forgot password?</a>
+            </div>
+            <div class="creaateAkk"><a href="#" data-bs-toggle="modal" data-bs-target="#createAkk">Create new accont</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="forgot" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="loginForm">
+            <form action="">
+              <div class="formTitle">Recover password</div>
+              <div class="form-group">
+                <div class="controls">
+                  <input type="email" id="12" name="email" value="" placeholder="Email" class="form-control" />
+                  <span class="error_name"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <button type="submit" class="btn btn-primary">Reset my password</button>
+                </div>
+              </div>
+            </form>
+            <div class="backToLogin"><a href="#" data-bs-toggle="modal" data-bs-target="#login">Go back to login
+                form</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="createAkk" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="loginForm">
+            <form action="">
+              <div class="formTitle">Sign up</div>
+              <div class="form-group">
+                <div class="controls">
+                  <input type="email" id="12" name="email" value="" placeholder="Email" class="form-control" />
+                  <span class="error_name"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <input type="password" id="32" name="password" value="" placeholder="Password" class="form-control" />
+                  <span class="error_name"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <input type="password" id="32" name="password" value="" placeholder="Repeat password"
+                    class="form-control" />
+                  <span class="error_name"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <button type="submit" class="btn btn-primary">Sign up</button>
+                </div>
+              </div>
+            </form>
+            <div class="backToLogin"><a href="#" data-bs-toggle="modal" data-bs-target="#login">Already have an account?
+                Sign
+                in</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="request" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="loginForm">
+            <form action="">
+              <div class="formTitle">Request A Service</div>
+              <div class="formSubTitle">Couldn't find a service you need? Submit a request and we will make you a custom
+                offer tailored to your needs!</div>
+              <div class="form-group">
+                <div class="controls">
+                  <label for="selectGage">Select game <span>*</span></label>
+                  <select name="" id="selectGage" class="js-example-basic-single">
+                    <option value="" disabled>Select game</option>
+                    <option value="">Test</option>
+                    <option value="">Test</option>
+                    <option value="">Test</option>
+                  </select>
+                  <span class="error_name"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <label for="email">Email<span>*</span></label>
+                  <input type="email" id="email" name="email" value="" placeholder="Email" class="form-control" />
+                  <span class="error_name"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <label for="contactMethod">Contact method (optional)</label>
+                  <select name="" id="contactMethod" class="js-example-basic-single">
+                    <option value="" selected>Contact me via email</option>
+                    <option value="">Test</option>
+                    <option value="">Test</option>
+                    <option value="">Test</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <label for="request">Your request <span>*</span></label>
+                  <textarea name="" id="request" cols="30" rows="5"
+                    placeholder="Describe what you are looking for and add all relevant information such as your region, character class, preferred playing schedule, etc."></textarea>
+                  <span class="error_name"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <button type="submit" class="btn btn-primary">Submit request</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(window).on('scroll', function (event) {
+      var scroll = $(window).scrollTop();
+      if (scroll < 300) {
+        $(".topNav").removeClass("sticky-top");
+      } else {
+        $(".topNav").addClass("sticky-top");
+      }
+    });
+    $(function () {
+      $("#customRange1").slider({
+        max: 5,
+        min: 1,
+        step: 1,
+        value: 3,
+        slide: function (event, ui) {
+          $('.asdasd').html(ui.value);
+        }
+      });
+    });
+    $(document).ready(function () {
+      $('.js-example-basic-single').select2();
+      $('.scrollbar-inner').scrollbar();
+    });
+    const swiper = new Swiper('.radioButtonslide', {
+      // Default parameters
+      slidesPerView: 'auto',
+      spaceBetween: 10,
+    })
+
+  </script>
+</body>
+
+</html>

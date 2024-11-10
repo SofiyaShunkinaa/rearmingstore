@@ -1,0 +1,12 @@
+2024-09-19 10:17:39 - [2024-09-19T10:17:39+00:00] </var/www/u2450855/data/www/rearmingstore.com/system/library/stripe/ApiRequestor.php> #181# ~Stripe Exception caught in confirm() method~ 
+Missing required param: shipping[address].
+
+
+2024-09-19 10:21:08 - [2024-09-19T10:21:08+00:00] </var/www/u2450855/data/www/rearmingstore.com/system/library/stripe/ApiRequestor.php> #181# ~Stripe Exception caught in confirm() method~ 
+Missing required param: shipping[address].
+
+
+2024-09-19 10:26:26 - [2024-09-19T10:26:26+00:00] </var/www/u2450855/data/www/rearmingstore.com/system/library/stripe/ApiRequestor.php> #181# ~Stripe Exception caught in confirm() method~ 
+Missing required param: shipping[address].
+
+
