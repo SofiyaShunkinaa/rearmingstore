@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="{{ direction }}" lang="{{ lang }}">
+<!--<![endif]-->
+
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>
+  <base href="{{ base }}"/>
+  {% if description %}
+    <meta name="description" content="{{ description }}"/>
+  {% endif %}
+  {% if keywords %}
+    <meta name="keywords" content="{{ keywords }}"/>
+  {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="{{ icons }}" rel="stylesheet" type="text/css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+   <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% if title == 'Checkout' %}
+        <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    {% endif %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+ <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <link rel="stylesheet" href="/css/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+    integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js"
+    integrity="sha512-RtZU3AyMVArmHLiW0suEZ9McadTdegwbgtiQl5Qqo9kunkVg1ofwueXD8/8wv3Af8jkME3DDe3yLfR8HSJfT2g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/jquery.scrollbar.min.js"></script>
+  {% for style in styles %}
+    <link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}"/>
+  {% endfor %}
+  {% for script in scripts %}
+    <script src="{{ script.href }}" type="text/javascript"></script>
+  {% endfor %}
+  <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+  {% for link in links %}
+    <link href="{{ link.href }}" rel="{{ link.rel }}"/>
+  {% endfor %}
+  {% for analytic in analytics %}
+    {{ analytic }}
+  {% endfor %}
+  <script src="/js/script.js"></script>
+  <style>
+    body {
+      background: #F9F9F9;
+      /*background-image: url(/page2.jpg);*/
+      background-position: top center;
+    }
+
+    .frame {
+      overflow: hidden;
+    }
+  </style>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+    integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.8/jquery.jgrowl.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.8/jquery.jgrowl.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+
+                <script>
+                    var trustpilot_script_url = '{{ Trustpilot_script_url }}';
+                    var trustpilot_key = '{{ Trustpilot_app_key }}';
+                    var trustpilot_widget_script_url = '{{ Trustpilot_widget_script_url }}';
+                    var trustpilot_trustbox_settings = {{ Trustpilot_trustbox_settings }};
+                    var trustpilot_integration_app_url = '{{ Trustpilot_integration_app_url }}';
+                    var trustpilot_preview_css_url = '{{ Trustpilot_preview_css_url }}';
+                    var trustpilot_preview_script_url = '{{ Trustpilot_preview_script_url }}';
+                </script>
+                <script type="text/javascript" src="/catalog/view/javascript/trustpilot/register.min.js"></script>
+                <script type="text/javascript" src="/catalog/view/javascript/trustpilot/trustbox.min.js"></script>
+                <script type="text/javascript" src="/catalog/view/javascript/trustpilot/preview.min.js"></script>
+            
+
+        {% if w3creators_css %}
+        <style type="text/css">
+        {{ w3creators_css }}
+        </style>
+        {% endif %}
+
+        {% if w3creators_custom_head %}
+          {{ w3creators_custom_head }}
+        {% endif %}
+      
+</head>
+
+<body>
+  <div style="overflow: hidden;" data-test="12345">
+    <section class="topNav {{ class }}">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <a href="#" class="navbtn"><img src="img/Category_2.svg" /></a>
+          </div>
+          <div class="col-md-6">
+            <a href="{{ home }}" class="REARMBOX"><span class="text-wrapper">Rearm</span><span class="span">ing</span></a>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <a href="{{ wishlist }}" class="topNavI fawbtn {% if text_wishlist %}has_faw{% endif %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M21.0419 6.75799C23.7519 5.04465 27.3519 4.57132 30.4619 5.56799C37.2269 7.74965 39.3269 15.1247 37.4486 20.993C34.5502 30.2097 22.1719 37.0847 21.6469 37.373C21.4602 37.4763 21.2536 37.528 21.0469 37.528C20.8402 37.528 20.6352 37.478 20.4486 37.3763C19.9269 37.0913 7.63857 30.318 4.64357 20.9947L4.6419 20.993C2.7619 15.123 4.85524 7.74632 11.6136 5.56799C14.7869 4.54132 18.2452 4.99299 21.0419 6.75799ZM12.3802 7.94799C6.9119 9.71132 5.53857 15.593 7.02357 20.2313C9.36024 27.5013 18.5919 33.3797 21.0452 34.8347C23.5069 33.3647 32.8052 27.4213 35.0669 20.238C36.5519 15.5947 35.1736 9.71299 29.6969 7.94799C27.0436 7.09632 23.9486 7.61465 21.8119 9.26799C21.3652 9.61132 20.7452 9.61799 20.2952 9.27799C18.0319 7.57632 15.0752 7.07799 12.3802 7.94799Z"
+                    fill="#0F0F0F" />
+                </svg>
+				<span>{{ text_wishlist }}</span>
+              </a>
+              <a href="{{ checkout }}" class="topNavI cartbtn {% if cart_nums %}has_cart_item{% endif %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M19.7909 3.36011C24.1473 3.36011 27.7462 6.67954 28.1899 10.925L28.3137 10.9264C30.7304 10.9264 33.6687 12.5314 34.6604 17.0331L35.9754 27.2114C36.4471 30.4964 35.8571 33.1314 34.2187 35.0214C32.5887 36.9014 30.0087 37.8964 26.7571 37.8964H12.8437C9.27206 37.8964 6.78372 37.0214 5.23539 35.2231C3.68039 33.4198 3.16039 30.7148 3.69039 27.1848L4.98372 17.1414C5.83372 12.5364 8.94205 10.9264 11.3487 10.9264C11.5565 9.01057 12.4204 7.18794 13.7909 5.82177C15.3659 4.25677 17.5376 3.36011 19.7559 3.36011H19.7909ZM28.3137 13.4264H11.3487C10.6137 13.4264 8.15705 13.7231 7.45205 17.5298L6.16539 27.5298C5.74705 30.3348 6.07039 32.3648 7.12872 33.5931C8.17372 34.8064 10.0437 35.3964 12.8437 35.3964H26.7571C28.5037 35.3964 30.8887 35.0481 32.3287 33.3848C33.4721 32.0664 33.8654 30.1031 33.4987 27.5481L32.2004 17.4614C31.6471 14.9764 30.1871 13.4264 28.3137 13.4264ZM19.7859 5.86011H19.7609C18.1926 5.86011 16.6642 6.49177 15.5559 7.59344C14.6531 8.49222 14.0626 9.67377 13.8716 10.9257L25.6704 10.9261C25.2421 8.0624 22.7657 5.86011 19.7859 5.86011Z"
+                    fill="#0F0F0F" />
+                </svg>
+				<span>{{ cart_nums }}</span>
+              </a>
+            </div>
+            <div>
+			{% if logged %}
+              <a href="{{ account }}" class="topNavI">
+                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                  <path
+                    d="M20.8949 25.5525C28.1259 25.5525 34.2282 26.7275 34.2282 31.2609C34.2282 35.7959 28.0859 36.9293 20.8949 36.9293C13.6655 36.9293 7.56152 35.7543 7.56152 31.2209C7.56152 26.6858 13.7038 25.5525 20.8949 25.5525ZM20.8949 3.59595C25.7934 3.59595 29.7182 7.51932 29.7182 12.4144C29.7182 17.3094 25.7934 21.2345 20.8949 21.2345C15.998 21.2345 12.0715 17.3094 12.0715 12.4144C12.0715 7.51932 15.998 3.59595 20.8949 3.59595Z"
+                    fill="#32B46F" />
+                </svg>
+				
+              </a>
+			{% else %}
+              <a href="{{ account }}" class="topNavI" data-bs-toggle="modal" data-bs-target="#login">
+                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                  <path
+                    d="M20.8949 25.5525C28.1259 25.5525 34.2282 26.7275 34.2282 31.2609C34.2282 35.7959 28.0859 36.9293 20.8949 36.9293C13.6655 36.9293 7.56152 35.7543 7.56152 31.2209C7.56152 26.6858 13.7038 25.5525 20.8949 25.5525ZM20.8949 3.59595C25.7934 3.59595 29.7182 7.51932 29.7182 12.4144C29.7182 17.3094 25.7934 21.2345 20.8949 21.2345C15.998 21.2345 12.0715 17.3094 12.0715 12.4144C12.0715 7.51932 15.998 3.59595 20.8949 3.59595Z"
+                    fill="#32B46F" />
+                </svg>
+              </a>
+            {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+	<div class="favoritePanel">
+      <div class="closefpanel"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none">
+          <path
+            d="M23.9351 19.9501L20.6332 23.252L0.748044 3.36676L4.04991 0.0648991L23.9351 19.9501ZM23.9104 3.79563L3.79563 23.9104L0.109493 20.2243L20.2243 0.109493L23.9104 3.79563Z"
+            fill="black" fill-opacity="0.4" />
+        </svg></div>
+      <div class="fpanelTitle">Favorites</div>
+      <div class="scrolls">
+        <div class="fpanItems">
+			{{products_wishlist}}
+        </div>
+      </div>
+    </div>
+	<div class="orderPanel">
+		<div class="closefpanel">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+			  fill="none">
+			  <path
+				d="M23.9351 19.9501L20.6332 23.252L0.748044 3.36676L4.04991 0.0648991L23.9351 19.9501ZM23.9104 3.79563L3.79563 23.9104L0.109493 20.2243L20.2243 0.109493L23.9104 3.79563Z"
+				fill="black" fill-opacity="0.4" />
+			</svg>
+		</div>
+      <div class="scrolls">
+		<div class="fpanelTitle">Your order</div>
+		
+		<div id="cartRows">{{ cart }}</div>
+      
+	  </div>
+	</div>
+	<div class="nav_panel">
+		<div class="closefpanel"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none">
+          <path
+            d="M23.9351 19.9501L20.6332 23.252L0.748044 3.36676L4.04991 0.0648991L23.9351 19.9501ZM23.9104 3.79563L3.79563 23.9104L0.109493 20.2243L20.2243 0.109493L23.9104 3.79563Z"
+            fill="black" fill-opacity="0.4" />
+        </svg></div>
+		<div class="scrolls">
+			{{ menu }}
+		</div>
+	</div>
+	
+</div>
