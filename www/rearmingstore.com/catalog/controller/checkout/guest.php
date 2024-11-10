@@ -199,10 +199,6 @@ class ControllerCheckoutGuest extends Controller {
             if ((oc_strlen($this->request->post['email']) > 96) || !filter_var($this->request->post['email'], FILTER_VALIDATE_EMAIL)) {
                 $json['error']['email'] = $this->language->get('error_email');
             }
-
-            if ((oc_strlen($this->request->post['discord']) < 3) || (oc_strlen($this->request->post['discord']) > 128)) {
-                $json['error']['discord'] = 'This field is required';
-            }
             
             if (empty($this->request->post['agree_terms'])) {
                 $json['error']['agree_terms'] = 'You must agree to the terms of service!';
