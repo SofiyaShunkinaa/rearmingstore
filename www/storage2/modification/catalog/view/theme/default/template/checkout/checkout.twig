@@ -56,6 +56,19 @@
     </section>
 
 <script type="text/javascript">
+$(document).ready(function() {
+    $(document).on('change', 'input.form-control', function() {
+        if ($(this).val().trim() !== '') {
+            $(this).css('font-weight', 'bold');
+        } else {
+            $(this).css('font-weight', 'normal');
+        }
+    });
+});
+
+</script>    
+
+<script type="text/javascript">
 $(document).on('change', 'input[name=\'account\']', function () {
     if ($('#collapse-payment-address').parent().find('.panel-heading .panel-title > *').is('a')) {
         if (this.value == 'register') {
