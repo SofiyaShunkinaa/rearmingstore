@@ -1,0 +1,27 @@
+<section class="slider" id="banner{{ module }}">
+  <div class="container">
+	<div class="row">
+	  <div class="col-md-12">
+		<div class="sliderbg">
+		  <div class="slider_txt">
+			<p>Choose your destiny in our catalogue</p>
+			<a href="/index.php?route=product/category&path=79" class="btn btn-lg">Catalog</a>
+		  </div>
+		  <div class="swiper">
+			<div class="swiper-wrapper">
+			{% for banner in banners %}
+				<div class="swiper-slide">
+				  {% if banner.link %}
+					<a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive"/></a>
+				  {% else %}
+					<img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive"/>
+				  {% endif %}
+				</div>
+			  {% endfor %}
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+</section>

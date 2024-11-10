@@ -1,0 +1,51 @@
+{{ header }}{{ column_left }}
+<div id="content">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{ text_form }}</h3>
+        </div>
+        <div class="panel-body">
+          <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-name">{{ entry_name }}</label>
+              <div class="col-sm-10">
+                <input type="text" name="name" value="{{ name }}" placeholder="{{ entry_name }}" id="input-name" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-text">{{ entry_text }}</label>
+              <div class="col-sm-10">
+                <textarea name="text" rows="5" placeholder="{{ entry_text }}" id="input-text" class="form-control">{{ text }}</textarea>
+              </div>
+            </div>
+            <div class="form-group">
+			  <label class="col-sm-2 control-label" for="input-photo">{{ entry_photo }}</label>
+			  <div class="col-sm-10">
+				<div class="input-group">
+					<input type="hidden" name="photo" value="{{ photo }}" placeholder="{{ entry_photo }}" id="input-image" class="form-control" />
+					<a href="" id="thumb-image" data-toggle="image" class="img-thumbnail">
+						<img src="{{ thumb }}">
+					</a>
+				</div>
+				{% if photo and photo|slice(0, 9) == 'banner_id:' %}
+				  <p>{{ text_selected_banner }}</p>
+				{% endif %}
+			  </div>
+			</div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">{{ button_save }}</button>
+                <a href="{{ cancel }}" class="btn btn-default">{{ button_cancel }}</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{{ footer }}

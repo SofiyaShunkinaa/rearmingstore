@@ -1,0 +1,3712 @@
+{{ header }}
+
+<style type="text/css">
+#product .borderedRow .dropdown-menu-end {
+overflow-y: auto;
+}
+#nav-tabContent p {
+font-weight: normal;
+font-family: Graphik LCG !important;
+font-size:16px;
+}
+
+#product-product .sidebarnav li.ative a{
+color: #e2704b;
+}
+
+.borderedRow .dropdown-menu.show {
+max-width: 250px;
+}
+
+.opt-checkbox {
+border-radius: 10px;
+    border: 1px solid var(--5, rgba(0, 0, 0, 0.05));
+    width: 100%;
+    padding: 22px 20px;
+    margin-bottom: 10px;
+}
+.opt-checkbox_name {
+	color: #000;
+    font-family: Graphik LCG;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 145%;
+    padding-bottom: 22px;
+}
+.opt-checkbox.hidden,
+.checkbigrow.hidden {
+	display: none;
+}
+.checkbigrow:last-child .form-check {
+margin-bottom: 0;
+}
+.checkbigrow label {
+	background-size: 18px;
+	color: rgba(0, 0, 0, 0.50);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 130%;
+	padding-left: 25px;
+}
+#hidden-options-checkbox, #specific-gear-slot, #specific-item-slot, #original-price{
+	display: none;
+}
+
+/* Настройка цвета трека слайдера */
+.irs--round .irs-bar {
+    background-color: #FF7147; /* Оранжевый цвет трека */
+}
+.irs--round .irs-line {
+    background-color: #dedede; /* Оранжевый цвет трека */
+}
+.irs--round .irs-from:before, .irs--round .irs-to:before, .irs--round .irs-single:before{
+	border-top-color:#FF7147;
+}
+
+.irs--round .irs-from,
+.irs--round .irs-to,
+.irs--round .irs-single {
+    background-color: #FF7147; /* Оранжевый цвет для значений */
+}
+
+/* Настройка цвета ползунка */
+.irs--round .irs-handle {
+    background-color: #FF7147; /* Темно-оранжевый цвет для ползунка */
+    border-color: #FF7147;
+}
+.irs--round {
+    width: 150px; 
+}
+.borderedRow>div:first-child, .opt-checkbox_name{
+	text-transform: capitalize;
+}
+
+.tab-content p span, .tab-content{
+    font-family: Graphik LCG !important;
+	font-weight: normal;
+}
+
+.tab-content a, .tab-content u, .tab-content b{
+	text-decoration: none;
+	color: #FF7147;
+}
+
+.checkbigrow input[type="checkbox"]:checked + label{
+	background-image: url(/img/radio_check.svg);
+}
+.checkbigrow input[type="checkbox"] + label{
+	background-image: url(/img/radio.svg);
+}
+</style>
+
+<div class="head_bg"></div>
+<div id="product-product" style="overflow:hidden;">
+	<section class="catalog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+			{{ column_left }}
+          </div>
+          <div class="col-md-8">
+            <nav class="breadcrumb">
+				{% for breadcrumb in breadcrumbs %}
+					{% if breadcrumb.href %}
+						<a href="{{ breadcrumb.href }}"  class="breadcrumb-item">{{ breadcrumb.text }}</a>
+					{% else %}
+						<span class="breadcrumb-item active">{{ breadcrumb.text }}</span>
+					{% endif %}
+				{% endfor %}
+
+            </nav>
+
+            <div class="pagetitle">
+              <h1 class="titlepage">{{ heading_title }}</h1>
+            </div>
+            <div class="row">
+
+              <div class="col-md-12">
+
+                <!--//<div class="trustpilot">
+                <img src="/img/Frame435.svg" alt="">
+				<br>
+				<br>
+				</div>//-->
+
+
+				{% if prod_category%}
+                    <div class="radioButton">
+						{% for prod_cat in prod_category %}
+							<a href="{{prod_cat.href}}" class="btn btn-outline-primary form-check-label">{{prod_cat.text}}</a>
+						{% endfor %}
+                    </div>
+				{% endif %}
+
+
+
+                <div class="boostCard">
+                  <div class="imageBoost">
+						{% if image %}
+						<img src="{{ image }}" title="{{ heading_title }}" alt="{{ heading_title }}"/>
+						{% endif %}
+						{% if thumb %}
+						<img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}"/>
+						{% endif %}
+                  </div>
+                  <div class="row tOrow">
+                    <div class="col-md-6 tToRow">
+                      <div class="tTo">
+                        <span>{{timestart}}</span>
+                        <span>Time to start</span>
+                      </div>
+                      <div class="tToRange">
+                        <span id="comlete-time-text" data-days="" data-hours="" data-additionals="">{{timecomplete}}</span>
+                        <span>Time to complete</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 tToBtn">
+						{% if tags_prod%}
+							{% for tag_prod in tags_prod %}
+							<a href="{{tag_prod.href}}" class="btn btn-outline-primary form-check-label {{tag_prod.active}}">{{tag_prod.tag}}</a>
+							{% endfor %}
+						{% endif %}
+
+                    </div>
+                  </div>
+
+				<div id="product">
+				{% if options %}
+				  {% for option in options %}
+				  <h3>{{option.product_option_value.name}}</h3>
+					{% if option.type == 'select' %}
+					  <div class="row">
+						<div class="col-md-12">
+						  <div class="borderedRow borderedRow-{{option.id}}">
+							<div>{{ option.name }}</div>
+							<input name="option[{{ option.product_option_id }}]" id="input-option-{{ option.product_option_id }}" type="hidden" data-prise="0" data-name="{{ option_value.name }}" data-value="{{option.product_option_value.name}}">
+							<div class="dropdownSelect">
+							  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" 
+								aria-expanded="false">0 - 1000</button>
+							  <div class="dropdown-menu dropdown-menu-end">
+								<div class="scrollbar-inner" data-id="{{ option.product_option_id }}">
+								{% for option_value in option.product_option_value %}
+								<li>
+									<a class="dropdown-item" href="#" data-id="{{ option_value.product_option_value_id }}" data-name="{{ option.name }}" data-value="{{ option_value.name }}" data-prise="{{ option_value.price }}" data-prisePref="{{ option_value.price_prefix }}">
+										{{ option_value.name }}
+										{% if option_value.price %}
+											<span class="option-price" data-base-prise="{{ option_value.price }}" data-prefix="{{ option_value.price_prefix }}">({{ option_value.price_prefix }}<span class="price-value">{{ option_value.price }}</span>)</span>
+										{% endif %}
+									</a>
+
+								</li>
+								{% endfor %}
+								</div>
+							  </div>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					{% endif %}
+					{% if option.type == 'radio' %}
+						<div class="opt-checkbox">
+							<div class="opt-checkbox_name">{{ option.name }}</div>
+							{% for option_value in option.product_option_value %}
+								<div class="checkbigrow"> 
+									<div class="form-check">
+										<input type="radio" 
+											name="option[{{ option.product_option_id }}]" 
+											value="{{ option_value.product_option_value_id }}" 
+											id="product_option_id{{ option.product_option_id }}_{{ option_value.product_option_value_id }}" 
+											data-prise="{{ option_value.price }}" 
+											data-name="{{ option_value.name }}"
+											{% if (option.name == 'Boost Method' and option_value.name == 'Piloted') or 
+													(option.name == 'Boost method' and option_value.name == 'Piloted (Solo Shuffle)') or
+													(option.name == 'Execution options' and option_value.name == 'Full Gear') or
+													(option.name == 'EXECUTION OPTIONS' and option_value.name == 'Keystone Hero') or
+													(option.name == 'ARENA BRACKET' and option_value.name == '2v2 Arena') or
+													(option.name == 'COACH EXPERIENCE' and option_value.name == 'Multi-Gladiator') or
+													(option.name == 'Execution Speed' and option_value.name == 'Regular') or
+													(option.name == 'Boost Method' and option_value.name == 'Selfplay' ) or
+													(option.name == 'Basic option' and option_value.name == '70-80 Leveling + 8/8 M+0 Dungeons + 593 ilvl Gear')%}checked{% endif %}/>
+										
+										<label class="form-check-label" for="product_option_id{{ option.product_option_id }}_{{ option_value.product_option_value_id }}">
+											{{ option_value.name }}
+											{% if option_value.price %}
+											<span>({{ option_value.price_prefix }}{{ option_value.price }})</span>
+											{% endif %}
+										</label>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+
+
+
+					{% if option.type == 'checkbox' %}
+						<div class="opt-checkbox" {% if option.name == 'Select Dungeons' %}id="hidden-options-checkbox"{% endif %}{% if option.name == "Specific Slot" %}id="specific-gear-slot"{% endif %}{% if option.name == "Specific Item Slot" %}id="specific-item-slot"{% endif %}>
+							<div class="opt-checkbox_name">{{ option.name }}</div>
+							{% for option_value in option.product_option_value %}
+								<div class="checkbigrow"> 
+									<div class="form-check">
+										<input type="checkbox" {% if option.name in ['Select Dungeons', 'Speecific Item Slot', 'Specific Slot'] %}class="special-opt"{% endif %} name="option[{{ option.product_option_id }}][]" value="{{ option_value.product_option_value_id }}" id="exampleRadios{{ option.product_option_id }}_{{ option_value.product_option_value_id }}" data-prise="{{ option_value.price }}" data-name="{{ option_value.name }}"/>
+										<label class="form-check-label" for="exampleRadios{{ option.product_option_id }}_{{ option_value.product_option_value_id }}">
+											{{ option_value.name }}
+											{% if option_value.price %}
+											<span>({{ option_value.price_prefix }}{{ option_value.price }})</span>
+											{% endif %}
+										</label>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+					{% if option.type == 'text' %}
+					  <div class="form-group{% if option.required %} required {% endif %}">
+						<label class="control-label" for="input-option{{ option.product_option_id }}">{{ option.name }}</label>
+						<input type="text" name="option[{{ option.product_option_id }}]" value="{{ option.value }}" placeholder="{{ option.name }}" id="input-option{{ option.product_option_id }}" class="form-control"/>
+					  </div>
+					{% endif %}
+					{% if option.type == 'textarea' %}
+					  <div class="form-group{% if option.required %} required {% endif %}">
+						<label class="control-label" for="input-option{{ option.product_option_id }}">{{ option.name }}</label>
+						<textarea name="option[{{ option.product_option_id }}]" rows="5" placeholder="{{ option.name }}" id="input-option{{ option.product_option_id }}" class="form-control">{{ option.value }}</textarea>
+					  </div>
+					{% endif %}
+					{% if option.type == 'file' %}
+					  <div class="form-group{% if option.required %} required {% endif %}">
+						<label class="control-label">{{ option.name }}</label>
+						<button type="button" id="button-upload{{ option.product_option_id }}" data-loading-text="{{ text_loading }}" class="btn btn-default btn-block"><i class="fa fa-upload"></i> {{ button_upload }}</button>
+						<input type="hidden" name="option[{{ option.product_option_id }}]" value="" id="input-option{{ option.product_option_id }}"/>
+					  </div>
+					{% endif %}
+					{% if option.type == 'date' %}
+					  <div class="form-group{% if option.required %} required {% endif %}">
+						<label class="control-label" for="input-option{{ option.product_option_id }}">{{ option.name }}</label>
+						<div class="input-group date">
+						  <input type="text" name="option[{{ option.product_option_id }}]" value="{{ option.value }}" data-date-format="YYYY-MM-DD" id="input-option{{ option.product_option_id }}" class="form-control"/>
+						  <span class="input-group-btn">
+							<button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+						  </span>
+						</div>
+					  </div>
+					{% endif %}
+					{% if option.type == 'datetime' %}
+					  <div class="form-group{% if option.required %} required {% endif %}">
+						<label class="control-label" for="input-option{{ option.product_option_id }}">{{ option.name }}</label>
+						<div class="input-group datetime">
+						  <input type="text" name="option[{{ option.product_option_id }}]" value="{{ option.value }}" data-date-format="YYYY-MM-DD HH:mm" id="input-option{{ option.product_option_id }}" class="form-control"/>
+						  <span class="input-group-btn">
+							<button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+						  </span>
+						</div>
+					  </div>
+					{% endif %}
+					{% if option.type == 'time' %}
+					  <div class="form-group{% if option.required %} required {% endif %}">
+						<label class="control-label" for="input-option{{ option.product_option_id }}">{{ option.name }}</label>
+						<div class="input-group time">
+						  <input type="text" name="option[{{ option.product_option_id }}]" value="{{ option.value }}" data-date-format="HH:mm" id="input-option{{ option.product_option_id }}" class="form-control"/>
+						  <span class="input-group-btn">
+							<button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+						  </span>
+						</div>
+					  </div>
+					{% endif %}
+					{% if option.type == 'choice' %}
+					  <div class="row">
+						<div class="col-md-12">
+						  <div class="row3colForm">
+							<div>
+							  <div><span class="asdasd">1</span>Runs</div>
+							</div>
+							<div>
+							  <div id="customRange1"></div>
+							</div>
+							<div>Choose 5 Runs to get a 10% OFF</div>
+						  </div>
+						</div>
+					  </div>
+
+					<input type="hidden" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" class="form-control"/>
+					{% endif %}
+				  {% endfor %}
+				{% endif %}
+				{% if name_option_slider %}
+				<div class="row">
+					<div class="col-md-12">
+						<div class="borderedRow">
+							<div class="opt-checkbox_name">{{name_option_slider}}</div>
+							<div class="d-flex flex-column align-items-center">
+							<input type="number" id="sliderValue" style="text-align:center; border:none; display:none"
+								min="{{ min_value_option_slider }}" 
+								max="{{ max_value_option_slider }}" 
+								value="5" 
+								step="1" 
+								oninput="document.getElementById('slider').value = this.value">
+							<input type="range" id="slider"
+								min="{{ min_value_option_slider }}" 
+								max="{{ max_value_option_slider }}" 
+								step="1" 
+								value="{{ min_value_option_slider }}" 
+								oninput="document.getElementById('sliderValue').value = this.value">
+							</div>
+						</div>
+					</div>
+				</div>	
+				{% endif %}		  
+				<input type="hidden" name="product_id" value="{{ product_id }}"/>
+				<div class="total">Total: <span data-prise="{{ price2 }}"></span></div>
+			  </div>
+                  <div class="row">
+                    <div class="col-md-12" style="text-align: center;">
+                      <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-by-boost">Buy now</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                      type="button" role="tab" aria-controls="nav-home" aria-selected="true">DESCRIPTION</button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                      type="button" role="tab" aria-controls="nav-profile" aria-selected="false">REQUIREMENTS</button>
+                    {#<button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                      type="button" role="tab" aria-controls="nav-contact" aria-selected="false">PAYMENTS AND
+                      CONTACTS</button>#}
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                    tabindex="0"><p>
+                    {{ description }}
+					</p>
+                  </div>
+                  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                    tabindex="0">
+					{{why}}
+                  </div>
+                  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+                    tabindex="0">
+					{{payments}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+</div>
+<script type="text/javascript">
+
+$(document).ready(function () {
+    if ($('#slider').length > 0) {
+        $("#slider").ionRangeSlider({
+            skin: "round",
+            min: {{ min_value_option_slider }},
+            max: {{ max_value_option_slider }},
+            from: {{ min_value_option_slider }},
+            step: 1,
+            onStart: function (data) {
+                $("#sliderValue").text(data.from);
+				$(this).attr('data-value',  data.from);
+                updateCompletionText(data.from);
+				calcPrice();
+            },
+            onChange: function (data) {
+                $("#sliderValue").text(data.from);
+				$('#slider').attr('data-value',  data.from);
+                updateCompletionText(data.from);
+				calcPrice();
+            },
+            hide_min_max: true,
+        });
+
+        function updateCompletionText(value) {
+            let total, days, hours, updatedPrice;
+
+            if (document.querySelector('.titlepage').textContent === "WoW Solo Shuffle Wins Boost") {
+                total = value * 2;
+                days = Math.floor(total / 24);
+                hours = total % 24;
+
+                if (hours > 11 && days > 1) { days++; hours = 0; }
+                if (days > 1) { hours = 0; }
+
+                let basePrice = parseFloat($('.option-price').data('base-prise').replace(/[^\d.-]/g, '')) || 0;
+                updatedPrice = basePrice * value;
+                $('.option-price').attr('data-prise', updatedPrice.toFixed(2));
+                $('.option-price .price-value').text(updatedPrice.toFixed(2) + '€'); // обновляем текстовое значение цены
+
+                if (value === 1) {
+                    $('#comlete-time-text').text("10 hours order completion");
+                } else {
+                    $('#comlete-time-text').text((days === 0 ? "" : days === 1 ? "1 day " : days + " days ") + (hours > 0 ? hours + " hours" : "") + " order completion");
+                }
+            } else {
+                total = value * 45;
+                hours = Math.floor(total / 60);
+                const minutes = total % 60;
+
+                if (hours > 15) { hours++; }
+
+                let basePrice = parseFloat($('.option-price').data('base-prise').replace(/[^\d.-]/g, '')) || 0;
+                updatedPrice = basePrice * value;
+                $('.option-price').attr('data-prise', updatedPrice.toFixed(2));
+               
+				$('.option-price').each(function () {
+					
+					if (!$(this).attr('data-original-prise')) {
+						$(this).attr('data-original-prise', $(this).attr('data-base-prise'));
+					}
+
+					const basePrice = parseFloat($(this).attr('data-original-prise').replace(/[^\d.-]/g, '')) || 0;
+					const updatedPrice = basePrice * value;
+
+					$(this).attr('data-base-prise', updatedPrice.toFixed(2));
+					$(this).find('.price-value').text(updatedPrice.toFixed(2) + '€');
+					$('span').attr('data-prise', updatedPrice.toFixed(2)+ '€');
+					
+				});
+
+                if (value === 1) {
+                    $('#comlete-time-text').text("45 minutes order completion");
+                } else {
+                    $('#comlete-time-text').text(hours + " hours order completion");
+                }
+            }
+			 
+        }
+    }
+});
+
+</script>
+<script type="text/javascript"><!--
+$('#input-subscription').on('change', function (e) {
+    var element = this;
+
+    $('.subscription').addClass('d-none');
+
+    $('#subscription-description-' + $(element).val()).removeClass('d-none');
+});
+
+function calcPrice() {
+    var all_price = 0;
+   
+    var initialPrice = $('#product input[type="hidden"][data-prise]').first().attr('data-prise');
+    all_price += getNum(initialPrice); 
+    
+    $('#product input[type="radio"]').each(function() {
+        var result = 0;
+        if ($(this).prop('checked')) {
+            var price = $(this).attr('data-prise');
+            result = getNum(price);
+        }
+        all_price += result;
+    });
+   
+    $('#product input[type="checkbox"]').each(function() {
+        var result = 0;
+        if ($(this).prop('checked')) {
+            var price = $(this).attr('data-prise');
+            result = getNum(price);
+        }
+        all_price += result;
+    });
+
+	var hiddenSummary = 0;
+ $('#product input[type="hidden"]').each(function() {
+    var result = 0;
+    if ($(this).attr('data-prise') !== undefined) {
+        var price = $(this).attr('data-prise');
+
+        var value = $("#slider").attr('data-value') || 1;
+
+        var prefixElement = $(this).closest('.row').find('.option-price');
+        var prefix = prefixElement.attr('data-prefix'); 
+
+        result = getNum(price) * value;
+
+        if (prefix == '-') {
+            result = -result;
+        }
+
+        console.log("Sign: ", prefix);
+    }
+    all_price += result;
+});
+
+
+    var count = document.getElementById('input-quantity') ? parseInt($('#input-quantity').val()) : 1;
+    all_price *= count;
+
+    var minus = 0;
+    if (count === 5) {
+        minus = (all_price / 100) * 10;
+    }
+    
+    if (all_price > 0) {
+        all_price /= 100;
+        minus /= 100;
+    }
+
+    if (minus > 0) {
+        all_price = all_price + '<i>(-' + minus.toFixed(2) + ')</i>';
+    }
+	console.log("111: ",$('#product input[type="hidden"][data-prise]').first().attr('data-prise'))
+	console.log(getNum(initialPrice))
+   
+    all_price = parseFloat(all_price) - parseFloat(getNum(initialPrice) * 0.01);
+	all_price = all_price.toFixed(2);
+   if (all_price < 0) all_price = 0;
+    
+    $('#product .total span').html('$' + all_price);
+}
+
+function getNum(value) {
+    var numericValue = parseFloat(value.replace(/[^\d.-]/g, ''));
+    if (!isNaN(numericValue)) {
+        return numericValue * 100;
+    }
+    return 0;
+}
+//--></script>
+<script type="text/javascript"><!--
+$('.borderedRow input[type="radio"]:first').prop('checked', true);
+$('.dropdownSelect').each(function(){
+	var name = $(this).find('li:first-child a').html();
+	var id = $(this).find('.scrollbar-inner').attr('data-id');
+	var thisid = $(this).find('li:first-child a').attr('data-id');
+	var price = $(this).find('li:first-child a').attr('data-prise');
+	var pricePref = $(this).find('li:first-child a').attr('data-prisePref');
+
+	$('#input-option-'+id).val(thisid);
+	$('#input-option-'+id).attr('data-prise',price);
+	$('#input-option-'+id).attr('data-prisePref',pricePref);
+	$(this).find('.dropdown-toggle').html(name);
+});
+$('#product input[type="checkbox"],#product  input[type="radio"]').on('change',function () {
+	calcPrice();
+});
+calcPrice();
+$('.dropdownSelect .dropdown-item').on('click',function(){
+	var name = $(this).html();
+	var id = $(this).parents('.scrollbar-inner').attr('data-id');
+	var thisid = $(this).attr('data-id');
+	var price = $(this).attr('data-prise');
+
+	$(this).parents('.dropdownSelect').find('.dropdown-toggle').html(name);
+	$('#input-option-'+id).val(thisid);
+	$('#input-option-'+id).attr('data-prise',price);
+	$(this).parents('.dropdownSelect').find('.dropdown-toggle').trigger('click');
+	calcPrice();
+	return false;
+});
+$('#button-cart').on('click', function() {
+    $.ajax({
+        url: 'index.php?route=checkout/cart/add',
+        type: 'post',
+        data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
+        dataType: 'json',
+        beforeSend: function() {
+            $('#button-cart').button('loading');
+        },
+        complete: function() {
+            $('#button-cart').button('reset');
+        },
+        success: function (json) {
+            $('.alert-dismissible, .text-danger').remove();
+            $('.form-group').removeClass('has-error');
+
+            if (json['error']) {
+                if (json['error']['option']) {
+				var txt = '';
+                    for (i in json['error']['option']) {
+                        var element = $('#input-option' + i.replace('_', '-'));
+						txt = txt +' '+ json['error']['option'][i];
+                        if (element.parent().hasClass('input-group')) {
+                            element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+                        } else {
+                            element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+                        }
+                    }
+
+					alert(txt);
+                }
+
+                if (json['error']['subscription']) {
+                    $('select[name=\'subscription_plan_id\']').after('<div class="text-danger">' + json['error']['subscription'] + '</div>');
+                }
+
+                // Highlight any found errors
+                $('.text-danger').parent().addClass('has-error');
+            }
+
+            if (json['success']) {
+                $.jGrowl(json['success'], { life: 10000 });
+                $('.cartbtn > span').html(json['total']);
+				if(!$('.cartbtn').hasClass('has_cart_item')){
+					$('.cartbtn').addClass('has_cart_item')
+				}
+
+                $('#cartRows').load('index.php?route=common/cart/info');
+            }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+        }
+    });
+});
+//--></script>
+<script type="text/javascript"><!--
+$('.date').datetimepicker({
+    language: '{{ datepicker }}',
+    pickTime: false
+});
+
+$('.datetime').datetimepicker({
+    language: '{{ datepicker }}',
+    pickDate: true,
+    pickTime: true
+});
+
+$('.time').datetimepicker({
+    language: '{{ datepicker }}',
+    pickDate: false
+});
+
+$('button[id^=\'button-upload\']').on('click', function() {
+    var element = this;
+
+    $('#form-upload').remove();
+
+    $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file"/></form>');
+
+    $('#form-upload input[name=\'file\']').trigger('click');
+
+    if (typeof timer != 'undefined') {
+        clearInterval(timer);
+    }
+
+    timer = setInterval(function() {
+        if ($('#form-upload input[name=\'file\']').val() != '') {
+            clearInterval(timer);
+
+            $.ajax({
+                url: 'index.php?route=tool/upload',
+                type: 'post',
+                dataType: 'json',
+                data: new FormData($('#form-upload')[0]),
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $(element).button('loading');
+                },
+                complete: function() {
+                    $(element).button('reset');
+                },
+                success: function (json) {
+                    $('.text-danger').remove();
+
+                    if (json['error']) {
+                        $(element).parent().find('input').after('<div class="text-danger">' + json['error'] + '</div>');
+                    }
+
+                    if (json['success']) {
+                        alert(json['success']);
+
+                        $(element).parent().find('input').val(json['code']);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                }
+            });
+        }
+    }, 500);
+});
+
+if (document.getElementById('customRange1')) {
+    $(function () {
+      $("#customRange1").slider({
+        max: 5,
+        min: 1,
+        step: 1,
+        value: 1,
+        slide: function (event, ui) {
+			$('.asdasd').html(ui.value);
+			$('#input-quantity').val(ui.value);
+			calcPrice();
+        }
+      });
+    });
+}
+//--></script>
+<script type="text/javascript"><!--
+$('#review').delegate('.pagination a', 'click', function (e) {
+    e.preventDefault();
+
+    $('#review').fadeOut('slow');
+    $('#review').load(this.href);
+    $('#review').fadeIn('slow');
+});
+
+$('#review').load('index.php?route=product/product/review&product_id={{ product_id }}');
+
+$('#button-review').on('click', function() {
+    $.ajax({
+        url: 'index.php?route=product/product/write&product_id={{ product_id }}',
+        type: 'post',
+        dataType: 'json',
+        data: $('#form-review').serialize(),
+        beforeSend: function() {
+            $('#button-review').button('loading');
+        },
+        complete: function() {
+            $('#button-review').button('reset');
+        },
+        success: function (json) {
+            $('.alert-dismissible').remove();
+
+            if (json['error']) {
+                $('#review').after('<div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
+            }
+
+            if (json['success']) {
+                $('#review').after('<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> ' + json['success'] + '</div>');
+
+                $('input[name=\'name\']').val('');
+
+                $('textarea[name=\'text\']').val('');
+
+                $('input[name=\'rating\']:checked').prop('checked', false);
+            }
+        }
+    });
+});
+
+$(document).ready(function() {
+    $('.thumbnails').magnificPopup({
+        type:'image',
+        delegate: 'a',
+        gallery: {
+            enabled: true
+        }
+    });
+});
+//--></script>
+
+<script>
+setTimeout(() => {
+	document.querySelector('.checkbigrow').removeAttribute('style');
+}, 500);
+//--></script>
+
+<script>
+const startTimeRange = document.querySelector('.tTo');
+const timeRange = document.querySelector('.tToRange');
+const timeRangeValue = timeRange.querySelectorAll('span')[0];
+const checkboxOptions = document.querySelectorAll('.opt-checkbox');
+const selectOptions = document.querySelectorAll('.row input[id^=input-option]');
+const price = document.querySelector('span[data-prise]');
+
+let currency;
+
+if(location.pathname.match('-eu')) currency = '€';
+else if(location.pathname.match('-us')) currency = '$';
+
+if(startTimeRange) {
+	if(!startTimeRange.querySelectorAll('span')[0].innerText) startTimeRange.style.display = 'none';
+}
+	
+if(timeRange) {
+	if(timeRange.querySelectorAll('span')[0].innerText) {
+		timeRangeValue.dataset.time = convertTimeString(timeRangeValue.innerText);
+	} else {
+		timeRangeValue.dataset.time = 0;
+		timeRange.style.display = 'none';
+	}
+}
+
+const paths0 = [
+	'/wow-powerleveling-boost-eu',
+	'/wow-powerleveling-boost-us',
+	'/wow-powerleveling-boost-eu/',
+	'/wow-powerleveling-boost-us/',
+];
+
+const paths1 = [
+	'/mythic-gear-boost-eu',
+	'/mythic-gear-boost-us',
+	'/mythic-gear-boost-eu/',
+	'/mythic-gear-boost-us/',
+];
+
+const paths2 = [
+	'/keystone-hero-boost-eu',
+	'/keystone-hero-boost-us',
+	'/keystone-hero-boost-eu/',
+	'/keystone-hero-boost-us/',
+];
+
+const paths3 = [
+	'/amirdrassil-heroic-boost-eu',
+	'/amirdrassil-heroic-boost-us',
+	'/amirdrassil-heroic-boost-eu/',
+	'/amirdrassil-heroic-boost-us/',
+];
+
+const paths4 = [
+	'/amirdrassil-normal-boost-eu',
+	'/amirdrassil-normal-boost-us',
+	'/amirdrassil-normal-boost-eu/',
+	'/amirdrassil-normal-boost-us/',
+];
+
+const paths5 = [
+	'/amirdrassil-mythic-boost-eu', 
+	'/amirdrassil-mythic-boost-us',
+	'/amirdrassil-mythic-boost-eu/', 
+	'/amirdrassil-mythic-boost-us/',
+];
+
+const paths6 = [
+	'/awakening-the-dragonflight-raids-boost-eu',
+	'/awakening-the-dragonflight-raids-boost-us',
+	'/awakening-the-dragonflight-raids-boost-eu/',
+	'/awakening-the-dragonflight-raids-boost-us/',
+];
+
+showHideOptions(paths2, 'Select Dungeons', 'Execution Options', [0, 0, 1]);
+showHideOptions(paths3, 'Unsaved Players', 'Loot Mode', [0, 0, 1, 1]);
+showHideOptions(paths4, 'Unsaved Players', 'Loot Mode', [0, 0, 1, 1]);
+
+if(paths0.includes(location.pathname)) {
+
+	let desiredId;
+	let currentId;
+	let defaultCurrentValue;
+	let desiredValue = 1;
+	let currentValue = 1;
+	
+	if(location.pathname === paths0[0]) {
+		desiredId = 313;
+		currentId = 312;
+		defaultCurrentValue = 1069;
+	} else if(location.pathname === paths0[1]) {
+		desiredId = 347;
+		currentId = 324;
+		defaultCurrentValue = 1158;
+	}
+	
+	const desiredLevels = document.querySelectorAll('.scrollbar-inner[data-id="' + desiredId + '"] a');
+	const currentLevels = document.querySelectorAll('.scrollbar-inner[data-id="' + currentId + '"] li');
+
+	desiredLevels.forEach((a) => {
+		a.addEventListener('click', function() { 
+			desiredValue = parseInt(this.innerText);
+
+			currentLevels.forEach((li) => {
+				if(li.style.display === 'none') li.style.display = '';
+			});
+			for(let i = 0; i < currentLevels.length; i++) {
+				if(i >= desiredValue) {
+					currentLevels[i].style.display = 'none';
+				}
+			}
+
+			if(currentValue > desiredValue) { 
+				document.querySelector('#input-option-' + currentId).value = defaultCurrentValue;
+				document.querySelector('.scrollbar-inner[data-id="' + currentId + '"').closest('.dropdownSelect').querySelector('button').innerText = '1';
+			}
+		});
+	});
+	
+	document.querySelectorAll('.scrollbar-inner[data-id="' + currentId + '"] a').forEach((a) => {
+		a.addEventListener('click', function() {
+			currentValue = parseInt(this.innerText);
+		});
+	});
+	
+	runCheckboxOptions('Execution Speed', [0, 120, 180], 'radio');
+	runCheckboxOptions('Questing Options', [60, 720, 1440, 9720, 1440, 1440, 120], 'check');
+	runCheckboxOptions('The War Within Pre-Orders', [2520, 40320, 0, 1440], 'check');
+	runCheckboxOptions('Gearing Options', [60, 120, 1440], 'check'); paths0
+}
+
+if(paths1.includes(location.pathname)) {
+	if(checkboxOptions.length > 0) {
+		checkboxOptions.forEach((option) => {
+			const optionName = option.querySelector('.opt-checkbox_name');
+			const optionCheckRowes = option.querySelectorAll('.checkbigrow');
+			
+			if(optionName.innerText === 'Specific Slot') {
+				option.setAttribute('id', optionName.innerText.replaceAll(' ', ''));
+				option.style.display = 'none';
+			} 
+			
+			if(optionName.innerText === 'Specific Item Slot') {
+				option.setAttribute('id', optionName.innerText.replaceAll(' ', ''));
+				option.style.display = 'none';
+			}
+			
+			if(optionName.innerText === 'Execution Options') {
+				const labels = option.querySelectorAll('label');
+				
+				for(let i = 0; i < labels.length; i++) {
+					labels[i].addEventListener('click', function() {
+						if(i === 0) {
+							if(!document.querySelector('#SpecificSlot').style.display) document.querySelector('#SpecificSlot').style.display = 'none';
+							if(!document.querySelector('#SpecificItemSlot').style.display) document.querySelector('#SpecificItemSlot').style.display = 'none';
+						} else if(i === 1) {
+							if(document.querySelector('#SpecificSlot').style.display) document.querySelector('#SpecificSlot').style.display = '';
+							if(!document.querySelector('#SpecificItemSlot').style.display) document.querySelector('#SpecificItemSlot').style.display = 'none';
+						} else if(i === 2) {
+							if(document.querySelector('#SpecificItemSlot').style.display) document.querySelector('#SpecificItemSlot').style.display = '';
+							if(!document.querySelector('#SpecificSlot').style.display) document.querySelector('#SpecificSlot').style.display = 'none';
+						}
+					});
+				}
+			}
+		});
+		
+		selectOptions.forEach((option) => {
+			if(option.previousElementSibling.innerText === 'Mythic+ Gear Ilvl') {
+				const dropdownItems = option.nextElementSibling.querySelectorAll('.dropdown-item');
+				let daysCount;
+				
+				for(let i = 0; i < 4; i++) {
+					dropdownItems[i].addEventListener('click', function() {
+						if(i < 2) daysCount = 10080;
+						else daysCount = 20160;
+						//timeRangeValue.innerText = daysCount + ' days';
+						timeRangeValue.innerText = convertMinutes(daysCount);
+					});
+				}
+			}
+		});
+	}
+}
+
+if(paths5.includes(location.pathname)) {
+	if(checkboxOptions.length > 0) {
+		checkboxOptions.forEach((option) => {
+			const optionName = option.querySelector('.opt-checkbox_name');
+			const optionCheckRowes = option.querySelectorAll('.checkbigrow');
+			
+			if(option.querySelector('.opt-checkbox_name').innerText === 'Raid Mode') { 
+				const labels = option.querySelectorAll('label');
+				labels[0].click();
+
+				labels[0].addEventListener('click', function() {
+					checkboxOptions.forEach((option) => {
+						if(option.querySelector('.opt-checkbox_name').innerText === 'Number of Bosses') { 
+							option.querySelectorAll('.checkbigrow').forEach((row) => {
+								row.style.display = '';
+							});
+							
+							option.querySelector('.checkbigrow:nth-of-type(2)').querySelector('label').click();
+						}
+					});
+				});
+
+				labels[1].addEventListener('click', function() { 
+					checkboxOptions.forEach((option) => {
+						if(option.querySelector('.opt-checkbox_name').innerText === 'Number of Bosses') {
+							for(let i = 0; i < option.querySelectorAll('.checkbigrow').length; i++) {
+								if(i < option.querySelectorAll('.checkbigrow').length - 1) {
+									option.querySelectorAll('.checkbigrow')[i].style.display = 'none';
+								}
+							}
+							
+							option.querySelector('.checkbigrow:last-child').querySelector('label').click();
+						}
+					});
+				});
+			}
+			
+			if(optionName.innerText === 'Number of Bosses') {
+				option.querySelector('.checkbigrow:nth-of-type(2)').querySelector('label').click();
+				option.querySelector('.checkbigrow:last-child').querySelector('label').addEventListener('click', function() {
+					checkboxOptions.forEach((option) => {
+						if(option.querySelector('.opt-checkbox_name').innerText === 'Full Loot Priority') {
+							option.style.display = '';
+						}
+					});
+				});
+				
+				option.querySelectorAll('.checkbigrow:not(:last-child)').forEach((row) => {
+					row.querySelector('label').addEventListener('click', function() {
+						checkboxOptions.forEach((option) => {
+							if(option.querySelector('.opt-checkbox_name').innerText === 'Full Loot Priority') {
+								option.style.display = 'none';
+							}
+						});
+					});
+				});
+			}
+			
+			if(optionName.innerText === 'Full Loot Priority') {
+				option.style.display = 'none';
+				optionName.style.display = 'none';
+			}
+		});
+	}
+	
+	runCheckboxOptions('Number of Bosses', [0, 60, 180, 180, 180, 180, 180, 180], 'radio');
+}
+
+if(paths6.includes(location.pathname)) {
+	if(checkboxOptions.length > 0) {
+		checkboxOptions.forEach((option) => {
+			const optionName = option.querySelector('.opt-checkbox_name');
+			const optionCheckRowes = option.querySelectorAll('.checkbigrow');
+			
+			if(optionName.innerText === 'Select Awakened Raids') {
+				option.setAttribute('id', optionName.innerText.replaceAll(' ', ''));
+				optionCheckRowes[2].querySelector('.form-check').style.marginBottom = 0;
+				optionCheckRowes[5].querySelector('.form-check').style.marginBottom = 0;
+				
+				for(let i = 3; i < optionCheckRowes.length; i++) {
+					optionCheckRowes[i].style.display = 'none';
+				}
+			}
+			
+			if(optionName.innerText === 'Awakened Raid Mode') {
+				for(let i = 0; i < optionCheckRowes.length; i++) {
+					optionCheckRowes[i].querySelector('label').addEventListener('click', function() {
+						setTimeout(() => {
+							const selectedOption = document.querySelector('#SelectAwakenedRaids');
+							
+							selectedOption.querySelectorAll('.checkbigrow').forEach((row) => {
+								if(!row.style.display) row.style.display = 'none';
+								if(row.querySelector('input').checked) row.querySelector('input').click();
+							});
+							
+							if(i === 0) {
+								for(let j = i; j < 3; j++) {
+									selectedOption.querySelectorAll('.checkbigrow')[j].style.display = '';
+								}
+							} else if(i === 1) {
+								for(let j = 3; j < 6; j++) {
+									selectedOption.querySelectorAll('.checkbigrow')[j].style.display = '';
+								}
+							
+							} else if(i === 2) {
+								for(let j = 6; j < 9; j++) {
+									selectedOption.querySelectorAll('.checkbigrow')[j].style.display = '';
+								}
+							}
+						}, 10);
+					});
+				}
+			}
+		});
+	}
+}
+
+const paths7 = [
+	'/mythic-bis-Items-boost-eu',
+	'/mythic-bis-Items-boost-us',
+	'/mythic-bis-Items-boost-eu/',
+	'/mythic-bis-Items-boost-us/',
+];
+
+if(paths7.includes(location.pathname)) {
+	if(checkboxOptions.length > 0) {
+		checkboxOptions.forEach((option) => {
+			const optionName = option.querySelector('.opt-checkbox_name');
+			const optionCheckRowes = option.querySelectorAll('.checkbigrow');
+			
+			if(optionName.innerText === 'Specific Item Slot') {
+				option.querySelectorAll('label').forEach((label) => {
+					label.addEventListener('click', function() {
+						setTimeout(() => {
+							let checkedCount = option.querySelectorAll('input:checked').length;
+							if(checkedCount > 0) {
+								timeRange.querySelectorAll('span')[0].innerText = checkedCount * 3 + ' days';
+								timeRange.style.display = '';
+							} else {
+								timeRange.querySelectorAll('span')[0].innerText = '';
+								timeRange.style.display = 'none';
+							}
+						});
+					});
+				});
+			}
+		});
+	}
+}
+
+const paths8 = [
+	'/mythic-keys-boost-eu',
+	'/mythic-keys-boost-us',
+	'/mythic-keys-boost-eu/',
+	'/mythic-keys-boost-us/',
+];
+
+if(paths8.includes(location.pathname)) {
+	const numberOfRuns = document.querySelector('input[placeholder="Number of Runs"]');
+	
+	if(numberOfRuns) {
+		numberOfRuns.addEventListener('input', function() {
+			if(this.value) { 
+				if(this.value < 1) this.value = 1;
+				else if(this.value > 15) this.value = 15;
+				
+				let time = 45 * this.value;
+				
+				timeRangeValue.innerText = convertMinutes(time);
+				let total = parseFloat(price.dataset.price * this.value).toFixed(2);
+			}
+		});
+	}
+}
+
+const paths9 = [
+	'/keystone-master-boost-eu',
+	'/keystone-master-boost-us',
+	'/keystone-master-boost-eu/',
+	'/keystone-master-boost-us/',
+];
+
+if(paths9.includes(location.pathname)) {
+	selectOptions.forEach((option) => {
+		if(option.previousElementSibling.innerText === 'Get Discount for M+5 Progress') {
+			const dropdownItems = option.nextElementSibling.querySelectorAll('.dropdown-item');
+			const daysCount = convertTimeString(timeRangeValue.innerText);
+			const times = [0, 1440, 1440, 2880, 4320, 4320, 5760, 7200, 8640, 10800, 11520, 12960, 14400, 15840, 17280, 18711];
+			
+			if(dropdownItems.length === times.length) {
+				for(let i = 0; i < dropdownItems.length; i++) {
+					dropdownItems[i].addEventListener('click', function() {
+						dropdownItems[i].dataset.time = times[i];
+						const time = +times[i];
+						let currentValue;
+						currentValue = daysCount - time;
+						timeRangeValue.innerText = convertMinutes(currentValue);
+					});
+				};
+			}
+		}
+	});
+};
+
+const paths10 = [
+	'/dragonflight-starter-package-eu',
+	'/dragonflight-starter-package-us',
+	'/dragonflight-starter-package-eu/',
+	'/dragonflight-starter-package-us/',
+];
+
+if(paths10.includes(location.pathname)) {
+	if(checkboxOptions.length > 0) {
+		checkboxOptions.forEach((option) => {
+			const optionName = option.querySelector('.opt-checkbox_name');
+			const optionCheckRowes = option.querySelectorAll('.checkbigrow');
+			
+			if(optionName.innerText === 'Gearing Options') {
+				const inputs = option.querySelectorAll('input[name^=option]');
+				let time;
+				
+				for(let i = 0; i < inputs.length; i++) {
+					inputs[i].addEventListener('click', function() {
+						let currentTime = convertTimeString(timeRangeValue.innerText);
+						let thisTime;
+						let thisNumber = parseInt(this.nextElementSibling.innerText);
+						
+						if(thisNumber === 499) thisTime = 10080;
+						else if(thisNumber === 509) thisTime = 20160;
+						else if(thisNumber === 515) thisTime = 2880;
+						else if(thisNumber === 528) thisTime = 7200;
+						
+						if(this.checked) currentTime += thisTime;
+						else currentTime -= thisTime;
+						
+						timeRangeValue.innerText = convertMinutes(currentTime);
+					});
+				}
+			}
+			
+			if(optionName.innerText === 'Questing Options') {
+				const inputs = option.querySelectorAll('input[name^=option]');
+				
+				inputs[0].addEventListener('click', function() {
+					let currentTime = parseInt(timeRangeValue.innerText);
+					let thisTime = 35;
+					
+					if(this.checked) currentTime += thisTime;
+					else currentTime -= thisTime;
+						
+					timeRangeValue.innerText = currentTime + ' days';
+				});
+			}
+		});
+	}
+}
+
+const paths11 = [
+	'/mythic-bundle-eu',
+	'/mythic-bundle-us',
+	'/mythic-bundle-eu/',
+	'/mythic-bundle-us/',
+];
+
+if(paths11.includes(location.pathname)) {
+	if(selectOptions.length > 0) {
+		selectOptions.forEach((option) => {
+			if(option.previousElementSibling.innerText === 'Keystone Level') { 
+				const dropdownItems = option.nextElementSibling.querySelectorAll('.dropdown-item');
+				
+				for(let i = 0; i < dropdownItems.length; i++) {
+					dropdownItems[i].addEventListener('click', function() { 
+						let currentTime;
+						if((i % 2) !== 0) {
+							currentTime = 300;
+						} else currentTime = 120;
+						
+						timeRangeValue.innerText = convertMinutes(currentTime);
+					});
+				};
+			}
+		});
+	}
+}
+
+
+const paths12 = [
+	'/dragonflight-elite-pvp-gear-boost-eu',
+	'/dragonflight-elite-pvp-gear-boost-us',
+	'/dragonflight-elite-pvp-gear-boost-eu',
+	'/dragonflight-elite-pvp-gear-boost-us',
+];
+
+if(paths12.includes(location.pathname)) {
+	sessionStorage.setItem('additional', 'false');
+	checkboxOptions[0].querySelector('input[name*="option"]').checked = true;
+	
+	checkboxOptions.forEach((option) => {
+		const optionName = option.querySelector('.opt-checkbox_name');
+		const optionCheckRowes = option.querySelectorAll('.checkbigrow');
+		
+		if(optionName.innerText === 'Play Method') {
+			const times = [0, 480];
+			
+			if(times.length === optionCheckRowes.length) {
+				for(let i = 0; i < optionCheckRowes.length; i++) {
+					const input = optionCheckRowes[i].querySelector('input[name*=option]');
+					
+					input.addEventListener('click', function() {
+						let currentValue = +timeRangeValue.dataset.time; 
+						
+						if(sessionStorage.getItem('additional') === 'false') {
+							if(i === 0) currentValue = 2880;
+							else if(i === 1) currentValue = 2400;
+						} else if(sessionStorage.getItem('additional') === 'true') {
+							if(currentValue > 24480) {
+								if(i === 0) currentValue = 28800;
+								else if(i === 1) currentValue = 27360;
+							} else {
+								if(currentValue <= 2880) {
+									if(i === 0) currentValue = 2880;
+									else if(i === 1) currentValue = 2400;
+								} else currentValue = currentValue;
+							}
+						}
+						
+						timeRangeValue.dataset.time = currentValue;
+						timeRangeValue.innerText = convertMinutes(currentValue);
+	
+					});
+				}
+			}
+		}
+		
+		if(optionName.innerText === 'Additional Options') {
+			const times = [2880, 0, 7200, 14400];
+			
+			if(times.length === optionCheckRowes.length) {
+				for(let i = 0; i < optionCheckRowes.length; i++) {
+					const input = optionCheckRowes[i].querySelector('input[name*=option]');
+					
+					input.addEventListener('click', function() {
+						let currentValue = +timeRangeValue.dataset.time; 
+						if(currentValue < 2880) currentValue = 2880;
+						
+						if(this.checked) {
+							sessionStorage.setItem('additional', 'true');
+							currentValue += times[i];
+						} else {
+							sessionStorage.setItem('additional', 'false');
+							currentValue -= times[i];
+							
+							if(checkboxOptions[0].querySelectorAll('input[name*=option]')[1].checked && currentValue === 2880) {
+								currentValue = 2400;
+							}
+						}
+						
+						timeRangeValue.dataset.time = currentValue;
+						if(currentValue > 24480) timeRangeValue.innerText = convertMinutes(currentValue + 1440);
+						else timeRangeValue.innerText = convertMinutes(currentValue);
+					
+					});
+				}
+			}
+		}
+	});
+}
+
+const paths13 = [
+	'/dragonflight-honor-gear-boost-eu',
+	'/dragonflight-honor-gear-boost-us',
+	'/dragonflight-honor-gear-boost-eu/',
+	'/dragonflight-honor-gear-boost-us/',
+];
+
+if(paths13.includes(location.pathname)) { 
+	checkboxOptions[0].querySelector('input[name*="option"]').checked = true;
+	
+	runCheckboxOptions('PvP Gear Options', [7200,14400], 'check');
+}
+
+const paths14 = [
+	'/full-pvp-gear-boost-eu',
+	'/full-pvp-gear-boost-us',
+	'/full-pvp-gear-boost-eu/',
+	'/full-pvp-gear-boost-us/',
+];
+
+if(paths14.includes(location.pathname)) {
+	checkboxOptions[0].querySelector('input[name*="option"]').checked = true;
+	
+	runCheckboxOptions('PvP Gear Options', [2880, 7200, 14400, 2400], 'check');
+}
+
+const paths15 = [
+	'/rbg-rating-boost-eu',
+	'/rbg-rating-boost-us',
+	'/rbg-rating-boost-eu/',
+	'/rbg-rating-boost-us/',
+];
+
+if(paths15.includes(location.pathname)) { 
+	checkboxOptions[0].querySelector('input[name*="option"]').checked = true;
+		
+	const times = [
+		[2880, 4320, 4320, 4320, 5760, 8640, 10080, 11520, 14400, 15840, 18720],
+		[7200, 14400, 900, 1140, 2520, 5760, 7200, 10080, 11520, 12960, 15840],
+		[2, 300, 600, 840, 2280, 5760, 7200, 10080, 11520, 12960, 15840],
+		[0, 26, 300, 540, 1980, 4320, 5760, 8640, 10080, 11520, 14400],
+		[0, 0, 105, 360, 1740, 4320, 5760, 8640, 10080, 11520, 14400],
+		[0, 0, 0, 0, 480, 2880, 4320, 7200, 8640, 10080, 12960],
+		[0, 0, 0, 0, 0, 720, 2100, 4320, 5760, 7200, 10080],
+		[0, 0, 0, 0, 0, 0, 780, 4320, 5760, 7200, 10080],
+		[0, 0, 0, 0, 0, 0, 0, 1020, 11640, 4320, 7200],
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 1440, 4320],
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2880],
+	];
+	
+	runDoubledSelectOptions('Current RBG Rating', 'Desired RBG Rating', times);
+}
+
+const paths16 = [
+	'/wow-solo-shuffle-boost-eu',
+	'/wow-solo-shuffle-boost-us',
+	'/wow-solo-shuffle-boost-eu/',
+	'/wow-solo-shuffle-boost-us/',
+];
+
+if(paths16.includes(location.pathname)) {
+	const times = [
+		[600,720,1080,1380,2880,2880,4320,4320,4320,7200,8640,10080],
+		[300,420,780,1080,2580,2580,4320,4320,4320,7200,8640,10080],
+		[300,420,780,1080,2580,2580,4320,4320,4320,7200,8640,10080],
+		[240,360,720,1020,2520,2520,4320,4320,4320,7200,8640,10080],
+		[0,120,480,780,2280,2280,4320,4320,4320,7200,8640,10080],
+		[0,0,360,660,2160,2160,4320,4320,4320,7200,8640,10080],
+		[0,0,0,300,1800,1800,2880,2880,2880,5760,7200,8640],
+		[0,0,0,0,1500,1500,2880,2880,2880,5760,7200,8640],
+		[0,0,0,0,0,0,1440,1440,1440,4320,5760,7200],
+		[0,0,0,0,0,0,1440,1440,1440,4320,5760,7200],
+		[0,0,0,0,0,0,0,0,0,2880,4320,5760],
+		[0,0,0,0,0,0,0,0,0,0,1440,2880], 
+		[0,0,0,0,0,0,0,0,0,0,1440,2880],
+		[0,0,0,0,0,0,0,0,0,0,0,1440],
+	];
+	
+	runCheckboxOptions('Additional Options', [2280, 13800, 8040, 15240], 'check');
+	runDoubledSelectOptions('Current Rating', 'Desired Rating', times);
+}
+
+const paths17 = [
+	'/wow-solo-shuffle-wins-boost-eu',
+	'/wow-solo-shuffle-wins-boost-us',
+	'/wow-solo-shuffle-wins-boost-eu/',
+	'/wow-solo-shuffle-wins-boost-us/',
+];
+
+if(paths17.includes(location.pathname)) {
+	if(checkboxOptions.length > 0) checkboxOptions[0].querySelector('input[name*="option"]').checked = true;
+	
+	const formGroup = document.querySelector('.form-group');
+	
+	if(formGroup) {
+		const input = formGroup.querySelector('input[name*=option]');
+		
+		let prevValue = 0;
+		
+		input.addEventListener('input', function() {
+			if(this.value !== '') {
+				if(this.value < 1) this.value = 1;
+				if(this.value > 15) this.value = 15;
+				
+				if(isFinite(this.value) && this.value > 5) {
+					timeRangeValue.innerText = convertMinutes(this.value * 120);
+				} else {
+					timeRangeValue.innerText = convertMinutes(600);
+				}
+			}
+		});
+	}
+	
+}
+
+const paths18 = [
+	'/2v2-arena-rating-boost-eu',
+	'/2v2-arena-rating-boost-us',
+	'/2v2-arena-rating-boost-eu/',
+	'/2v2-arena-rating-boost-us/',
+];
+
+if(paths18.includes(location.pathname)) {
+	const times = [
+		[960,1320,1680,2040,2400,4320,5760,5760,8640],
+		[180,540,900,1260,1620,2880,4320,5760,7200],
+		[120,480,840,1200,1560,2880,4320,5760,7200],
+		[60,420,780,1140,1500,2880,4320,5760,7200],
+		[0,360,720,1080,1440,2880,4320,5760,7200],
+		[0,0,360,720,1080,2880,4320,4320,7200],
+		[0,0,0,360,720,2640,4320,4320,7200],
+		[0,0,0,0,360,2280,2880,4320,5760], 
+		[0,0,0,0,0,1920,2880,4320,5760],
+		[0,0,0,0,0,0,960,1920,4320],
+		[0,0,0,0,0,0,0,0,1920],
+		[0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,1920],
+		[0,0,0,0,0,0,0,0,0],
+		
+	];
+	
+	runCheckboxOptions('Additional Options', [3360, 0, 7680, 7680], 'check');
+	runDoubledSelectOptions('Current Rating', 'Desired Rating', times);
+}
+
+const paths19 = [
+	'/3v3-arena-rating-boost-eu',
+	'/3v3-arena-rating-boost-us',
+	'/3v3-arena-rating-boost-eu/',
+	'/3v3-arena-rating-boost-us/',
+];
+
+if(paths19.includes(location.pathname)) {
+	const times = [
+		[960,1320,1680,2040,2400,4320,5760,5760,8640,11520,14400,18720],
+		[180,540,900,1260,1620,2880,4320,5760,7200,10080,14400,17280],
+		[120,480,840,1200,1560,2880,4320,5760,7200,10080,14400,17280],
+		[60,420,780,1140,1500,2880,4320,5760,7200,10080,14400,17280],
+		[0,360,720,1080,1440,2880,4320,5760,7200,10080,14400,17280],
+		[0,0,360,720,1080,2880,4320,4320,7200,10080,12960,17280],
+		[0,0,0,360,720,2640,4320,4320,7200,10080,12960,17280],
+		[0,0,0,0,360,2280,2880,4320,5760,10080,12960,15840], 
+		[0,0,0,0,0,1920,2880,4320,5760,8640,12960,15840],
+		[0,0,0,0,0,0,960,1920,4320,7200,10080,14400],
+		[0,0,0,0,0,0,0,0,1920,5760,8640,11520],
+		[0,0,0,0,0,0,0,0,0,2880,7200,10080],
+		[0,0,0,0,0,0,0,0,0,0,2880,7200],
+		[0,0,0,0,0,0,0,0,0,0,0,2880],
+	];
+	
+	runCheckboxOptions('Additional Options', [3360, 0, 60, 7680, 14880], 'check');
+	runDoubledSelectOptions('Current Rating', 'Desired Rating', times);
+	
+}
+
+const paths20 = [
+	'/azerothian-archives-reputation-boost-eu',
+	'/azerothian-archives-reputation-boost-us',
+	'/azerothian-archives-reputation-boost-eu/',
+	'/azerothian-archives-reputation-boost-us/',
+];
+
+if(paths20.includes(location.pathname)) {
+	runCheckboxOptions('Reputation Level', [2880, 5760, 11520, 17280], 'check');
+}
+
+const paths21 = [
+	'/dream-wardens-renown-boost-eu',
+	'/dream-wardens-renown-boost-us',
+	'/dream-wardens-renown-boost-eu/',
+	'/dream-wardens-renown-boost-us/',
+];
+
+if(paths21.includes(location.pathname)) {
+	runSelectOptions('Your Current Renown Level', [0, 1120, 2240, 3360, 4480, 5600, 6720, 7840, 8960, 10080, 11200, 12320, 13440, 14560, 15680, 16800, 17920, 19040, 20160], 0);
+	runSelectOptions('Desired Renown Level', [0, 1332, 2664, 3996, 5328, 6660, 7992, 9324, 10656, 11988, 13320, 14652, 15984, 17316, 18648, 19980], 0);
+	runCheckboxOptions('Questing Options',  [1440, 50400, 1440, 1440, 0], 'check');
+}
+
+const paths22 = [
+	'/dragonscale-expedition-reputation-boost-eu',
+	'/dragonscale-expedition-reputation-boost-us',
+	'/dragonscale-expedition-reputation-boost-eu/',
+	'/dragonscale-expedition-reputation-boost-us/',
+];
+
+if(paths22.includes(location.pathname)) {
+	runSelectOptions('Your Current Renown Level', [0, 1816,3632,5448,7264,9080,10896,12712,14528,16344,18160,19976,21792,23608,25424,27240,29056,30872,32688,34504,36320,38136,39952,41760], 0);
+	runSelectOptions('Your Current Renown Level', [0, 1816,3632,5448,7264,9080,10896,12712,14528,16344,18160,19976,21792,23608,25424,27240,29056,30872,32688,34504,36320,38136,39952,41760,0,0,0,0,0], 0);
+}
+
+const paths23 = [
+	'/iskaara-tuskarr-reputation-boost-eu',
+	'/iskaara-tuskarr-reputation-boost-us',
+	'/iskaara-tuskarr-reputation-boost-eu/',
+	'/iskaara-tuskarr-reputation-boost-us/',
+];
+
+if(paths23.includes(location.pathname)) {
+	runSelectOptions('Your Current Renown Level',  [0,1440,2880,4320,5760,7200,8640,10080,11520,12960,14400,15840,17280,18720,20160,21600,23040,25920,27360,28800,30240,31680,33120,34560,36000,37440,38880,40320, 41760], 0);
+}
+
+const paths24 = [
+	'/loamm-niffen-reputation-boost-eu',
+	'/loamm-niffen-reputation-boost-us',
+	'/loamm-niffen-reputation-boost-eu/',
+	'/loamm-niffen-reputation-boost-us/',
+];
+
+if(paths24.includes(location.pathname)) {
+	runSelectOptions('Your Current Renown Level', [0,1680,3360,5040,6720,8400,10080,11760,13440,15120,16800,18480,20160,21840,23520,25200,26880,28560,30240], 0);
+}
+
+const paths25 = [
+	'/soridormi-reputation-boost-eu',
+	'/soridormi-reputation-boost-us',
+	'/soridormi-reputation-boost-eu/',
+	'/soridormi-reputation-boost-us/',
+];
+
+if(paths25.includes(location.pathname)) {
+	runCheckboxOptions('Soridormi Options', [2520, 2520, 2520, 2520], 'check');
+}
+
+const paths26 = [
+	'/the-cobalt-assembly-reputation-boost-eu',
+	'/the-cobalt-assembly-reputation-boost-us',
+	'/the-cobalt-assembly-reputation-boost-eu/',
+	'/the-cobalt-assembly-reputation-boost-us/',
+];
+
+if(paths26.includes(location.pathname)) {
+	runCheckboxOptions('Cobalt Options', [180, 180, 180, 180], 'check');
+}
+
+const paths27 = [
+	'/the-maruuk-centaur-reputation-boost-eu',
+	'/the-maruuk-centaur-reputation-boost-us',
+	'/the-maruuk-centaur-reputation-boost-eu/',
+	'/the-maruuk-centaur-reputation-boost-us/',
+];
+
+if(paths27.includes(location.pathname)) {
+	runSelectOptions('Your Current Renown Level',  [0,1440,2880,4320,5760,7200,8640,10080,11520,12960,14400,15840,17280,18720,20160,21600,23040,25920,27360,28800,30240,31680,33120,34560,36000,37440,38880,40320, 41760], 0);
+	runSelectOptions('Your Current Renown Level', [0,1816,3632,5448,7264,9080,10896,12712,14528,16344,18160,19976,21792,23608,25424,27240,29056,30872,32688,34504,36320,38136,39952, 41760], 0);
+}
+
+const paths28 = [
+	'/valdrakken-accord-reputation-boost-eu',
+	'/valdrakken-accord-reputation-boost-us',
+	'/valdrakken-accord-reputation-boost-eu/',
+	'/valdrakken-accord-reputation-boost-us/',
+];
+
+if(paths28.includes(location.pathname)) {
+	runSelectOptions('Your Current Renown Level',  [0,1440,2880,4320,5760,7200,8640,10080,11520,12960,14400,15840,17280,18720,20160,21600,23040,25920,27360,28800,30240,31680,33120,34560,36000,37440,38880,40320, 41760], 0);
+}
+
+const paths29 = [
+	'/winterpelt-furbolg-reputation-boost-eu',
+	'/winterpelt-furbolg-reputation-boost-us',
+	'/winterpelt-furbolg-reputation-boost-eu/',
+	'/winterpelt-furbolg-reputation-boost-us/',
+];
+
+if(paths29.includes(location.pathname)) {
+	runCheckboxOptions('Winterpelt Options', [24, 24, 24, 24, 24], 'check');
+}
+
+const paths30 = [
+	'/wrathion-reputation-boost-eu',
+	'/wrathion-reputation-boost-us',
+	'/wrathion-reputation-boost-eu/',
+	'/wrathion-reputation-boost-us/',
+];
+
+if(paths30.includes(location.pathname)) {
+	runCheckboxOptions('Wrathion Options', [1440, 1440, 1440, 1440, 1440], 'check');
+}
+
+function showHideOptions(paths, hiddenOptionName, tiedOptionName, labelIndexes) {
+	if(paths.includes(location.pathname)) {
+		if(checkboxOptions.length > 0) {
+			checkboxOptions.forEach((option) => {
+				const optionName = option.querySelector('.opt-checkbox_name');
+				
+				if(optionName.innerText === hiddenOptionName) {
+					option.setAttribute('id', hiddenOptionName.replace(' ', ''));
+					option.classList.add('hidden');
+					
+					if(hiddenOptionName === 'Unsaved Players') {
+						option.querySelectorAll('.checkbigrow')[8].setAttribute('hidden', 1);
+					}
+				}
+				if(optionName.innerText === tiedOptionName) {
+					const labels = option.querySelectorAll('label');
+						
+					if(labels.length === labelIndexes.length) {  
+						setTimeout(() => {
+							const hiddenOption = document.getElementById(hiddenOptionName.replace(' ', ''));
+							if(hiddenOption) {
+								for(let i = 0; i < labels.length; i++) {
+									if(labelIndexes[i]) {
+										labels[i].addEventListener('click', function() { 
+											if(hiddenOption.classList.contains('hidden')) hiddenOption.classList.remove('hidden');
+										
+											const pathnames = [
+												'/amirdrassil-normal-boost-eu',
+												'/amirdrassil-normal-boost-us',
+												'/amirdrassil-heroic-boost-eu',
+												'/amirdrassil-heroic-boost-us',
+												'/amirdrassil-normal-boost-eu/',
+												'/amirdrassil-normal-boost-us/',
+												'/amirdrassil-heroic-boost-eu/',
+												'/amirdrassil-heroic-boost-us/',
+											];
+											
+											if(pathnames.includes(location.pathname)) {
+												let startIndex;
+												let endIndex;
+												let checked;
+												let display;
+												
+												if(this.innerText === 'Armor + Tier Priority') {
+													startIndex = 4;
+													endIndex = 8;
+													checked = 0;
+													display = '';
+												} else if(this.innerText === 'Full Priority') {
+													startIndex = 0;
+													endIndex = 4;
+													checked = 4;
+													display = 'none';
+												}
+												
+												hiddenOption.querySelectorAll('.checkbigrow').forEach((row) => {
+													if(row.style.display === 'none') row.style.display = '';
+												});
+												
+												hiddenOption.querySelectorAll('.form-check')[3].style.marginBottom = 0;
+												
+												for(let i = startIndex; i < endIndex; i++) {
+													hiddenOption.querySelectorAll('.checkbigrow')[i].style.display = 'none';
+												} 
+												
+												for(let i = 0; i < 4; i++) {
+													hiddenOption.querySelectorAll('label')[i].addEventListener('click', function() {
+														document.querySelector('#GuaranteedItems').querySelectorAll('.checkbigrow').forEach((row) => {
+															row.querySelector('.form-check').style.marginBottom = 0;
+															if(!row.style.display) row.style.display = 'none';
+														});
+														document.querySelector('#GuaranteedItems').querySelectorAll('.checkbigrow')[i].style.display = '';
+													});
+												}
+												
+												hiddenOption.querySelectorAll('.checkbigrow')[checked].querySelector('label').click();
+												
+												document.querySelector('#GuaranteedItems').style.display = display;
+											} 
+										});
+									} else {
+										labels[i].addEventListener('click', function() {
+											if(!hiddenOption.classList.contains('hidden'))hiddenOption.classList.add('hidden');
+											
+											if(!document.querySelector('#GuaranteedItems').style.display) {
+												document.querySelector('#GuaranteedItems').style.display = 'none';
+											}
+											
+											if(document.querySelector('#UnsavedPlayers')) {
+												document.querySelector('#UnsavedPlayers').querySelectorAll('label')[8].click();
+											}
+										});
+									}
+								}
+							}
+						}, 100);
+					}
+				}
+				if(optionName.innerText === 'Guaranteed Items') {
+					option.setAttribute('id', 'GuaranteedItems');
+					option.style.display = 'none';
+					optionName.style.display = 'none';
+					option.querySelectorAll('.checkbigrow').forEach((row) => {
+						row.style.display = 'none';
+					});
+				}
+			});
+		}
+	}
+}
+
+function runCheckboxOptions(name, times, type) { 
+	checkboxOptions.forEach((option) => {
+		const optionName = option.querySelector('.opt-checkbox_name');
+		const optionCheckRowes = option.querySelectorAll('.checkbigrow');
+		
+		changeTimeBy(name, times, type);
+
+		function changeTimeBy(name, times, type) { 
+			if(optionName.innerText === name) {
+				if(times.length === optionCheckRowes.length) {
+					if(name === 'The War Within Pre-Orders') {
+						optionCheckRowes[0].querySelector('input').addEventListener('click', function() { 
+							for(let i = 1; i < optionCheckRowes.length; i++) {
+								optionCheckRowes[i].classList.toggle('hidden');
+								if(optionCheckRowes[i].querySelector('input').checked) { 
+									optionCheckRowes[i].querySelector('input').checked = false;
+									timeRangeValue.innerText = convertMinutes(timeRangeValue.dataset.time - optionCheckRowes[i].querySelector('input').dataset.time);
+								timeRangeValue.dataset.time = convertTimeString(timeRangeValue.innerText)
+								}
+							}
+						}); 
+						
+						for(let i = 1; i < optionCheckRowes.length; i++) {
+							optionCheckRowes[i].classList.add('hidden');
+						}
+					}
+					
+					if(type === 'check') {
+						for(let i = 0; i < optionCheckRowes.length; i++) {
+							const input = optionCheckRowes[i].querySelector('input');
+							input.dataset.time = +times[i];
+									
+							input.addEventListener('click', function() {
+								const time = +this.dataset.time;
+								let currentValue;
+											
+								if(this.checked) currentValue = +timeRangeValue.dataset.time + time; 
+								else currentValue = timeRangeValue.dataset.time - time;
+											
+								timeRangeValue.dataset.time = currentValue;
+											
+								timeRangeValue.innerText = convertMinutes(currentValue);
+								
+								if(optionName.innerText === 'PvP Gear Options' && paths13.includes(location.pathname)) {
+									const inputs = option.querySelectorAll('input[name*=option]');
+									
+									if(inputs[0].checked && inputs[1].checked) {
+										timeRangeValue.innerText = convertMinutes(25920);
+									}
+								}
+								
+								if(optionName.innerText === 'PvP Gear Options' && paths14.includes(location.pathname)) {
+									const inputs = option.querySelectorAll('input[name*=option]');
+									
+									if(inputs[0].checked || inputs[1].checked || inputs[2].checked) {
+										inputs[3].dataset.time = 2880;
+									} 
+									if(!inputs[0].checked && !inputs[1].checked && !inputs[2].checked && inputs[3].checked) {
+										inputs[3].dataset.time = 2400;
+										timeRangeValue.innerText = convertMinutes(2400);
+									}
+									if(inputs[0].checked && inputs[1].checked && inputs[2].checked && !inputs[3].checked) {
+										inputs[3].dataset.time = 2880;
+										timeRangeValue.innerText = convertMinutes(25920);
+									}
+								}
+								
+								if(currentValue > 0) timeRange.style.display = '';
+								else timeRange.style.display = 'none';
+							});
+						}
+					} else if(type === 'radio') {
+						let num = 0;
+               				
+						for(let i = 0; i < optionCheckRowes.length; i++) {
+							const input = optionCheckRowes[i].querySelector('input');
+							input.dataset.time = +times[i];
+										
+							input.addEventListener('click', function() { 
+								const time = +this.dataset.time;
+								let currentValue;
+											
+								if(paths5.includes(location.pathname)) currentValue = convertTimeString(timeRangeValue.innerText) + time - num;
+								else currentValue = convertTimeString(timeRangeValue.innerText) - time + num;
+											
+								timeRangeValue.innerText = convertMinutes(currentValue);
+											
+								num = time;
+							});
+						}
+					}
+				} 
+			}
+		}
+	});
+}
+
+function runSelectOptions(name, times, type) {
+	selectOptions.forEach((option) => {
+		const dropdownItems = option.nextElementSibling.querySelectorAll('.dropdown-item'); 
+		
+		if(option.previousElementSibling.innerText === name && times.length === dropdownItems.length) {
+			let prevValue = 0;
+			
+			for(let i = 0; i < dropdownItems.length; i++) {
+				dropdownItems[i].addEventListener('click', function() { 
+					let currentValue = +timeRangeValue.dataset.time;
+					
+					if(type) currentValue = currentValue + times[i] - prevValue;
+					else currentValue = currentValue - times[i] + prevValue;
+					
+					timeRangeValue.innerText = convertMinutes(currentValue);
+					timeRangeValue.dataset.time = currentValue;
+						
+					prevValue = times[i];
+						
+					if(currentValue > 0) timeRange.style.display = '';
+					else timeRange.style.display = 'none';
+					
+				});
+			}
+		}
+	});
+}
+
+function runDoubledSelectOptions(currentName, desiredName, times) {
+	sessionStorage.setItem('currentIndex', 0);
+	sessionStorage.setItem('desiredIndex', 0);
+	
+	selectOptions.forEach((option) => {
+		const dropdownItems = option.nextElementSibling.querySelectorAll('.dropdown-item'); 
+				
+		if(option.previousElementSibling.innerText === currentName) {
+			for(let i = 0; i < dropdownItems.length; i++) {
+				dropdownItems[i].addEventListener('click', function() { 
+					let desiredIndex = sessionStorage.getItem('desiredIndex') ? sessionStorage.getItem('desiredIndex') : 0; 
+					timeRangeValue.innerText = convertMinutes(times[i][desiredIndex]);
+					sessionStorage.setItem('currentIndex', i); console.log('current: ' + i);
+					
+					if(times[desiredIndex][i] > 0) timeRange.style.display = '';
+					else timeRange.style.display = 'none';
+				});
+			}
+		}
+		
+		if(option.previousElementSibling.innerText === desiredName) {
+			for(let i = 0; i < dropdownItems.length; i++) {
+				
+				dropdownItems[i].addEventListener('click', function() { 
+				let currentIndex = sessionStorage.getItem('currentIndex') ? sessionStorage.getItem('currentIndex') : 0;
+					timeRangeValue.innerText = convertMinutes(times[currentIndex][i]);
+					sessionStorage.setItem('desiredIndex', i); console.log('desired: ' + i);
+					
+					if(times[currentIndex][i] > 0) timeRange.style.display = '';
+					else timeRange.style.display = 'none';
+				});
+			}
+		}
+	});
+}
+
+function convertTimeString(timeString) {
+	const tsArr = timeString.split(' ');
+	const numbs = [];
+	const words = [];
+	
+	for(let i = 0; i < tsArr.length; i++) {
+		if((i % 2) === 0) {
+			numbs.push(tsArr[i]);
+		} else words.push(tsArr[i]);
+	}
+
+	let minutes = 0;
+
+	if(numbs.length === words.length) {
+		for(let i = 0; i < numbs.length; i++) {
+			if(words[i].match('month')) {
+				minutes = numbs[i] * 30 * 24 * 60;
+			} else if(words[i].match('day')) {
+				minutes += numbs[i] * 24 * 60;
+			} else if(words[i].match('hour')) {
+				minutes += numbs[i] * 60;
+			} else if(words[i].match('minute')) {
+				minutes += +numbs[i];
+			}
+		}
+		return minutes;
+	} else return false;
+}
+
+function convertMinutes(numberOfMinutes) {
+	let months = 0;
+	let days = 0;
+	let hours = 0;
+	let minutes = 0;
+
+	if(numberOfMinutes >= 60) {
+		hours = Math.floor(numberOfMinutes / 60);
+		minutes = numberOfMinutes % 60;
+
+		if(hours >= 24) {
+			days = Math.floor(hours / 24);
+			hours = hours % 24;
+		}
+
+		if(days >= 30) {
+			months = Math.floor(days / 30);
+			days = days % 30;
+		}
+	} else {
+		minutes = numberOfMinutes;
+	}
+        
+	let monthsTmp = (months.toString().slice(-1) === '1') ? ' month ' : ' months ';
+	//let daysTmp = (days.toString().slice(-1) === '1') ? ' day ' : ' days ';
+	let daysTmp = days.toString() === '1' ? ' day ' : ' days ';
+	//let hoursTmp = (hours.toString().slice(-1) === '1') ? ' hour ' : ' hours ';
+	let hoursTmp = hours.toString() === '1' ? ' hour ' : ' hours ';
+	//let minutesTmp = (minutes.toString().slice(-1) === '1') ? ' minute' : ' minutes';
+	let minutesTmp = minutes.toString() === '1' ? ' minute' : ' minutes';
+        
+	let monthsString = months ? months + monthsTmp : '';
+	let daysString = days ? days + daysTmp : '';
+	let hoursString = hours ? hours + hoursTmp : '';
+	let minutesString = minutes ? minutes + minutesTmp : '';
+	
+	let timeString;
+
+	if(paths29.includes(location.pathname)) timeString = monthsString + daysString + hoursString + minutesString;
+	else timeString = monthsString + daysString + hoursString;
+	return timeString;
+}
+//--></script>
+
+
+<script type="text/javascript">	
+	document.addEventListener("DOMContentLoaded", function() {
+    const firstRow = document.querySelector('#product .row');
+	console.log("element: ",firstRow)
+    if (firstRow) {
+        firstRow.style.display = 'none';
+    }
+});
+
+	$(document).ready(function () {
+		
+		function checkBoostMethod() {
+			const pilotedNotChecked = $('input[data-name="Piloted"]');
+			const selfplayChecked = $('input[data-name="Selfplay"]:checked').length > 0;
+			if (pilotedNotChecked && selfplayChecked) {
+				$('input[data-name="Selfplay"]').prop('checked', false);
+				$('input[data-name="Piloted"]').prop('checked', true);
+			}
+		}
+
+		checkBoostMethod();
+	})
+
+	function countTimeBy2Opts(optionName) {
+		if (optionName.includes("(x3 + 1 free)")) {
+		$('#comlete-time-text').text("3 hours order completion");
+		} else if (optionName.includes("(x6 + 2 free)")) {
+		$('#comlete-time-text').text("6 hours order completion");
+		} else {
+		$('#comlete-time-text').text("3 hours order completion"); 
+		}
+	}
+
+	function countTimeByProgress(value){
+		const initialTime = 30; 
+		const optionValue = value === "No progress" ? 0 : value[0]; 
+		const completionTime = initialTime - optionValue + (optionValue >=4 ? 1 : 0); 
+
+		const days = Math.floor(completionTime / 24);
+		const hours = completionTime % 24;
+		$('#comlete-time-text').text(days + " day " + (hours === 0 ? "" : (hours + " hour" + (hours !== 1 ? "s" : ""))));
+	}
+
+	function countTimeByGroupedRating(value){
+		const maxDays = 30;
+		var text = "none";
+		if (value == 1) {
+			text = "1 month"; 
+		} else if (value == 2 || value == 3) {
+			text = (maxDays - value + 1) +" days";
+		} else if (value > 3 && value <= 8) {
+			text = (maxDays - value) + " days"; 
+		} else if (value > 8 && value <= 13) {
+			text = (maxDays - value -1) + " days";
+		} else if (value > 13 && value <= 17) {
+			text = (maxDays - value - 2) + " days";
+		} else if (value > 17  && value <= 22) {
+			text = (maxDays - value - 3) + " days";
+		} else if(value == 23){
+			text = "3 days";
+		} else if( value == 24){
+			text = "1 day";
+		}
+		$('#comlete-time-text').text(text+" order completion");
+	}
+
+	function countTimeByGroupedRating2(value){
+		console.log(value)
+		const maxDays = 23;
+		var text = "none";
+		if (value == 19) {
+			text = "1 day"
+		}
+		else if(value >= 1 && value < 6){
+			text = (maxDays - value) +" days";
+		}
+		else if(value >= 6 && value < 16){
+			text = (maxDays - value - 1) +" days";
+		}
+		else if(value >= 16 && value < 19){
+			text =  (maxDays - value - 2) +" days";
+		}
+		$('#comlete-time-text').text(text+" order completion");
+	}
+
+	function countTimeByIteratedRating(value){
+		const maxDays = 31;
+		var text = "none";
+		if (value == 1) {
+			text = "1 month"
+		} else if(value == 29){
+			text = "1 day"
+		}
+		else{
+			text =  (maxDays - value) + " days";
+		}
+		$('#comlete-time-text').text(text+" order completion");
+	}
+
+	function countTimeByRepLvl(values){
+		var text = 0
+		if (values.some(function(value) { return value.includes('(Rank 2)'); })) {
+        	text += 2; 
+		}
+		if (values.some(function(value) { return value.includes('(Rank 3)'); })) {
+			text += 4; 
+		}
+		if (values.some(function(value) { return value.includes('(Rank 4)'); })) {
+			text += 8; 
+		}
+		if (values.some(function(value) { return value.includes('(Rank 5)'); })) {
+			text += 12; 
+		}
+		if(text != 0){
+			$('.tToRange').css('display', 'flex');
+			$('#comlete-time-text').text(text+" days order completion");
+		} else{
+			$('.tToRange').css('display', 'none');
+		}
+	}
+
+	function getDaysAndHours(){
+		const text = document.getElementById('comlete-time-text').textContent;
+		const daysMatch = text.match(/(\d+)\s+day/); 
+		const hoursMatch = text.match(/(\d+)\s+hour/); 
+		let days = daysMatch ? parseInt(daysMatch[1]) : '';
+		let hours = hoursMatch ? parseInt(hoursMatch[1]) : '';
+		return [days, hours];
+	}
+
+	function calcTimeByAdditionals(values){
+		var days ="";
+		var hours = "";
+		var additionalMonths = "";
+		if($('#comlete-time-text').attr('data-days') == "" && $('#comlete-time-text').attr('data-hours') == ""){
+			[days, hours] = getDaysAndHours();
+			$('#comlete-time-text').attr('data-days', days);
+			$('#comlete-time-text').attr('data-hours', hours);
+		} else{
+			days = Number($('#comlete-time-text').attr('data-days')) == 0 ? '' : Number($('#comlete-time-text').attr('data-days'));
+			hours = Number($('#comlete-time-text').attr('data-hours'));
+		}
+	
+		var additionals = 0
+		if(document.querySelector('.titlepage').textContent=="2v2 Arena Rating Boost"){
+			if (values.some(function(value) { return value.includes('PvP ilvl'); })) {
+				additionals += Number(2); 
+			}
+			if (values.some(function(value) { return value.includes('Full Conquest'); })) {
+				additionals += Number(5); 
+			}
+			if (values.some(function(value) { return value.includes('PvP Gear'); })) {
+				additionals += Number(5); 
+			}
+		}else{
+			if (values.some(function(value) { return value.includes('PvP ilvl'); })) {
+				additionals += Number(2); 
+			}
+			if (values.some(function(value) { return value.includes('Full Conquest'); })) {
+				additionals += Number(5); 
+			}
+			if (values.some(function(value) { return value.includes('PvP Gear'); })) {
+				additionalMonths = 2; 
+			}
+		}
+	
+		$('#comlete-time-text').attr('data-additionals', additionals);
+		$('#comlete-time-text').attr('data-additional-months', additionalMonths);
+	
+		days += additionals;
+		var chekEmpty = hours;
+		if(hours>=16){
+			days++;
+			hours=0;
+		}
+		console.log(additionalMonths,  days, hours);
+
+		if (additionalMonths > 0) {
+			$('#comlete-time-text').text(
+				additionalMonths + " month" + (additionalMonths > 1 ? "s " : " ") +
+				(days > 0 ? " " + (days === 1 ? days + " day " : days + " days ") : "") +
+				"order completion"
+			);
+		} else if(additionals==0&&chekEmpty==16){
+			
+			$('#comlete-time-text').text("16 hours order completion");
+		}else {
+			$('#comlete-time-text').text(
+				(days > 0 ? " " + (days === 1 ? days + " day " : days + " days ") : "") +
+				(hours === 0 ? "" : (hours + " hour" + (hours !== 1 ? "s" : ""))) +
+				" order completion"
+			);
+		}
+
+		
+		}	
+
+	try {
+   		var currentRBG = $('.dropdown-item[data-name="Current RBG rating"]').data('value').split('-')[1]; 
+    	var desiredRBG = $('.dropdown-item[data-name="Desired RBG rating"]').data('value');
+	} catch (error) {}
+		
+	function calcTimeByRatingSubstraction(current, desired){
+		var ratingData;
+		if(document.querySelector('.titlepage').textContent=="WoW Solo Shuffle Boost"){
+			ratingData = [
+				{ current: 1000, desired: 1400, time: 10 },
+				{ current: 1000, desired: 1500, time: 12 },
+				{ current: 1000, desired: 1600, time: 18 },
+				{ current: 1000, desired: 1700, time: 23 },
+				{ current: 1000, desired: 1800, time: 48 },
+				{ current: 1000, desired: 1900, time: 48 },
+				{ current: 1000, desired: 1950, time: 72 },
+				{ current: 1000, desired: 2000, time: 72 },
+				{ current: 1000, desired: 2100, time: 72 },
+				{ current: 1000, desired: 2200, time: 120 },
+				{ current: 1000, desired: 2300, time: 144 },
+				{ current: 1000, desired: 2400, time: 168 },
+
+				{ current: 1100, desired: 1400, time: 5 },
+				{ current: 1100, desired: 1500, time: 7 },
+				{ current: 1100, desired: 1600, time: 13 },
+				{ current: 1100, desired: 1700, time: 18 },
+				{ current: 1100, desired: 1800, time: 43 },
+				{ current: 1100, desired: 1900, time: 43 },
+				{ current: 1100, desired: 1950, time: 72 },
+				{ current: 1100, desired: 2000, time: 72 },
+				{ current: 1100, desired: 2100, time: 72 },
+				{ current: 1100, desired: 2200, time: 120 },
+				{ current: 1100, desired: 2300, time: 144 },
+				{ current: 1100, desired: 2400, time: 168 },
+				
+				{ current: 1200, desired: 1400, time: 5 },
+				{ current: 1200, desired: 1500, time: 7 },
+				{ current: 1200, desired: 1600, time: 13 },
+				{ current: 1200, desired: 1700, time: 18 },
+				{ current: 1200, desired: 1800, time: 43 },
+				{ current: 1200, desired: 1900, time: 43 },
+				{ current: 1200, desired: 1950, time: 72 },
+				{ current: 1200, desired: 2000, time: 72 },
+				{ current: 1200, desired: 2100, time: 72 },
+				{ current: 1200, desired: 2200, time: 120 },
+				{ current: 1200, desired: 2300, time: 144 },
+				{ current: 1200, desired: 2400, time: 168 },
+					
+				{ current: 1300, desired: 1400, time: 4 },
+				{ current: 1300, desired: 1500, time: 6 },
+				{ current: 1300, desired: 1600, time: 12 },
+				{ current: 1300, desired: 1700, time: 17 },
+				{ current: 1300, desired: 1800, time: 42 },
+				{ current: 1300, desired: 1900, time: 42 },
+				{ current: 1300, desired: 1950, time: 72 },
+				{ current: 1300, desired: 2000, time: 72 },
+				{ current: 1300, desired: 2100, time: 72 },
+				{ current: 1300, desired: 2200, time: 120 },
+				{ current: 1300, desired: 2300, time: 144 },
+				{ current: 1300, desired: 2400, time: 168 },
+			
+				{ current: 1400, desired: 1500, time: 2 },
+				{ current: 1400, desired: 1600, time: 8 },
+				{ current: 1400, desired: 1700, time: 13 },
+				{ current: 1400, desired: 1800, time: 38 },
+				{ current: 1400, desired: 1900, time: 38 },
+				{ current: 1400, desired: 1950, time: 72 },
+				{ current: 1400, desired: 2000, time: 72 },
+				{ current: 1400, desired: 2100, time: 72 },
+				{ current: 1400, desired: 2200, time: 120 },
+				{ current: 1400, desired: 2300, time: 144 },
+				{ current: 1400, desired: 2400, time: 168 },
+				
+				{ current: 1500, desired: 1600, time: 6 },
+				{ current: 1500, desired: 1700, time: 11 },
+				{ current: 1500, desired: 1800, time: 36 },
+				{ current: 1500, desired: 1900, time: 36 },
+				{ current: 1500, desired: 1950, time: 72 },
+				{ current: 1500, desired: 2000, time: 72 },
+				{ current: 1500, desired: 2100, time: 72 },
+				{ current: 1500, desired: 2200, time: 120 },
+				{ current: 1500, desired: 2300, time: 144 },
+				{ current: 1500, desired: 2400, time: 168 },
+			
+				{ current: 1600, desired: 1700, time: 5 },
+				{ current: 1600, desired: 1800, time: 30 },
+				{ current: 1600, desired: 1900, time: 30 },
+				{ current: 1600, desired: 1950, time: 48 },
+				{ current: 1600, desired: 2000, time: 48 },
+				{ current: 1600, desired: 2100, time: 48 },
+				{ current: 1600, desired: 2200, time: 96 },
+				{ current: 1600, desired: 2300, time: 120 },
+				{ current: 1600, desired: 2400, time: 144 },
+
+				{ current: 1700, desired: 1800, time: 25 },
+				{ current: 1700, desired: 1900, time: 25 },
+				{ current: 1700, desired: 1950, time: 48 },
+				{ current: 1700, desired: 2000, time: 48 },
+				{ current: 1700, desired: 2100, time: 48 },
+				{ current: 1700, desired: 2200, time: 96 },
+				{ current: 1700, desired: 2300, time: 120 },
+				{ current: 1700, desired: 2400, time: 144 },
+
+				{ current: 1800, desired: 1950, time: 24 },
+				{ current: 1800, desired: 2000, time: 24 },
+				{ current: 1800, desired: 2100, time: 24 },
+				{ current: 1800, desired: 2200, time: 72 },
+				{ current: 1800, desired: 2300, time: 96 },
+				{ current: 1800, desired: 2400, time: 120 },
+				
+				{ current: 1900, desired: 1950, time: 24 },
+				{ current: 1900, desired: 2000, time: 24 },
+				{ current: 1900, desired: 2100, time: 24 },
+				{ current: 1900, desired: 2200, time: 72 },
+				{ current: 1900, desired: 2300, time: 96 },
+				{ current: 1900, desired: 2400, time: 120 },
+				
+				{ current: 2000, desired: 2200, time: 48 },
+				{ current: 2000, desired: 2300, time: 72 },
+				{ current: 2000, desired: 2400, time: 96 },
+
+				{ current: 2100, desired: 2200, time: 48 },
+				{ current: 2100, desired: 2300, time: 72 },
+				{ current: 2100, desired: 2400, time: 96 },
+
+				{ current: 2200, desired: 2300, time: 24 },
+				{ current: 2200, desired: 2400, time: 48 },
+
+				{ current: 2300, desired: 2400, time: 24 },
+				
+			];
+		}else{
+				ratingData = [
+				{ current: 1000, desired: 1100, time: 48 },
+				{ current: 1000, desired: 1200, time: 72 },
+				{ current: 1000, desired: 1300, time: 72 },
+				{ current: 1000, desired: 1400, time: 72 },
+				{ current: 1000, desired: 1500, time: 96 },
+				{ current: 1000, desired: 1600, time: 144 },
+				{ current: 1000, desired: 1700, time: 168 },
+				{ current: 1000, desired: 1800, time: 216 },
+				{ current: 1000, desired: 1900, time: 240 },
+				{ current: 1000, desired: 2000, time: 264 },
+				{ current: 1000, desired: 2100, time: 312 },
+
+				{ current: 1100, desired: 1100, time: 5 },
+				{ current: 1100, desired: 1200, time: 10 },
+				{ current: 1100, desired: 1300, time: 15 },	
+				{ current: 1100, desired: 1400, time: 19 },
+				{ current: 1100, desired: 1500, time: 42 },
+				{ current: 1100, desired: 1600, time: 96 },
+				{ current: 1100, desired: 1700, time: 120 },
+				{ current: 1100, desired: 1800, time: 168 },
+				{ current: 1100, desired: 1900, time: 192 },
+				{ current: 1100, desired: 2000, time: 216 },
+				{ current: 1100, desired: 2100, time: 264 },
+				
+				{ current: 1200, desired: 1200, time: 5 },	
+				{ current: 1200, desired: 1300, time: 10 },	
+				{ current: 1200, desired: 1400, time: 14 },
+				{ current: 1200, desired: 1500, time: 38 },
+				{ current: 1200, desired: 1600, time: 96 },
+				{ current: 1200, desired: 1700, time: 120 },
+				{ current: 1200, desired: 1800, time: 168 },
+				{ current: 1200, desired: 1900, time: 192 },
+				{ current: 1200, desired: 2000, time: 216},
+				{ current: 1200, desired: 2100, time: 264},
+					
+				{ current: 1300, desired: 1300, time: 5 },	
+				{ current: 1300, desired: 1400, time: 9 },
+				{ current: 1300, desired: 1500, time: 33 },
+				{ current: 1300, desired: 1600, time: 72 },
+				{ current: 1300, desired: 1700, time: 96 },
+				{ current: 1300, desired: 1800, time: 144 },
+				{ current: 1300, desired: 1900, time: 168 },
+				{ current: 1300, desired: 2000, time: 192},
+				{ current: 1300, desired: 2100, time: 216},
+			
+				{ current: 1400, desired: 1400, time: 6 },
+				{ current: 1400, desired: 1500, time: 29 },
+				{ current: 1400, desired: 1600, time: 72 },
+				{ current: 1400, desired: 1700, time: 96 },
+				{ current: 1400, desired: 1800, time: 144},
+				{ current: 1400, desired: 1900, time: 168 },
+				{ current: 1400, desired: 2000, time: 192 },
+				{ current: 1400, desired: 2100, time: 216 },
+				
+				{ current: 1500, desired: 1500, time: 8 },
+				{ current: 1500, desired: 1600, time: 48 },
+				{ current: 1500, desired: 1700, time: 72 },
+				{ current: 1500, desired: 1800, time: 120 },
+				{ current: 1500, desired: 1900, time: 144 },
+				{ current: 1500, desired: 2000, time: 168 },
+				{ current: 1500, desired: 2100, time: 216 },
+			
+				{ current: 1600, desired: 1600, time: 12 },
+				{ current: 1600, desired: 1700, time: 35 },
+				{ current: 1600, desired: 1800, time: 72 },
+				{ current: 1600, desired: 1900, time: 96 },
+				{ current: 1600, desired: 2000, time: 120 },
+				{ current: 1600, desired: 2100, time: 168 },
+
+				{ current: 1700, desired: 1700, time: 13 },
+				{ current: 1700, desired: 1800, time: 72 },
+				{ current: 1700, desired: 1900, time: 96 },
+				{ current: 1700, desired: 2000, time: 120 },
+				{ current: 1700, desired: 2100, time: 168 },
+
+				{ current: 1800, desired: 1800, time: 17 },
+				{ current: 1800, desired: 1900, time: 41 },
+				{ current: 1800, desired: 2000, time: 72 },
+				{ current: 1800, desired: 2100, time: 120 },
+				
+				{ current: 1900, desired: 2000, time: 24 },
+				{ current: 1900, desired: 2100, time: 72 },
+
+				{ current: 2000, desired: 2100, time: 48 },
+				
+			];
+		}
+		
+		const result = ratingData.find(item => item.current == current && item.desired == desired);
+		return result ? result.time : null;  
+	}
+
+	function calcTimeBy3Opts(values) {
+		console.log("we are here")
+		const weights = {
+			'1-70 Leveling': 0,
+			'Khaz Algar Storyline': 0,
+			'TWW Campaign': 0,
+			'Skyriding Full Progress': 1,
+			'Loremaster of Khaz Algar': 4,
+			'Conquest Gear': 5,
+			'Honor Gear': 2,
+			'Nerub-ar Heroic + Free Normal': 1
+		};
+
+		const specialCombo = ['1-70 Leveling', 'Khaz Algar Storyline', 'TWW Campaign'];
+	
+		const isSpecialComboSelected = specialCombo.every(option => values.includes(option));
+
+		const totalWeight = values.reduce((total, element) => {
+			const weight = weights[element] || 0; 
+			return total + weight;
+		}, 0);
+
+		let result = totalWeight;
+		if (isSpecialComboSelected) {
+			result += 1;
+		}
+
+		result += 4;
+
+		return result;
+	}
+
+	function calcTimeBy3or4Options(values) {
+		const hourWeights = {
+			'Unlock Open World Locations': 1,
+			'Khaz Algar Storyline': 12,
+			'TWW Campaign': 24,
+			'Skyriding Full Progress': 2,
+			'Loremaster of Khaz Algar': 4 * 24,
+			'Khaz Algar Flight Master': 2,
+			'Earthen Unlock': 8,
+
+			'593 ilvl PvE Gear': 7*24,
+			'603 ilvl PvE Gear': 7 * 24,
+			'626 ilvl Honor Gear': 48,
+			'639 ilvl Conquest Gear': 5 * 24,
+
+			'All Heroic Dungeons': 8,
+			'8/8 Mythic+0': 8,
+			'Unlock Delves Tier 8': 5,
+			'3+1 Delves Tier 8 Runs': 3,
+			'Mythic+5 Run': 0.75,
+			'Mythic+10 Run': 0.75,
+			'Nerub-ar Heroic + Free Normal': 7 * 24,
+		};
+
+		var allHours = values.reduce((total, element) => {
+			const weight = hourWeights[element] || 0; 
+			return total + weight;
+		}, 0);
+
+		const extra_days = Math.floor(allHours / 24);
+		const extra_hours = Math.floor(allHours % 24);
+		const extra_minutes = Math.round((allHours % 1) * 60);
+
+		$('#comlete-time-text').attr('data-extra-days', extra_days);
+		$('#comlete-time-text').attr('data-extra-hours', extra_hours);
+		$('#comlete-time-text').attr('data-extra-minutes', extra_minutes);
+
+		const hours = parseInt($('#comlete-time-text').attr('data-hours')) || 12; 
+		const minutes = parseInt($('#comlete-time-text').attr('data-minutes')) || 0; 
+	
+		let totalDays = extra_days;
+		let totalHours = extra_hours + hours;
+		let totalMinutes = extra_minutes + minutes;
+
+		if(getSelectedRadioOptionName().includes('Fast (30% Faster)')){
+			let totalTimeInMinutes = (totalDays * 24 * 60) + (totalHours * 60) + totalMinutes;
+			totalTimeInMinutes = totalTimeInMinutes * (2/3);
+			totalDays = Math.floor(totalTimeInMinutes / (24 * 60));
+			totalTimeInMinutes %= (24 * 60);
+			totalHours = Math.floor(totalTimeInMinutes / 60);
+			totalMinutes = Math.round(totalTimeInMinutes % 60);
+		} else if(getSelectedRadioOptionName().includes('Express (50% Faster)')){
+			let totalTimeInMinutes = (totalDays * 24 * 60) + (totalHours * 60) + totalMinutes;
+			totalTimeInMinutes = totalTimeInMinutes * 0.5;
+			totalDays = Math.floor(totalTimeInMinutes / (24 * 60));
+			totalTimeInMinutes %= (24 * 60);
+			totalHours = Math.floor(totalTimeInMinutes / 60);
+			totalMinutes = Math.round(totalTimeInMinutes % 60);
+		}
+
+		let newDays = Math.floor(totalHours / 24);
+		let newHours = Math.floor(totalHours % 24);
+		totalDays += newDays;
+		totalHours = newHours;
+
+		if (totalMinutes >= 60) {
+			totalHours += Math.floor(totalMinutes / 60);
+			totalMinutes = totalMinutes % 60;
+		}
+
+		if (totalHours >= 12 && totalDays > 0) {
+			totalDays++;
+			totalHours = 0;
+		} else if (totalHours < 12 && totalDays > 2) {
+			totalHours = 0;
+		}
+
+		if (totalHours === 1 && totalMinutes === 20) {
+			totalMinutes = 24;
+		} else if(totalDays === 23&&getSelectedRadioOptionName().includes('Fast (30% Faster)')){
+			totalDays = 25;
+		}
+
+		let totalMonths = Math.floor(totalDays / 30);
+		totalDays = totalDays % 30; 
+
+		let output = "";
+
+		if (totalMonths > 0) {
+			output += totalMonths + (totalMonths === 1 ? " month " : " months ");
+			output += (totalDays > 0 ? totalDays + (totalDays === 1 ? " day " : " days ") : "");
+		} else {
+			output += (totalDays > 0 ? totalDays + (totalDays === 1 ? " day " : " days ") : "");
+			output += (totalHours > 0 ? totalHours + (totalHours === 1 ? " hour " : " hours ") : "");
+			if (totalDays === 0) {
+				output += (totalMinutes === 0 ? "" : totalMinutes + " minute" + (totalMinutes !== 1 ? "s" : ""));
+			}
+		}
+		
+		$('#comlete-time-text').text(output+ " order completion");
+	}
+
+
+	function calcTimeByRenownLvl(current, desired){ 
+		console.log(current, desired)
+		const levelData = [
+			{ desired: 5,  current: 1, time: '3 hours' },
+			{ desired: 5,  current: 2, time: '2 hours' },
+			{ desired: 5,  current: 3, time: '1 hour 1 minute' }, 
+			{ desired: 5,  current: 4, time: '1 hour 1 minute' },
+			{ desired: 6,  current: 1, time: '4 hours' },
+			{ desired: 6,  current: 2, time: '3 hours' },
+			{ desired: 6,  current: 3, time: '2 hours' },
+			{ desired: 6,  current: 4, time: '2 hours' },
+			{ desired: 6,  current: 5, time: '1 hour 1 minute' },
+			{ desired: 7,  current: 1, time: '5 hours' },
+			{ desired: 7,  current: 2, time: '4 hours' },
+			{ desired: 7,  current: 3, time: '3 hours' },
+			{ desired: 7,  current: 4, time: '3 hours' },
+			{ desired: 7,  current: 5, time: '2 hours' },
+			{ desired: 7,  current: 6, time: '1  hour 1 minute' },
+			{ desired: 8,  current: 1, time: '6 hours' },
+			{ desired: 8,  current: 2, time: '5 hours' },
+			{ desired: 8,  current: 3, time: '4 hours' },
+			{ desired: 8,  current: 4, time: '4 hours' },
+			{ desired: 8,  current: 5, time: '3 hours' },
+			{ desired: 8,  current: 6, time: '2 hours' },
+			{ desired: 8,  current: 7, time: '1 hours  1 minute' },
+			{ desired: 9,  current: 1, time: '1 day' },
+			{ desired: 9,  current: 2, time: '23 hours' },
+			{ desired: 9,  current: 3, time: '22 hours' },
+			{ desired: 9,  current: 4, time: '22 hours' },
+			{ desired: 9,  current: 5, time: '21 hours' },
+			{ desired: 9,  current: 6, time: '20 hours' },
+			{ desired: 9,  current: 7, time: '19 hours' },
+			{ desired: 9,  current: 8, time: '18 hours' },
+			{ desired: 10,  current: 1, time: '1 day 18 hours' },
+			{ desired: 10,  current: 2, time: '1 day 17 hours' },
+			{ desired: 10,  current: 3, time: '1 day 16 hours' },
+			{ desired: 10,  current: 4, time: '1 day 16 hours' },
+			{ desired: 10,  current: 5, time: '1 dday 14 hours' },
+			{ desired: 10,  current: 6, time: '1 day 13 hours' },
+			{ desired: 10,  current: 7, time: '1 day 13 hours' },
+			{ desired: 10,  current: 8, time: '1 day 11 hours' },
+			{ desired: 10,  current: 9, time: '18 hours' },
+			{ desired: 11,  current: 1, time: '3 days' },
+			{ desired: 11,  current: 2, time: '3 days' },
+			{ desired: 11,  current: 3, time: '3 days' },
+			{ desired: 11,  current: 4, time: '3 days' },
+			{ desired: 11,  current: 5, time: '3 days' },
+			{ desired: 11,  current: 6, time: '3 days' },
+			{ desired: 11,  current: 7, time: '3 days' },
+			{ desired: 11,  current: 8, time: '3 days' },
+			{ desired: 11,  current: 9, time: '1 day 23 hours' },
+			{ desired: 11,  current: 10, time: '1 day 6 hours' },
+			{ desired: 12,  current: 1, time: '4 days' },
+			{ desired: 12,  current: 2, time: '4  days' },
+			{ desired: 12,  current: 3, time: '4 days' },
+			{ desired: 12,  current: 4, time: '4 days' },
+			{ desired: 12,  current: 5, time: '4 days' },
+			{ desired: 12,  current: 6, time: '4 days' },
+			{ desired: 12,  current: 7, time: '4 days' },
+			{ desired: 12,  current: 8, time: '4 days' },
+			{ desired: 12,  current: 9, time: '3 days' },
+			{ desired: 12,  current: 10, time: '2 days' },
+			{ desired: 12,  current: 11, time: '24 hours' },
+			{ desired: 13,  current: 1, time: '5 days' },
+			{ desired: 13,  current: 2, time: '5 days' },
+			{ desired: 13,  current: 3, time: '5 days' },
+			{ desired: 13,  current: 4, time: '5 days' },
+			{ desired: 13,  current: 5, time: '5 days' },
+			{ desired: 13,  current: 6, time: '5 days' },
+			{ desired: 13,  current: 7, time: '5 days' },
+			{ desired: 13,  current: 8, time: '5 days' },
+			{ desired: 13,  current: 9, time: '4 days' },
+			{ desired: 13,  current: 10, time: '3 days' },
+			{ desired: 13,  current: 11, time: '1 day 23 hours' },
+			{ desired: 13,  current: 12, time: '24 hours' },
+			{ desired: 14,  current: 1, time: '7 days' },
+			{ desired: 14,  current: 2, time: '7 days' },
+			{ desired: 14,  current: 3, time: '7 days' },
+			{ desired: 14,  current: 4, time: '7 days' },
+			{ desired: 14,  current: 5, time: '7 days' },
+			{ desired: 14,  current: 6, time: '7 days' },
+			{ desired: 14,  current: 7, time: '7 days' },
+			{ desired: 14,  current: 8, time: '7 days' },
+			{ desired: 14,  current: 9, time: '5 days' },
+			{ desired: 14,  current: 10, time: '5 days' },
+			{ desired: 14,  current: 11, time: '4 days' },
+			{ desired: 14,  current: 12, time: '3 days' },
+			{ desired: 14,  current: 13, time: '2 days' },
+			{ desired: 15,  current: 1, time: '8 days' },
+			{ desired: 15,  current: 2, time: '8 days' },
+			{ desired: 15,  current: 3, time: '8 days' },
+			{ desired: 15,  current: 4, time: '8 days' },
+			{ desired: 15,  current: 5, time: '8 days' },
+			{ desired: 15,  current: 6, time: '8 days' },
+			{ desired: 15,  current: 7, time: '8 days' },
+			{ desired: 15,  current: 8, time: '8 days' },
+			{ desired: 15,  current: 9, time: '7 days' },
+			{ desired: 15,  current: 10, time: '6 days' },
+			{ desired: 15,  current: 11, time: '5 days' },
+			{ desired: 15,  current: 12, time: '4 days' },
+			{ desired: 15,  current: 13, time: '3 days' },
+			{ desired: 15,  current: 14, time: '24 hours' },
+			{ desired: 16,  current: 1, time: '9 days' },
+			{ desired: 16,  current: 2, time: '9 days' },
+			{ desired: 16,  current: 3, time: '9 days' },
+			{ desired: 16,  current: 4, time: '9 days' },
+			{ desired: 16,  current: 5, time: '9 days' },
+			{ desired: 16,  current: 6, time: '9 days' },
+			{ desired: 16,  current: 7, time: '9 days' },
+			{ desired: 16,  current: 8, time: '9 days' },
+			{ desired: 16,  current: 9, time: '8 days' },
+			{ desired: 16,  current: 10, time: '7 days' },
+			{ desired: 16,  current: 11, time: '6 days' },
+			{ desired: 16,  current: 12, time: '5 days' },
+			{ desired: 16,  current: 13, time: '4 days' },
+			{ desired: 16,  current: 14, time: '1 day 23 hours' },
+			{ desired: 16,  current: 15, time: '24 hours' },
+			{ desired: 17,  current: 1, time: '10 days' },
+			{ desired: 17,  current: 2, time: '10 days' },
+			{ desired: 17,  current: 3, time: '10 days' },
+			{ desired: 17,  current: 4, time: '10 days' },
+			{ desired: 17,  current: 5, time: '10 days' },
+			{ desired: 17,  current: 6, time: '10 days' },
+			{ desired: 17,  current: 7, time: '10 days' },
+			{ desired: 17,  current: 8, time: '10 days' },
+			{ desired: 17,  current: 9, time: '9 days' },
+			{ desired: 17,  current: 10, time: '8 days' },
+			{ desired: 17,  current: 11, time: '7 days' },
+			{ desired: 17,  current: 12, time: '6 days' },
+			{ desired: 17,  current: 13, time: '5 days' },
+			{ desired: 17,  current: 14, time: '4 days' },
+			{ desired: 17,  current: 15, time: '1 day 23 hours' },
+			{ desired: 17,  current: 16, time: '24 hours' },
+			{ desired: 18,  current: 1, time: '11 days' },
+			{ desired: 18,  current: 2, time: '11 days' },
+			{ desired: 18,  current: 3, time: '11 days' },
+			{ desired: 18,  current: 4, time: '11 days' },
+			{ desired: 18,  current: 5, time: '11 days' },
+			{ desired: 18,  current: 6, time: '11 days' },
+			{ desired: 18,  current: 7, time: '11 days' },
+			{ desired: 18,  current: 8, time: '11 days' },
+			{ desired: 18,  current: 9, time: '10 days' },
+			{ desired: 18,  current: 10, time: '9 days' },
+			{ desired: 18,  current: 11, time: '8 days' },
+			{ desired: 18,  current: 12, time: '7 days' },
+			{ desired: 18,  current: 13, time: '6 days' },
+			{ desired: 18,  current: 14, time: '4 days' },
+			{ desired: 18,  current: 15, time: '3 days' },
+			{ desired: 18,  current: 16, time: '1 day 23 hours' },
+			{ desired: 18,  current: 17, time: '24 hours' },
+			{ desired: 19,  current: 1, time: '13 days' },
+			{ desired: 19,  current: 2, time: '13 days' },
+			{ desired: 19,  current: 3, time: '13 days' },
+			{ desired: 19,  current: 4, time: '13 days' },
+			{ desired: 19,  current: 5, time: '13 days' },
+			{ desired: 19,  current: 6, time: '13 days' },
+			{ desired: 19,  current: 7, time: '13 days' },
+			{ desired: 19,  current: 8, time: '13 days' },
+			{ desired: 19,  current: 9, time: '11 days' },
+			{ desired: 19,  current: 10, time: '11 days' },
+			{ desired: 19,  current: 11, time: '10 days' },
+			{ desired: 19,  current: 12, time: '9 days' },
+			{ desired: 19,  current: 13, time: '8 days' },
+			{ desired: 19,  current: 14, time: '6 days' },
+			{ desired: 19,  current: 15, time: '5 days' },
+			{ desired: 19,  current: 16, time: '4 days' },
+			{ desired: 19,  current: 17, time: '3 days' },
+			{ desired: 19,  current: 18, time: '2 days' },
+			{ desired: 20,  current: 1, time: '14 days' },
+			{ desired: 20,  current: 2, time: '14 days' },
+			{ desired: 20,  current: 3, time: '14 days' },
+			{ desired: 20,  current: 4, time: '14 days' },
+			{ desired: 20,  current: 5, time: '14 days' },
+			{ desired: 20,  current: 6, time: '14 days' },
+			{ desired: 20,  current: 7, time: '14 days' },
+			{ desired: 20,  current: 8, time: '14 days' },
+			{ desired: 20,  current: 9, time: '13 days' },
+			{ desired: 20,  current: 10, time: '12 days' },
+			{ desired: 20,  current: 11, time: '11 days' },
+			{ desired: 20,  current: 12, time: '10 days' },
+			{ desired: 20,  current: 13, time: '9 days' },
+			{ desired: 20,  current: 14, time: '7 days' },
+			{ desired: 20,  current: 15, time: '6 days' },
+			{ desired: 20,  current: 16, time: '5 days' },
+			{ desired: 20,  current: 17, time: '4 days' },
+			{ desired: 20,  current: 18, time: '3 days' },
+			{ desired: 20,  current: 19, time: '1 day 5 hours' }
+		];
+		
+		const result = levelData.find(item => item.current == current && item.desired == desired);
+		return result ? result.time : null; 
+
+	}
+
+	function calcTimeByLevelSubstraction(current, desired){
+		const ratingData = [
+			{ current: [1,9], desired: 10, time: 30 },
+			{ current: [1,19], desired: 20, time: 60},
+			{ current: [1,19], desired: 30, time: 60},
+			{ current: [1,19], desired: 40, time: 60},
+			{ current: [1,19], desired: 50, time: 120},
+			{ current: [1,19], desired: 60, time: 120},
+			{ current: [1,19], desired: 70, time: 180 },
+			{ current: [1,19], desired: 80, time: 900 },
+			
+			{ current: [10,19], desired: 20, time: 60},
+
+			{ current: [20,29], desired: 30, time: 5 },
+			{ current: [20,29], desired: 40, time: 5 },
+			{ current: [20,29], desired: 50, time: 66},
+			{ current: [20,29], desired: 60, time: 66},
+			{ current: [20,69], desired: 70, time: 120 },
+			{ current: [20,69], desired: 80, time: 840 },
+
+			{ current: [30,49], desired: 50, time: 60},
+			{ current: [30,59], desired: 60, time: 60},
+			{ current: [30,69], desired: 70, time: 120 },
+			{ current: [30,69], desired: 80, time: 840 },
+			
+			{ current: [70], desired: 80, time: 720},
+			{ current: [71,79], desired: 80, time: 600},
+			
+		];
+		
+		const result = ratingData.find(entry => 
+			entry.desired === desired && 
+			(Array.isArray(entry.current) ? current >= entry.current[0] && current <= entry.current[1] : current === entry.current)
+		);
+
+		if (result) {
+			var hours = Math.floor(result.time / 60);
+
+			$('#comlete-time-text').attr('data-hours', hours);
+			var minutes = result.time % 60;
+			var days  = Math.floor(hours / 24);
+			hours = hours % 24;
+			
+			$('#comlete-time-text').attr('data-minutes', minutes);
+
+			const extraHours = parseInt($('#comlete-time-text').attr('data-extra-hours')) || 0; 
+			const extraMinutes = parseInt($('#comlete-time-text').attr('data-extra-minutes')) || 0; 
+			const extraDays = parseInt($('#comlete-time-text').attr('data-extra-days')) || 0; 
+			hours += extraHours;
+			minutes += extraMinutes;
+
+			if(getSelectedRadioOptionName().includes('Fast (30% Faster)')){
+				let totalTimeInMinutes = (days * 24 * 60) + (hours * 60) + minutes;
+				totalTimeInMinutes = totalTimeInMinutes * (2/3);
+				days = Math.floor(totalTimeInMinutes / (24 * 60));
+				totalTimeInMinutes %= (24 * 60);
+				hours = Math.floor(totalTimeInMinutes / 60);
+				minutes = Math.round(totalTimeInMinutes % 60);
+			} else if(getSelectedRadioOptionName().includes('Express (50% Faster)')){
+				let totalTimeInMinutes = (days * 24 * 60) + (hours * 60) + minutes;
+				totalTimeInMinutes = totalTimeInMinutes * 0.5;
+				days = Math.floor(totalTimeInMinutes / (24 * 60));
+				totalTimeInMinutes %= (24 * 60);
+				hours = Math.floor(totalTimeInMinutes / 60);
+				minutes = Math.round(totalTimeInMinutes % 60);
+			}
+
+			days +=  Math.floor(hours / 24)+extraDays;
+			hours =  Math.floor(hours % 24);
+		
+			if(hours>=12 && days>0){
+				days++;
+				hours=0;
+			}else if(hours<12&&days>2){
+				hours=0;
+			}
+			if (hours === 1 && minutes === 20) {
+				minutes = 24;
+			} else if(days === 23&&getSelectedRadioOptionName().includes('Fast (30% Faster)')){
+				days = 25;
+			}
+			let months = Math.floor(days / 30);
+			days = days % 30; 
+			
+			let text = "";
+
+			if (months > 0) {
+				text += months + (months === 1 ? " month " : " months ");
+				text += (days > 0 ? days + (days === 1 ? " day " : " days ") : "");
+			} else {
+				text += (days > 0 ? days + (days === 1 ? " day " : " days ") : "");
+				text += (hours > 0 ? hours + (hours === 1 ? " hour " : " hours ") : "");
+				if (days === 0) {
+					text += (minutes === 0 ? "" : minutes + " minute" + (minutes !== 1 ? "s" : ""));
+				}
+			}	
+			text +=" order completion";
+			$('#comlete-time-text').text(text);
+
+		} else {
+			console.log('Time not found');
+		}
+
+		
+	}
+
+	function calcTimeByQuesting(values) {
+		timeString = calcTimeByRenownLvl(currentL, desiredL);
+		const timeUnits = {month:0, day: 0, hour: 0, minute: 0 };
+		const regex = /(\d+)\s*(month|day|hour|minute)s?/g;
+		let match;
+		
+		while ((match = regex.exec(timeString)) !== null) {
+			const value = parseInt(match[1]);
+			const unit = match[2];
+			timeUnits[unit] = value;
+		}
+
+		let additionalMonth = 0;
+		let additionalHours = 0;
+		let additionalDays = 0;
+
+		if (values.some(value => value.includes('Khaz Algar Storyline'))) {
+			additionalHours += 8;
+		}
+		if (values.some(value => value.includes('TWW Campaign'))) {
+			additionalMonth += 1;
+			additionalDays += 5;
+		}
+		if (values.some(value => value.includes('Skyriding Full Progress'))) {
+			additionalHours += 2;
+		}
+		if((timeUnits.days=6&&additionalDays==5)||(timeUnits.day==10&&additionalHours==8)||(timeUnits.day==10&&additionalHours==10)){
+			additionalDays--;
+		}
+		
+		console.log("additionals: "+additionalMonth, additionalHours, additionalDays)
+		timeUnits.day += additionalDays;
+		timeUnits.hour += additionalHours;
+		timeUnits.month = (timeUnits.month || 0) + additionalMonth;
+		if (timeUnits.hour >= 24) {
+			timeUnits.day += Math.floor(timeUnits.hour / 24);
+			timeUnits.hour = timeUnits.hour % 24;
+		}
+		
+			if (timeUnits.hour < 8) {
+				timeUnits.hour = 0; 
+			} else {
+				timeUnits.day += 1; 
+				timeUnits.hour = 0;
+			}
+		
+		console.log(timeUnits.month, timeUnits.day, timeUnits.hour)
+
+		if (additionalDays > 0 || additionalHours > 0 || additionalMonth > 0) {
+			timeUnits.minute = 0;
+		}
+	
+
+		const resultString = Object.entries(timeUnits)
+			.filter(([_, value]) => typeof value === 'number' && value > 0) // Проверяем, что значение числовое и больше 0
+			.map(([unit, value]) => `${value} ${unit}${value > 1 ? 's' : ''}`)
+			.join(' ');
+
+
+		return resultString;
+	}
+	
+	function calcTimeByEqualExtraOptions(values, product){
+		let count = values.length;
+		console.log("values: ",values)
+
+		if(product == "The Cobalt Assembly Reputation Boost"){
+			$('#comlete-time-text').text(count*3 + " hours order completion");
+		}else if(product == "Winterpelt Furbolg Reputation Boost"){
+			let minutes = count*24;
+			let hours = Math.floor(minutes/60);
+			let mins = hours == 0 ? minutes : minutes%60;
+
+			console.log("mins: "+mins+" minutes: "+minutes)
+			$('#comlete-time-text').text((hours>0 ? hours+(hours==1?" hour " : " hours "):"")+(mins >0 ? mins+" minutes " : "")+"order completion");
+		}else if(product == "Conquest Gear Boost"){
+			
+			if(count==2){
+				$('#comlete-time-text').text("2 months 1 day order completion");
+			}else if(values.includes("add 1800 rating in arena (free selfplay)")){
+				$('#comlete-time-text').text("7 days order completion");
+			}else{
+				$('#comlete-time-text').text("2 months order completion");
+			}
+		}else if(product == "WoW Gladiator Title Boost"){
+			
+			let days = $('#comlete-time-text').attr('data-current-val') == undefined ? 35 : Number($('#comlete-time-text').attr('data-current-val'));
+			let extraDays = 0;
+			if(count==2){
+				if(days==25){
+				extraDays=64
+				} else{
+					extraDays=65	
+				}
+			} else if(values.includes("get BiS PvP Gear for Current Meta")){
+				if(days==25){
+					extraDays=59
+				}else{
+					extraDays=60
+				}
+			} else if(values.includes("add Conquest Gear")){
+				if(days==22){
+					extraDays=6
+				} else{
+					extraDays=5
+				}
+			} 
+			$('#comlete-time-text').attr('data-extra-days', extraDays)
+			days+=extraDays;
+			let months = Math.floor(days/30);
+			days = days%30;
+			console.log((months>0?months+" months  ":"")+(days>0?days+" days":"")+" order completion")
+
+			let text = (months>0?months+" months  ":"")+(days>0?days+" days":"")+" order completion";
+			$('#comlete-time-text').text(text);
+		}else if(product == "Soridormi Reputation Boost"){
+			let hours = count*42;
+			let days = Math.floor(hours/24);
+			let hours2 = hours%24;
+			console.log("days:  "+days+" hours: "+hours2)
+			if(hours2>=12&&hours2!=18){
+				days++;
+				hours2 = 0;
+			}else if(hours2!=18){
+				hours2=0;
+			}
+			$('#comlete-time-text').text((days>0 ? days+(days==1?" day " : " days "):"")+(hours2 >0 ? hours2+" hours " : "")+"order completion");
+		}
+		else{
+			$('#comlete-time-text').text(count+(count==1?" day" : " days")+" order completion");
+		}
+
+		if(count != 0){
+			$('.tToRange').css('display', 'flex');
+			//$('#comlete-time-text').text(text+" order completion");
+		} else if(product=="Conquest Gear Boost"){
+			$('#comlete-time-text').text("5 days order completion");
+			$('.tToRange').css('display', 'flex');
+		}else if(product=="WoW Gladiator Title Boost"){
+			let days = $('#comlete-time-text').attr('data-current-val') == undefined ? 35 : Number($('#comlete-time-text').attr('data-current-val'));
+			let months = Math.floor(days/30);
+			days = days%30;
+			let text = (months>0?months+" months  ":"")+(days>0?days+" days":"")+" order completion";
+			$('#comlete-time-text').text(text);
+			$('.tToRange').css('display', 'flex');
+		}else{
+			$('.tToRange').css('display', 'none');
+		}
+	}
+
+	function calcTimeByNotEqualExtraOptions(values){
+		const weights = {
+			'add 1800 rating in arena (free selfplay)': 2,
+			'BiS PvP Gear for Current Meta': 60,
+			'Conquest Gear (ilvl 639)': 5,
+			'Honor Gear (ilvl 626)': 2,
+			'add BiS PvP Gear for Current Meta': 60,
+			'add Conquest Gear': 5,
+			'get BiS PvP Gear for Current Meta': 60,
+			'get full Conquest Gear (ilvl 639)': 5,
+			'Soloist title': 10,
+			"I don't have PvP ilvl 626+": 2,
+		};	
+		let count = values.length;
+		let total=0;
+		
+		let totalWeight = values.reduce((total, element) => {
+			const weight = weights[element] || 0; 
+			return total + weight;
+		}, 0);
+		console.log("total: "+totalWeight)
+		
+		if(count==4 || values.includes("add 1800 rating in arena (free selfplay)")&&values.includes("BiS PvP Gear for Current Meta")){
+			totalWeight--;
+		} else if(document.querySelector('.titlepage').textContent=="Honor Gear Boost"){
+			totalWeight+=2;
+		}
+		let months =  Math.floor(totalWeight/30);
+		let days = Math.floor(totalWeight%30);
+		let text = "";
+		let hours = "";
+		if(document.querySelector('.titlepage').textContent=="WoW Solo Shuffle Boost"){
+			$('#comlete-time-text').attr('data-extra-days', totalWeight)
+			let extra = parseInt($('#comlete-time-text').attr('data-hours')) || 10;
+			totalWeight = totalWeight*24+extra;
+			months = Math.floor(totalWeight/720)
+			days = Math.floor((totalWeight%720)/24)
+			hours =  Math.floor((totalWeight%720)%24)
+			if(hours>=10){
+				days++;
+				hours = 0;
+			}
+		}
+		
+		if(values.includes("add 1800 rating in arena (free selfplay)")&&count==1){
+			text = "1 day 16 hours order completion";
+		} else{
+
+			if(months==0 && hours>0){
+				text = (days>0?days+" days  ":"")+(hours>0?hours+" hours":"")+" order completion";
+			}else{
+				text = (months>0?months+" months  ":"")+(days>0?days+" days":"")+" order completion";
+			}
+		}
+		console.log(months > 0 ? months + " months  " : "")
+		$('#comlete-time-text').text(text);
+		if(count != 0){
+			$('.tToRange').css('display', 'flex');
+		}else if(document.querySelector('.titlepage').textContent=="Honor Gear Boost"&&count==0){
+			$('#comlete-time-text').text("2 days order completion");
+		}else if(document.querySelector('.titlepage').textContent=="WoW Solo Shuffle Boost"){
+			let extra = parseInt($('#comlete-time-text').attr('data-hours')) || 10;
+			console.log(Math.floor(extra/720))
+			let months = Math.floor(extra/720);
+			let days = Math.floor((extra%720)/24);
+			let hours = 0;
+			console.log(extra, months, days)
+			let text=""
+			if(days == 0&&months==0){
+				hours=extra;
+				text = (hours>0?hours+" hours":"")+" order completion";
+			}else{
+			    text = (months>0?months+" months  ":"")+(days>0?(day==1?"1 day":days+" days"):"")+" order completion";
+			}
+			
+		}else{
+			$('.tToRange').css('display', 'none');
+		}
+	}
+
+	function getSelectedRadioOptionName() {
+		const selectedRadio = $(`input[type="radio"]:checked`);
+		
+		if (selectedRadio.length > 0) {
+			const optionName = selectedRadio.closest('.checkbigrow').find('label').text().trim();
+			return optionName;
+		}
+		return null; 
+	}
+
+	function getSelectedCheckboxes(optionGroupId) {
+		const selectedCheckboxes = $(`input[name="option[${optionGroupId}][]"]:checked`);
+
+		if (selectedCheckboxes.length > 0) {
+			const optionNames = selectedCheckboxes.map(function() {
+				return $(this).data('name');
+			}).get(); 
+			return optionNames;
+		}
+		
+		return [];
+	}
+
+
+	function calcTimeByBMAndAdditionals(values){
+		console.log("777: "+values)
+		const weights = {
+			"I don't have 626+ PvP ilvl": 2,
+			'Full Conquest Gear': 5,
+			'BiS PvP Gear for Current Meta': 60,
+		};	
+		
+		let method = getSelectedRadioOptionName() == null ? "Piloted (Solo Shuffle)" : getSelectedRadioOptionName();
+		console.log("BM: "+values)
+		let defaultVal=2;
+		
+		let totalWeight = values.reduce((total, element) => {
+			const weight = weights[element] || 0; 
+			return total + weight;
+		}, 0);
+		
+		if(method != "Piloted (Solo Shuffle)"){
+			console.log("not piloted")
+			totalWeight--;
+		}
+		totalWeight+=defaultVal;
+		let months =  Math.floor(totalWeight/30);
+		let days = Math.floor(totalWeight%30);
+		var text =""
+		console.log(totalWeight)
+		if(totalWeight==1&&method != "Piloted (Solo Shuffle)"){
+			text="1 day 16 hours order completion"
+		}else{
+			text = (months>0?months+" months  ":"")+(days>0?days+" days":"")+" order completion";
+		}
+		$('#comlete-time-text').text(text);
+	}
+
+	function calcTimeBySingleRating(rating){
+		var days = 0
+		var months = 0
+		const ratingData = {
+			"0-1500": 35,
+			"1600": 33,
+			"1700": 33,
+			"1800": 33,
+			"1900": 32,
+			"2000": 30,
+			"2100": 29,
+			"2200": 27,
+			"2300": 25,
+			"2400+": 22,
+		};
+		if (ratingData.hasOwnProperty(rating)) {
+			days = ratingData[rating];
+			$('#comlete-time-text').attr('data-current-val', days);
+		}
+		
+		let extra = $('#comlete-time-text').attr('data-extra-days') == undefined ?  0 : parseInt($('#comlete-time-text').attr('data-extra-days'));
+		console.log($('#comlete-time-text').attr('data-extra-days'))
+		if(rating == "2300"&&extra!=5){
+			days--;
+		}
+		days +=extra;
+		console.log("days at all: ", days)
+		months = Math.floor(days/30);
+		days = days%30;
+		let text = (months>0?months+" months  ":"")+(days>0?days+" days":"")+" order completion";
+		$('#comlete-time-text').text(text);
+
+	}
+
+	function calcTimeBySpecialOptions(values){
+		var count = values.length;
+		console.log(values)
+		if(document.querySelector('.titlepage').textContent=="Keystone Hero Boost"){
+			if (count>0){
+				$('.tToRange').css('display', 'flex');
+				$('#comlete-time-text').text((count>1?count+" days ":"1 day ")+"order completion");
+			} 
+			else{
+				$('.tToRange').css('display', 'none');
+			}
+		}else if(document.querySelector('.titlepage').textContent=="Mythic+ Gear Boost"||document.querySelector('.titlepage').textContent=="Mythic+ BiS Items Boost"){
+			
+			if($('#specific-item-slot').css('display') == 'block'){
+				console.log(count)
+				if (count>0){
+				
+
+					let totalDays = count*21;
+					let months = Math.floor(totalDays/30);
+					let days = totalDays%30;
+					$('.tToRange').css('display', 'flex');
+					console.log((months>0?(months==1?"1 month ":months+" months  "):"")+(days>1?days+" days ":"1 day ")+"order completion")
+					$('#comlete-time-text').text((months>0?(months==1?"1 month ":months+" months  "):"")+(days>1?days+" days ":"1 day ")+"order completion")
+				} 
+			}else if($('#specific-gear-slot').css('display') == 'block'){
+				console.log(22)
+				if (count>0){
+					let totalDays = count*7;
+					let months = Math.floor(totalDays/30);
+					let days = totalDays%30;
+					$('.tToRange').css('display', 'flex');
+					console.log((months>0?(months==1?"1 month ":months+" months  "):"")+(days>1?days+" days ":"1 day ")+"order completion")
+
+					$('#comlete-time-text').text((months>0?(months==1?"1 month ":months+" months  "):"")+(days>1?days+" days ":"1 day ")+"order completion")
+				} 
+			}else{
+					console.log("we are here: "+values)
+
+				if (values.length>0){
+					let totalDays = values.length*21;
+					let months = Math.floor(totalDays/30);
+					let days = totalDays%30;
+					//$('.tToRange').css('display', 'flex');
+					console.log((months>0?(months==1?"1 month ":months+" months  "):"")+(days>1?days+" days ":"1 day ")+"order completion")
+					$('.tToRange').css('display', 'flex');
+					$('#comlete-time-text').text((months>0?(months==1?"1 month ":months+" months  "):"")+(days>1?days+" days ":"1 day ")+"order completion")
+				} 
+			}
+		}
+	}
+
+	function calcTimeWithSelect(val){
+		if(val=="600 ilvl (Mythic+4)"){
+			$('#comlete-time-text').text("7 days order completion");
+		} else{
+			$('#comlete-time-text').text("14 days order completion");
+		}
+		$('#specific-item-slot').css('display', 'none')
+		$('#specific-gear-slot').css('display', 'none')
+		$('#specific-gear-slot input[type="checkbox"]').prop('checked', false);
+		$('#specific-item-slot input[type="checkbox"]').prop('checked', false);
+		$('input[type="radio"]').prop('checked', false);
+	}
+
+	// updateTimeToCompleteText function for single inputs
+	document.querySelectorAll('.dropdown-item').forEach(function(item) {
+		item.addEventListener('click', function(event) {
+			event.preventDefault(); 
+			var optionName = this.dataset.name; 
+			const productName  = document.querySelector('.titlepage').textContent;
+			var optionValue = this.dataset.value;
+			console.log(optionName)
+			switch (true) {
+				case ["Mythic+ Bundle"].includes(productName):
+					countTimeBy2Opts(optionValue);
+					break;
+				case ["Keystone Master Boost"].includes(productName):
+					countTimeByProgress(optionValue);
+					break;
+				case ["Dragonscale Expedition Reputation Boost", 
+						"The Maruuk Centaur Reputation Boost"].includes(productName):
+					countTimeByGroupedRating(optionValue);
+					break;
+				case ["Iskaara Tuskarr Reputation Boost", 
+						"Valdrakken Accord Reputation Boost"].includes(productName): 
+					countTimeByIteratedRating(optionValue);
+					break;
+				case ["Loamm Niffen Reputation Boost"].includes(productName):
+					countTimeByGroupedRating2(optionValue);
+					break;
+				case ["Mythic+ Gear Boost"].includes(productName):
+				    calcTimeWithSelect(optionValue);
+					break;
+				}
+		});
+	});
+
+	//for radio buttons
+	$(document).on('change', '.opt-checkbox input[type="radio"]', function() {
+		if(document.querySelector('.titlepage').textContent=="Elite PvP Gear Boost"){
+			let values = getSelectedCheckboxes(23164);
+			calcTimeByBMAndAdditionals(values)
+		} else if(document.querySelector('.titlepage').textContent=="Keystone Hero Boost"){
+
+			if($(this).data('name')=="Custom Teleports"){
+				$('#hidden-options-checkbox').css('display', 'block')
+				$('.tToRange').css('display', 'none');
+			} else{
+				$('#hidden-options-checkbox input[type="checkbox"]').prop('checked', false);
+				$('#hidden-options-checkbox').css('display', 'none')
+				$('.tToRange').css('display', 'flex');
+				$('#comlete-time-text').text("8 days order completion")
+			}
+		} else if(document.querySelector('.titlepage').textContent=="Mythic+ Gear Boost"){
+			
+			if($(this).data('name')=="Specific Item"){
+				$('#specific-item-slot').css('display', 'block')
+				$('#specific-gear-slot').css('display', 'none')
+				$('.tToRange').css('display', 'none');
+				$('#specific-gear-slot input[type="checkbox"]').prop('checked', false);
+
+			} else if($(this).data('name')=="Specific Gear Slot"){
+				$('#specific-item-slot').css('display', 'none')
+				$('#specific-gear-slot').css('display', 'block')
+				$('.tToRange').css('display', 'none');
+				$('#specific-item-slot input[type="checkbox"]').prop('checked', false);
+
+			} else{
+				$('#specific-gear-slot input[type="checkbox"]').prop('checked', false);
+				$('#specific-item-slot input[type="checkbox"]').prop('checked', false);
+				$('#specific-gear-slot').css('display', 'none')
+				$('#specific-item-slot').css('display', 'none')
+				$('.tToRange').css('display', 'flex');
+				$('#comlete-time-text').text("7 days order completion")
+			}
+		} else if(document.querySelector('.titlepage').textContent=="The War Within Level Boost"){
+			var values = [];
+		
+			$('input[type="checkbox"]:checked').each(function() {
+				var optionName = $(this).data('name'); 
+				values.push(optionName);
+			});
+
+			calcTimeBy3or4Options(values)
+		}
+	});
+
+	// updateTimeToCompleteText function for checkboxes
+	$(document).on('change', 'input[type="checkbox"]', function() {
+		var checkedValues = [];
+		var checkedSpecialValues = [];
+	
+		$('input[type="checkbox"]:checked').each(function() {
+			var optionName = $(this).data('name'); 
+			checkedValues.push(optionName);
+		});
+		$('input.special-opt[type="checkbox"]:checked').each(function() {
+			var optionName = $(this).data('name'); 
+			//console.log(optionName)
+			checkedSpecialValues.push(optionName);
+		});
+		
+		const productName  = document.querySelector('.titlepage').textContent;
+			switch (true) {
+				case ["Azerothian Archives Reputation Boost"].includes(productName):
+					countTimeByRepLvl(checkedValues);
+					break;
+				case ["2v2 Arena Rating Boost", "3v3 Arena Rating Boost"].includes(productName):	
+					calcTimeByAdditionals(checkedValues);
+					break;
+				case ["The War Within Starter Package"].includes(productName):
+					let time = calcTimeBy3Opts(checkedValues);
+					$('#comlete-time-text').text(time+" days order completion");
+					break;
+				case ["Dream Wardens Renown Boost"].includes(productName):
+					$('#comlete-time-text').text(calcTimeByQuesting(checkedValues)+" order completion");
+					break;
+				case ["The War Within Level Boost", "WoW Selfplay Leveling Boost"].includes(productName):
+					calcTimeBy3or4Options(checkedValues);
+					break;
+				case ["Wrathion Reputation Boost", "Sabellian Reputation Boost", 
+				"The Cobalt Assembly Reputation Boost", "Winterpelt Furbolg Reputation Boost", 
+				"Conquest Gear Boost", "Wrathion Reputation Boost", "Conquest Gear Boost", 
+				"Soridormi Reputation Boost", "WoW Gladiator Title Boost"].includes(productName):
+					calcTimeByEqualExtraOptions(checkedValues, productName);
+					break;
+				case ["Full PvP Gear Boost", "Honor Gear Boost", "WoW Solo Shuffle Boost"].includes(productName):
+					calcTimeByNotEqualExtraOptions(checkedValues);
+					break;
+				case ["Elite PvP Gear Boost"].includes(productName):
+				    calcTimeByBMAndAdditionals(checkedValues)	
+					break;
+				case ["Keystone Hero Boost", "Mythic+ Gear Boost"].includes(productName):
+				    calcTimeBySpecialOptions(checkedSpecialValues);
+					break;	
+				case ["Mythic+ BiS Items Boost"].includes(productName):
+				console.log("1: ",checkedValues)
+				    calcTimeBySpecialOptions(checkedValues);
+					break;	
+			}
+		
+	});
+
+	var currentL, desiredL, currentR, desiredR, currentRBG, desiredRBG;
+
+	try {
+		currentL = $('.dropdown-item[data-name="Your current Renown level"]').data('value');
+		desiredL = $('.dropdown-item[data-name="Desired renown level"]').data('value');
+
+		if (document.querySelector('.titlepage').textContent == "3v3 Arena Rating Boost" || 
+			document.querySelector('.titlepage').textContent == "2v2 Arena Rating Boost") {
+			
+			currentR = $('.dropdown-item[data-name="Current rating"]').first().data('value') == "0-1000" ? "1000" : $('.dropdown-item[data-name="Current rating"]').first().data('value');
+			desiredR = $('.dropdown-item[data-name="Desired rating"]').first().data('value');
+			
+		} else if(document.querySelector('.titlepage').textContent == "WoW Solo Shuffle Boost"){
+			currentR = $('.dropdown-item[data-name="Current rating"]').first().data('value') == "0-1000" ? "1000" : $('.dropdown-item[data-name="Current rating"]').first().data('value');
+			desiredR = $('.dropdown-item[data-name="Desired Rating"]').first().data('value');
+		} else if (document.querySelector('.titlepage').textContent == "The War Within Level Boost" || document.querySelector('.titlepage').textContent == "WoW Selfplay Leveling Boost") {
+			
+			currentR = $('.dropdown-item[data-name="current Level"]').data('value');
+			desiredR = $('.dropdown-item[data-name="Desired level"]').data('value');
+			
+		} else if(document.querySelector('.titlepage').textContent == "WoW Gladiator Title Boost"){
+			current = $('.dropdown-item[data-name="Your current 3v3 rating').data('value');
+			console.log("3v3 rating:  ", current)
+		}else {
+			
+			currentR = $('.dropdown-item[data-name="Current RBG rating"]').first().data('value') == "0-1000" ? "1000" : $('.dropdown-item[data-name="Current rating"]').first().data('value');
+			desiredR = $('.dropdown-item[data-name="Desired RBG rating"]').first().data('value');
+		}
+
+	} catch (e) {}
+
+	console.log("Initial values:", currentR, desiredR);	
+	
+	//for ratings
+	$('.dropdown-item').each(function() {
+		
+		$(this).on('click', function(event) {
+			event.preventDefault(); 
+				console.log(currentR, desiredR)	
+
+			var threeHoured2200 = ['1700','2000'];
+			var threeHoured2300 = ['1100', '1200','1300','1400','1800','2100',];
+			var threeHoured2400 = ['1000', '1500', '1600', '1900', '2200'];
+			var optionName = $(this).data('name');
+        	var value = $(this).data('value');
+
+			if (optionName == 'Current rating' || optionName == 'Current rating') {
+				currentR = value == "0-1000" ? "1000" : value;
+			} else if (optionName == 'Desired rating'||optionName == 'Desired Rating') {
+				desiredR = value;
+			} else if (optionName == 'Current RBG rating') {
+				currentRBG = value ? value.split('-')[1] : undefined;
+			} else if (optionName == 'Desired RBG rating') {
+				desiredRBG = value;
+			} else if (optionName == 'Your current Renown level') {
+				currentL = value;
+			} else if (optionName == 'Desired renown level') {
+				desiredL = value;
+			} else if (optionName == 'current Level') {
+				currentR = value;
+			} else if (optionName == 'Desired level') {
+				desiredR = value;
+			} else if(optionName=="Your current 3v3 rating"){
+				current = value;
+			}
+
+			console.log("Updated values:", currentR, desiredR);
+			
+			if(document.querySelector('.titlepage').textContent == "RBG Rating Boost"){
+				let delta = desiredRBG - currentRBG;
+				let time = ""
+				if(delta<0){
+					console.log("yes")
+					if (delta == -100 && currentRBG == 1200){
+						time = "2 minutes";
+					} else if (delta == -100 && currentRBG == 1300){
+						time = "26 minutes";
+					} else if (delta == -100 && currentRBG == 1400){
+						time = "1 hour 45 minutes"
+					}
+					$('#comlete-time-text').text(time);
+				} else{
+					time = calcTimeByRatingSubstraction(currentRBG, desiredRBG);
+					days = Math.floor(time / 24);
+					hours = time % 24;
+
+					$('#comlete-time-text').text((days == 0 ? "" : (days == 1 ? days + " day " : (days + " days "))) + (hours == 0 ? "" : (hours + " hour" + (hours != 1 ? "s" : ""))) + " order completion");
+				}
+			
+			}
+			else if(document.querySelector('.titlepage').textContent == "WoW Solo Shuffle Boost"){
+				time = calcTimeByRatingSubstraction(currentR, desiredR);
+				$('#comlete-time-text').attr('data-hours', time)
+				let extra = $('#comlete-time-text').attr('data-extra-days') || 0;
+				console.log("time before: "+time+" extra: "+extra)
+				time+=extra*24;
+				time++;
+				console.log("current:"+currentR+" desired:"+desiredR+" time:"+time)
+				months = Math.floor(time/720)
+				days = Math.floor((time%720)/24)
+				hours =  Math.floor((time%720)%24)
+				console.log(hours)
+				if(hours>=10){
+					days++;
+					hours = 0;
+				}else if(days>0&&hours<10){
+					hours=0
+				}
+				console.log(hours)
+
+				let text = "";
+				if(months==0 && hours>0){
+					text = (days>0?days+" days  ":"")+(hours>0?hours+" hours":"")+" order completion";
+				}else{
+					text = (months>0?months+" months  ":"")+(days>0?days+" days":"")+" order completion";
+				}
+				$('#comlete-time-text').text(text);
+			}
+			else if(document.querySelector('.titlepage').textContent == "Dream Wardens Renown Boost"){
+				time = calcTimeByRenownLvl(currentL, desiredL);
+				var checkedValues = [];
+				$('input[type="checkbox"]:checked').each(function() {
+					var optionName = $(this).data('name');
+					checkedValues.push(optionName);
+				});
+				console.log("values: "+checkedValues)
+				$('#comlete-time-text').text(calcTimeByQuesting(checkedValues)+" order completion");
+			}else if(document.querySelector('.titlepage').textContent == "The War Within Level Boost" || document.querySelector('.titlepage').textContent == "WoW Selfplay Leveling Boost"){
+				calcTimeByLevelSubstraction(currentR, desiredR)
+			}else if(document.querySelector('.titlepage').textContent == "WoW Gladiator Title Boost"){
+				calcTimeBySingleRating(current)
+			}else if(document.querySelector('.titlepage').textContent == "Mythic+ Keys Boost"){
+				//console.log("no calc")
+			}
+			else{ // for 2v2 and 3v3 arena rating boost
+
+			var days ="";
+			var hours ="";
+			var deltaTimes;
+			var deltaTimes1;
+			var deltaTimes2;
+			var hoursTotal="";
+			console.log(currentR, desiredR)
+			if(desiredR<1900 && desiredR != "1400"){
+				if (currentR <= "1400"){
+					deltaTimes = (desiredR - 1400)/100;
+				} else{
+					deltaTimes = (desiredR - currentR)/100;
+				}
+				hoursTotal = deltaTimes*6;
+				console.log("hours: hours Total", hoursTotal)
+			} else if(desiredR>=1900 && desiredR != "1400"){
+				if (currentR < 1500){
+					
+					deltaTimes1 = (1800 - 1400)/100;
+					deltaTimes2 = (2100 - 1800)/100;
+					if(desiredR>2100){
+						deltaTimes3 = (desiredR - 2100)/100;
+						hoursTotal = deltaTimes1*6 + deltaTimes2*32+deltaTimes3*48;
+						console.log("current "+currentR+" result "+threeHoured2200.includes(String(currentR)))
+						if(desiredR==2200 && threeHoured2200.includes(currentR)){
+							hoursTotal += 24;
+						} else if(desiredR==2300 && (threeHoured2300.includes(String(currentR))||threeHoured2200.includes(String(currentR)))){
+							hoursTotal += 24;
+						}  else if(desiredR==2400 && (threeHoured2400.includes(String(currentR))||threeHoured2300.includes(String(currentR))||threeHoured2200.includes(String(currentR)))){
+							hoursTotal+=24;
+						} 
+
+					}
+					else if(desiredR==2000){
+						hoursTotal = 96
+						console.log(11)
+					}else{
+						hoursTotal = deltaTimes1*6 + deltaTimes2*32;
+					}
+					
+					
+				} else if(currentR < 1800){
+					deltaTimes1 = (1800 - currentR)/100;
+					if(desiredR>2100){
+						deltaTimes2 = (2100-1800)/100;
+						deltaTimes3 = (desiredR - 2100)/100;
+						hoursTotal = deltaTimes1*6 + deltaTimes2*32+deltaTimes3*48;
+						console.log("before "+ hoursTotal)
+						console.log("current2 "+currentR+" result "+threeHoured2200.includes(String(currentR)))
+						if(desiredR==2200 && threeHoured2200.includes(String(currentR))){
+							hoursTotal += 24;
+						} else if(desiredR==2300 && (threeHoured2300.includes(String(currentR))||threeHoured2200.includes(String(currentR)))){
+							hoursTotal += 24;
+						}  else if(desiredR==2400 && (threeHoured2400.includes(String(currentR))||threeHoured2300.includes(String(currentR))||threeHoured2200.includes(String(currentR)))){
+							hoursTotal+=24;
+						} 
+						console.log("after "+ hoursTotal)
+
+					}else{
+						console.log("test",currentR, desiredR)
+						deltaTimes2 = (desiredR - 1800)/100;
+						hoursTotal = deltaTimes1*6 + deltaTimes2*32;
+						if(desiredR==1900){
+							if(currentR==1000){
+								hoursTotal = 72;
+							}else if(currentR>1000&&currentR<1600){
+								hoursTotal== 48;
+							}
+						}else if(desiredR==1950){
+							if(currentR==1000){
+								hoursTotal=96;
+							}else if(currentR<1700){
+								hoursTotal=72
+							}
+						}else if(desiredR==2000){
+							if(currentR<1500){
+								console.log(000)
+								hoursTotal=96;
+							}
+						}
+					}
+				} else{
+					if(desiredR>2100){
+						if(desiredR>currentR && currentR<2100){
+							deltaTimes = (2100 - currentR)/100;
+							hoursTotal = deltaTimes*32+(desiredR-2100)/100*48;
+							console.log("current3 "+currentR+" result "+threeHoured2200.includes(String(currentR)))
+							if(desiredR==2200 && threeHoured2200.includes(String(currentR))){
+								hoursTotal += 24;
+							} else if(desiredR==2300 && (threeHoured2300.includes(String(currentR))||threeHoured2200.includes(String(currentR)))){
+								hoursTotal += 24;
+							}  else if(desiredR==2400 && (threeHoured2400.includes(String(currentR))||threeHoured2300.includes(String(currentR))||threeHoured2200.includes(String(currentR)))){
+								hoursTotal+=24;
+							} 
+						} else if(desiredR>currentR && currentR>=2100){
+							hoursTotal = (desiredR-currentR)/100*48;
+							if(desiredR==2200 && threeHoured2200.includes(String(currentR))){
+								hoursTotal += 24;
+							} else if(desiredR==2300 && (threeHoured2300.includes(String(currentR))||threeHoured2200.includes(String(currentR)))){
+								hoursTotal += 24;
+							}  else if(desiredR==2400 && (threeHoured2400.includes(String(currentR))||threeHoured2300.includes(String(currentR))||threeHoured2200.includes(String(currentR)))){
+								hoursTotal+=24;
+							} 
+						}
+					}else{
+						deltaTimes = (desiredR - currentR)/100;
+						hoursTotal = deltaTimes*32;
+					}
+				}
+			}
+
+			if (currentR == 1000){
+				hoursTotal+=16;
+			} else if(currentR == 1100){
+				hoursTotal+=3;
+			} else if(currentR == 1200){
+				hoursTotal+=2;
+			} else if(currentR == 1300){
+				hoursTotal+=1;
+			} else if (currentR == 1600&&desiredR>1900){
+				hoursTotal+=24;
+			}
+			if(desiredR==2000&&currentR==1000){
+				hoursTotal-=16;
+			}else if(currentR==1600&&desiredR==2000){
+				hoursTotal-=24
+			}
+		
+			days = Math.floor(hoursTotal / 24);
+			hours = hoursTotal % 24;
+			console.log("check: "+desiredR+" "+hours+" "+hours)
+			if(desiredR>=1900 && hours >= 16){
+				if(days != 1 && hours != 14){
+					if(days!=0&&hours!=16){
+					days++;
+					hours = 0;
+					}
+				}
+			} else if(desiredR>=1900 && hours < 16){
+				if((hours !=14 && hours != 8)||(currentR == 2000 && desiredR > 2100)){
+					hours = 0;
+				}
+				
+			}
+			console.log(days, hours)
+
+			if(document.querySelector('.titlepage').textContent != "The War Within Starter Package"){
+			$('#comlete-time-text').attr('data-days', days);
+			$('#comlete-time-text').attr('data-hours', hours);
+
+			let additional_days = $('#comlete-time-text').attr('data-additionals') == 0 ? "" : $('#comlete-time-text').attr('data-additionals');
+			let additional_months = $('#comlete-time-text').attr('data-additional-months') == 0 ? "" : $('#comlete-time-text').attr('data-additional-months');
+			console.log(additional_months)
+			days = Number(days) + Number(additional_days);
+			if (additional_months > 0) {
+				console.log(1)
+				$('#comlete-time-text').text(
+					additional_months + " month" + (additional_months > 1 ? "s " : " ") +
+					(days > 0 ? " " + (days == 1 ? days + " day " : days + " days ") : "") +
+					"order completion"
+				);
+			} else {
+				console.log(2)
+
+				$('#comlete-time-text').text(
+					(days > 0 ? " " + (days == 1 ? days + " day " : days + " days ") : "") +
+					(hours == 0 ? "" : (hours + " hour" + (hours != 1 ? "s" : ""))) +
+					" order completion"
+				);
+			}
+			}
+			}
+		})
+    });
+
+
+
+
+</script>
+
+{{ footer }}

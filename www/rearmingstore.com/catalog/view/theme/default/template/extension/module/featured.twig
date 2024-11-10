@@ -1,0 +1,48 @@
+<section class="mbl-3" id="featured">
+  <div class="container">
+	<div class="row">
+	  <div class="col-md-12">
+		<div class="mbs title"><div><span>Top</span> ways to top</div> <a href="/index.php?route=product/category&path=79">Catalog</a></div>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="col-md-12">
+		<div class="cards">
+		{% for product in products %}
+		  <div class="card-col">
+			
+				<div class="cardImage" onclick="wishlist.add('{{ product.product_id }}');">
+				  <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive"/></a>
+				  <span class="heart heart_{{ product.product_id }}"></span>
+				</div>
+			
+			<div class="div-6">
+			  <div class="div-wrapper-3">
+				<div class="text-wrapper-10">{{ product.name }}</div>
+			  </div>
+			  {% if product.price %}
+				<div class="div-7">
+				  {% if not product.special %}
+					<div class="text-wrapper-12">{{ product.price }}</div>
+				  {% else %}
+					<div class="text-wrapper-11">{{ product.price }}</div>
+					<div class="text-wrapper-12">{{ product.special }}</div>
+				  {% endif %}
+				</div>
+			  {% endif %}
+			</div>
+			<div class="div-8">
+			  <div class="frame-wrapper-2">
+				<div class="div-wrapper-4">
+				  <button class="text-wrapper-13" onclick="cart.add('{{ product.product_id }}');">To Cart</button>
+				  <a href="{{ product.href }}" class="text-wrapper-14">More info</a>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		{% endfor %}
+		</div>
+	  </div>
+	</div>
+  </div>
+</section>

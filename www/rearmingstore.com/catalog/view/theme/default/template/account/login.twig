@@ -1,0 +1,61 @@
+{{ header }}
+<div class="head_bg"></div>
+<section class="catalog">
+  <div class="container">
+	<div class="row">
+	  <div class="col-md-4">
+		{{ column_left }}
+	  </div>
+	  <div class="col-md-8">
+		<nav class="breadcrumb">
+			{% for breadcrumb in breadcrumbs %}
+				{% if breadcrumb.href %}
+					<a href="{{ breadcrumb.href }}"  class="breadcrumb-item">{{ breadcrumb.text }}</a>
+				{% else %}
+					<span class="breadcrumb-item active">{{ breadcrumb.text }}</span>
+				{% endif %}
+			{% endfor %}
+		</nav>
+		<div class="pagetitle">
+		  <h1 class="titlepage">{{ text_my_account }}</h1>
+		</div>
+		{% if success %}
+			<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}</div>
+		{% endif %}
+		{{ content_top }}
+		<div class="row">
+		  <div class="col-md-12">
+			<form  action="{{ action }}" method="post" enctype="multipart/form-data" class="loginform formCh">
+			  <div class="form-group">
+				<div class="controls">
+					<label class="control-label" for="input-email">{{ entry_email }}</label>
+					<input type="text" name="email" value="{{ email }}" placeholder="{{ entry_email }}" id="input-email" class="form-control"/>
+				</div>
+			  </div>
+			  <div class="form-group">
+				<div class="controls">
+				  <label class="control-label" for="input-password">{{ entry_password }}</label>
+                  <input type="password" name="password" value="{{ password }}" placeholder="{{ entry_password }}" id="input-password" class="form-control"/>
+				</div>
+			  </div>
+			  <div class="form-group">
+				<div class="controls">
+				  <button type="submit" class="btn btn-primary">Submit request</button>
+				</div>
+				<div class="controls">
+				  <a href="{{ forgotten }}">{{ text_forgotten }}</a>
+				  <br>
+				  <a href="{{ register }}">{{ text_new_customer }}</a>
+				</div>
+			  </div>
+
+			</form>
+		  </div>
+		</div>
+		{{ content_bottom }}
+	  </div>
+	</div>
+
+  </div>
+</section>
+{{ footer }}

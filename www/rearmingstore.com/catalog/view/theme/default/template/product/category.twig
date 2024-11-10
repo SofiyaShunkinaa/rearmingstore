@@ -1,0 +1,112 @@
+{{ header }}
+<style type="text/css">
+#category-product .sidebarnav li.ative a{
+color: #e2704b;
+}
+</style>
+
+
+<div class="head_bg"></div>
+<div id="category-product" style="overflow:hidden;">
+	<section class="catalog">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					{{ column_left }}
+				</div>
+				<div class="col-md-8">
+					<nav class="breadcrumb">
+						{% for breadcrumb in breadcrumbs %}
+							{% if breadcrumb.href %}
+								<a href="{{ breadcrumb.href }}"  class="breadcrumb-item">{{ breadcrumb.text }}</a>
+							{% else %}
+								<span class="breadcrumb-item active">{{ breadcrumb.text }}</span>
+							{% endif %}
+						{% endfor %}
+
+					</nav>
+
+					<div class="pagetitle">
+					  <h1 class="titlepage">{{ heading_title }}</h1>
+					  {% if description %}
+						<div class="">{{ description }}</div>
+					  {% endif %}
+					</div>
+					<div class="radioButton">
+						{% if category_products %}
+							{% for category_product in category_products %}
+								<a href="{{category_product.href}}" class="btn btn-outline-primary form-check-label {{category_product.class}}">{{category_product.name}}</a>
+							{% endfor %}
+						{% endif %}
+					</div>
+					<div class="radioButton swiper radioButtonslide">
+					  <div class="swiper-wrapper">
+						{% if category_products %}
+							{% for category_product in category_products %}
+								<div class="swiper-slide"><a href="{{category_product.href}}" class="btn btn-outline-primary form-check-label {{category_product.class}}">{{category_product.name}}</a></div>
+							{% endfor %}
+						{% endif %}
+					  </div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							{% if products %}
+								<div class="cards">
+								{% for product in products %}
+								<div class="card-col">
+
+									<div class="cardImage">
+									  <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}"/></a>
+									  <span class="heart heart_{{ product.product_id }}" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"></span>
+									</div>
+
+									<div class="div-6">
+										<div class="div-wrapper-3">
+											<div class="text-wrapper-10">{{ product.name }}</div>
+										</div>
+										{% if product.price %}
+										<div class="div-7">
+											{% if not product.special %}
+												<div class="text-wrapper-12">{{ product.price }}</div>
+											{% else %}
+												<div class="text-wrapper-11">{{ product.price }}</div>
+												<div class="text-wrapper-12">{{ product.special }}</div>
+											{% endif %}
+										</div>
+										{% endif %}
+									</div>
+									<div class="div-8">
+									  <div class="frame-wrapper-2">
+										<div class="div-wrapper-4">
+										  <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');" class="text-wrapper-13">To Cart</button>
+										  <a href="{{ product.href }}" class="text-wrapper-14">More info</a>
+										</div>
+									  </div>
+									</div>
+								</div>
+								{% endfor %}
+								</div>
+							{% endif %}
+							{% if not categories and not products %}
+							<p>{{ text_no_results }}</p>
+							<div class="buttons">
+								<div class="pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+			{{ content_bottom }}
+			<div class="row pagebanner">
+			  <div class="col-md-4"><img src="/img/pagebanner1m.png" alt=""></div>
+			  <div class="col-md-8">
+				<div class="h1">could not find what you were <br>looking for? create a custom <br>order!</div>
+				<p>We can accomplish anything even if it's not listed on the website</p>
+				<p><a href="#" data-bs-toggle="modal" data-bs-target="#request">Request a service</a></p>
+			  </div>
+			</div>
+		</div>
+	</section>
+</div>
+{{ footer }}

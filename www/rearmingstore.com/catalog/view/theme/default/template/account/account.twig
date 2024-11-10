@@ -1,0 +1,66 @@
+{{ header }}
+<div class="head_bg"></div>
+<section class="catalog">
+  <div class="container">
+	<div class="row">
+	  <div class="col-md-4">
+		{{ column_left }}
+	  </div>
+	  <div class="col-md-8">
+		<nav class="breadcrumb">
+			{% for breadcrumb in breadcrumbs %}
+				{% if breadcrumb.href %}
+					<a href="{{ breadcrumb.href }}"  class="breadcrumb-item">{{ breadcrumb.text }}</a>
+				{% else %}
+					<span class="breadcrumb-item active">{{ breadcrumb.text }}</span>
+				{% endif %}
+			{% endfor %}
+		</nav>
+		<div class="pagetitle">
+		  <h1 class="titlepage">{{ text_my_account }}</h1>
+		</div>
+		{% if success %}
+			<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}</div>
+		{% endif %}
+		{{ content_top }}
+
+		<div class="row">
+		  <div class="col-md-12">
+			<form  action="{{ action }}" method="post" class="loginform formCh">
+			  <div class="form-group">
+				<div class="controls">
+				  <label for="firstname">Username</label>
+				  <input type="text" id="firstname" name="firstname" value="{{ firstname }}" placeholder="Username" class="form-control">
+				  <span class="error_name"></span>
+				</div>
+			  </div>
+			  <div class="form-group">
+				<div class="controls">
+				  <label for="email3">Email</label>
+				  <input type="email" id="email3" name="email" value="{{ email }}" placeholder="Email" class="form-control">
+				  <span class="error_name"></span>
+				</div>
+			  </div>
+			  <div class="form-group">
+				<div class="controls">
+				  <label for="discord">Discord</label>
+				  <input type="text" id="discord" name="discord" value="{{ discord }}" placeholder="Discord" class="form-control">
+				  <span class="error_name"></span>
+				</div>
+			  </div>
+			  <div class="form-group">
+				<div class="controls">
+				  <button type="submit" class="btn btn-primary">Submit request</button>
+				</div>
+			  </div>
+
+			</form>
+		  </div>
+		</div>
+		{{ content_bottom }}
+	  </div>
+	</div>
+
+  </div>
+</section>
+{{ footer }}

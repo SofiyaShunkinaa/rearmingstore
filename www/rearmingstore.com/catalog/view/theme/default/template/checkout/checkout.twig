@@ -1,0 +1,140 @@
+{{ header }}
+<div class="head_bg"></div>
+<section class="cartPage">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="pagetitle">
+              <h1 class="titlepage">Cart</h1>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="sp">Your order</div>
+            <div class="chekedItems">
+			{% for product in products %}
+              <div class="cItem">
+                {% if product.thumb %}
+				  <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail"/></a>
+				{% endif %}
+                <div class="ccssw">
+                  <div class="cItemT">{{ product.name }}</div>
+                  <div class="p_c_t_count" data-cur="{{ product.quantity }}" data-min="1" data-max="999">
+                    <span class="minus"><img src="/img/Frame9.svg"></span>
+                    <span class="current" data-id="{{ product.cart_id }}">{{ product.quantity }}</span>
+                    <span class="plus"><img src="/img/Frame63.svg"></span>
+                  </div>
+                  <div class="cItemP" id="cItemP{{ product.cart_id }}">{{ product.total }}</div>
+                </div>
+                <div class="cItemRm" onclick="cart.remove('{{ product.cart_id }}');"><img src="/img/Frame64.svg" alt=""></div>
+              </div>
+			{% endfor %}
+            </div>
+			{% for total in totals %}
+			<div class="totalsCart">{{ total.title }}: {{ total.text }}</div>
+            {% endfor %}
+            
+          </div>
+          <div class="col-md-6">
+            <div id="test12" class="spForm">
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+<script type="text/javascript">
+$(document).on('change', 'input[name=\'account\']', function () {
+    if ($('#collapse-payment-address').parent().find('.panel-heading .panel-title > *').is('a')) {
+        if (this.value == 'register') {
+            $('#collapse-payment-address').parent().find('.panel-heading .panel-title').html('<a href="#collapse-payment-address" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle">{{ text_checkout_account }} <i class="fa fa-caret-down"></i></a>');
+        } else {
+            $('#collapse-payment-address').parent().find('.panel-heading .panel-title').html('<a href="#collapse-payment-address" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle">{{ text_checkout_payment_address }} <i class="fa fa-caret-down"></i></a>');
+        }
+    } else {
+        if (this.value == 'register') {
+            $('#collapse-payment-address').parent().find('.panel-heading .panel-title').html('{{ text_checkout_account }}');
+        } else {
+            $('#collapse-payment-address').parent().find('.panel-heading .panel-title').html('{{ text_checkout_payment_address }}');
+        }
+    }
+});
+$('.p_c_t_count .minus,.p_c_t_count .plus').click(function() {
+        var key = $(this).parent().find('.current').attr('data-id');
+        var quantity = Number($(this).parent().attr('data-cur'));
+		var quantity_or = quantity;
+		if($(this).hasClass('minus')){
+			quantity = quantity - 1;
+		}else{
+			quantity = quantity + 1;
+		}
+		if(quantity < 1){quantity = 1;}
+        if(quantity_or != quantity)
+		$.ajax({
+            url: 'index.php?route=checkout/cart/ajaxUpdate',
+            type: 'post',
+            data: { key: key, quantity: quantity },
+            dataType: 'json',
+            success: function(json) {
+                if (json['success']) {
+                    $('#cItemP' + key).text(json['product_total']);
+                    $('.totalsCart').text(json['total']);
+                }
+                if (json['error']) {
+					console.log(json['error']);
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $.ajax({
+            url: 'index.php?route=checkout/guest',
+            dataType: 'html',
+            success: function (html) {
+                $('.spForm').html(html);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            }
+        });
+    });
+	$(document).on('submit', '.orderForm', function(e) {
+		e.preventDefault(); // Предотвращаем стандартное действие отправки формы
+
+		// Получаем данные из формы
+		var formData = $(this).serialize();
+
+		// Отправляем AJAX-запрос
+		$.ajax({
+			type: 'POST',
+			url: 'index.php?route=checkout/guest/save',
+			data: formData,
+			dataType: 'json',
+			success: function(response) {
+				if (response.error) {
+					$.each(response.error, function(key, value) {
+						var inputElement = $('body').find('.orderForm [name="' + key + '"]').addClass('is-invalid');
+						$('.error_' + key).text(value);
+					});
+				} else {
+					if(response.payment){
+						$('body').find('.orderForm').css('display','none');
+						$('body').find('.spForm').prepend(response.payment);
+					}
+				}
+			},
+			error: function(error) {
+				// Обработка ошибок при выполнении запроса
+				alert('Error:', error);
+			}
+		});
+		return false;
+	});
+
+</script>
+{{ footer }}

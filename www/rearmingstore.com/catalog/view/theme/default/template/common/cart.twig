@@ -1,0 +1,33 @@
+{% if products or vouchers %}
+<div id="cart" class="">
+	<div class="fpanItems">
+	{% for product in products %}
+	  <div class="fpItem">
+		{% if product.thumb %}<a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail"/></a> {% endif %}
+		<div class="fpip">
+			<div class="fpItemt">{{ product.name }}</div>
+			<div class="price">{{ product.total }}</div>
+		</div>
+		<div class="remit"  onclick="cart.remove('{{ product.cart_id }}');" title="{{ button_remove }}" >
+			<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
+				fill="none">
+				<rect width="21" height="20" rx="10" fill="#EDEBEB" />
+				<path
+				  d="M13.4475 12.1482L12.6064 12.9892L7.54111 7.92397L8.38218 7.0829L13.4475 12.1482ZM13.4412 8.03322L8.31741 13.157L7.37846 12.218L12.5022 7.09426L13.4412 8.03322Z"
+				  fill="black" />
+			</svg>
+		</div>
+	  </div>
+	{% endfor %}
+	</div>
+	
+	{% for total in totals %}
+	  <div class="total">{{ total.title }} <span>{{ total.text }}</span>€</div>
+	{% endfor %}
+	<a href="{{ checkout }}" class="to_cart_btn btn">Order</a>
+
+{% else %}
+	<div class="text-center">{{ text_no_results }}</div>
+{% endif %}
+
+</div>

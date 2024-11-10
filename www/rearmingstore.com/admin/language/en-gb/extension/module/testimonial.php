@@ -1,0 +1,27 @@
+<?php
+$_['heading_title'] = 'Testimonials';
+$_['text_success'] = 'Success: You have modified testimonials!';
+$_['text_list'] = 'Testimonial List';
+$_['text_add'] = 'Add Testimonial';
+$_['text_edit'] = 'Edit Testimonial';
+$_['text_name'] = 'Name';
+$_['text_action'] = 'Action';
+$_['entry_name'] = 'Name';
+$_['entry_text'] = 'Text';
+$_['entry_photo'] = 'Photo';
+$_['error_permission'] = 'Warning: You do not have permission to modify testimonials!';
+$_['error_name'] = 'Name must be between 3 and 64 characters!';
+$_['error_text'] = 'Text must be at least 1 character!';
+$_['error_delete'] = 'Warning: At least one testimonial must be selected!';
+$_['column_name'] = 'Name';
+$_['column_action'] = 'Action';
+$_['text_add'] = 'Add Testimonial';
+$_['text_edit'] = 'Edit Testimonial';
+$_['text_select_image'] = 'Select Image';
+$_['entry_photo'] = 'Photo';
+$_['text_select_image'] = 'Select Image';
+$_['button_image'] = 'Upload Image';
+$_['button_insert_image'] = 'Insert Image';
+$_['entry_status'] = 'Status';
+$_['text_enabled'] = 'Enabled';
+$_['text_disabled'] = 'Disabled';

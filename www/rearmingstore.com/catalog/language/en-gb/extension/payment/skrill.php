@@ -1,0 +1,3 @@
+<?php
+// Text
+$_['text_title'] = 'Credit Card / Debit Card (Skrill) <img src="catalog/view/theme/default/image/credit.png" alt="Credit"/> <img src="catalog/view/theme/default/image/neteller.png" alt="Neteller"/> <img src="catalog/view/theme/default/image/rapid.png" alt="Rapid"/> <img src="catalog/view/theme/default/image/klarna.png" alt="Klarna" <img src="catalog/view/theme/default/image/ideal.png" alt="Ideal"/>';

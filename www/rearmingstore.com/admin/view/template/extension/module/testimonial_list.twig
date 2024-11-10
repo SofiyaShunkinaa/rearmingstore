@@ -1,0 +1,71 @@
+{{ header }}{{ column_left }}
+<div id="content">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{ heading_title }}</h3>
+		  
+		<div class="pull-right">
+		  <a href="{{ add }}" data-toggle="tooltip" title="{{ button_add }}" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+		</div>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+		  <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+		  <div style="padding:0 15px">
+			<div class="row">
+			<div class="col-md-12">
+			<div class="form-group">
+			  <label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
+			  <div class="col-sm-10">
+				<select name="module_testimonial_status" id="input-status" class="form-control">
+				  {% if module_testimonial_status %}
+					<option value="1" selected="selected">{{ text_enabled }}</option>
+					<option value="0">{{ text_disabled }}</option>
+				  {% else %}
+					<option value="1">{{ text_enabled }}</option>
+					<option value="0" selected="selected">{{ text_disabled }}</option>
+				  {% endif %}
+				</select>
+				<button type="submit" class="btn btn-primary">{{ button_save }}</button>
+			  </div>
+			</div>
+			</div>
+		  </div>
+		  <br>
+		  </div>
+		  </form>
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <td class="text-left">{{ column_name }}</td>
+                  <td class="text-right">{{ column_action }}</td>
+                </tr>
+              </thead>
+              <tbody>
+                {% if testimonials %}
+                  {% for testimonial in testimonials %}
+                    <tr>
+                      <td class="text-left">{{ testimonial.name }}</td>
+                      <td class="text-right">
+                        <a href="{{ testimonial.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                {% else %}
+                  <tr>
+                    <td class="text-center" colspan="2">{{ text_no_results }}</td>
+                  </tr>
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{{ footer }}

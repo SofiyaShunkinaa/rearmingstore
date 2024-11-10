@@ -1,0 +1,693 @@
+<!--
+/******************************************************
+ * @package Pav Megamenu module for Opencart 3.0.x
+ * @version 3.0
+ * @author http://www.pavothemes.com
+ * @copyright	Copyright (C) Oct 2017 PavoThemes.com <@emai:pavothemes@gmail.com>.All rights reserved.
+ * @license		GNU General Public License version 2
+*******************************************************/
+-->
+
+{{ header }} {{ column_left }} {% set module_row = 0 %}
+
+<div id="content">
+	
+	<div class="page-header">
+		<div class="container-fluid">
+			<div class="pull-right">
+				<button class="btn btn-primary" title="{{ button_save }}" onclick="$('#form').submit();"><i class="fa fa-save"></i> {{ button_save }}</button>
+				<a class="btn btn-info" title="{{ button_save_edit }}" onclick="$('#save_mode').val('save-edit');$('#form').submit();"><i class="fa fa-save"></i> {{ button_save_edit }}</a>
+				<a class="btn btn-success" title="{{ button_save_new }}" onclick="$('#save_mode').val('save-new');$('#form').submit();"><i class="fa fa-book"></i> {{ button_save_new }}</a> | 
+				<a class="btn btn-danger" title="{{ button_cancel }}" href="{{ cancel }}" ><i class="fa fa-book"></i> {{ button_cancel }}</a>
+				
+			</div>
+			<h1>{{ heading_title }}</h1>
+			<ul class="breadcrumb">
+		    {% for breadcrumb in breadcrumbs %}
+		        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+		    {% endfor %}
+		    </ul>
+		</div>
+	</div>
+
+	<div id="page-content" class="container-fluid">
+
+		{% if error_warning %}
+	    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+	      <button type="button" class="close" data-dismiss="alert">&times;</button>
+	    </div>
+	    {% endif %}
+	
+		<div id="ajaxloading" class="hide">
+			<div class="alert alert-warning" role="alert">{{ text_process_request }}</div>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-pencil"></i> {{ heading_title }}</h3>
+			</div>
+			<div class="panel-body">
+				<ul id="grouptabs" class="nav nav-tabs hidden" role="tablist">
+					<li class="active"><a href="#manage-menus" role="tab" data-toggle="tab">{{ tab_manage_megamenus }}</a></li>
+					<li><a href="#manage-widgets" role="tab" data-toggle="tab">{{ tab_manage_widgets }}</a></li>
+				</ul>
+				<div class="tab-content">
+
+					<div class="tab-pane hidden" id="manage-widgets">
+						<p><i>{{ text_explain_widgets }}</i></p>
+						<a class="btn btn-info btn-modal" href="index.php?route=extension/module/pavmegamenu/addwidget&user_token={{ user_token }}" >{{ text_create_widget }}</a>
+						<br/><br/>
+						<table class="table">
+							<tr>	
+								<td>{{ text_widget_name }}</td>
+								<td>{{ text_widget_type }}</td>
+								<td>{{ text_action }}</td>
+							</tr>
+
+							{% if widgets is iterable %}
+								{% for widget in widgets %}
+								<tr>
+									<td>{{ widget.name }}</td>
+									<td>{% set type = widget.type %} {{ text_widget_~type }}</td>
+									<td><a class="btn-action-widget btn-modal" rel="edit" href="index.php?route=extension/module/pavmegamenu/addwidget&user_token={{ user_token }}&id={{ widget.id }}&wtype={{ widget.type }}">{{ text_edit }}</a>
+									| 
+									<a onclick="return confirm('{{ text_confirm_delete }}');"	rel="edit" href="index.php?route=extension/module/pavmegamenu/delwidget&user_token={{ user_token }}&id={{ widget.id }}&wtype={{ widget.type }}">{{ text_delete }}</a>
+									</td>
+								</tr>
+								{% endfor %}
+							{% endif %}
+						</table>
+					</div><!-- div.panel > manage-widgets -->
+
+					<div class="tab-pane active" id="manage-menus">
+						<form action="{{ action }}" method="post" enctype="multipart/form-data" id="form">
+							<div class="buttons clearfix">
+								<div class="col-lg-6">
+								
+									<a class="btn btn-primary" title="{{ button_import_categories }}" onclick="$('#save_mode').val('import-categories');$('#form').submit();">{{ button_import_categories }}</a>
+									<a class="btn btn-danger" title="{{ button_delete_categories }}" data-toggle="modal" data-target=".deleteTree-modal-sm">{{ button_delete_categories }}</a>
+								</div>	
+								<div class="col-lg-6">
+									 
+									
+									<select class="form-control pull-right" name="stores" id="pavstores" style="width: 20%;">
+										{% for store in stores %}
+										{% if store.store_id == store_id %}
+											<option value="{{ store.store_id }}" selected="selected">{{ store.name }}</option>
+										{% else %}
+											<option value="{{ store.store_id }}">{{ store.name }}</option>
+										{% endif %}
+										{% endfor %}
+									</select>
+							 		<span class="pull-right" style="font-weight:bold;"> {{ entry_filter_store }} </span>
+								<input type="hidden" value="{{ store_id }}" name="megamenu[store]"/></br></br>
+								</div>
+
+							</div><br/><br/>
+
+							<div class="megamenu">
+								<div class="tree-megamenu">
+									<h4>{{ text_treemenu }}</h4>
+									<a class="btn btn-success btn-updatetree" name="serialize" id="serialize">{{ button_update_order }}</a>	
+									{{ tree }}
+									<a class="btn btn-success btn-updatetree" name="serialize" id="serialize">{{ button_update_order }}</a>
+									<p class="note"><i>{{ text_explain_drapanddrop }}</i></p>
+								</div>
+
+							</div><!-- end div.megamenu -->
+
+							<div class="megamenu-form">
+								<div id="megamenu-form">
+									{% if menu is defined %} {% set module_row = 'ss' %}
+
+									{% if menu.megamenu_id > 0 %}
+										<h3>{{ text_edit_menu|format(menu.title, menu.megamenu_id) }}</h3>
+									{% else %}
+										<h3>{{ text_create_new }}</h3>
+									{% endif %}
+
+									<h4>{{ entry_menu_information }}</h4>
+
+									<ul class="nav nav-tabs" id="language-{{ module_row }}">
+										{% for language in languages %}
+										<li>
+											<a href="#tab-language-{{ language.language_id }}" data-toggle="tab"><img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /> {{ language.name }}</a></li>
+										</li>
+										{% endfor %}
+									</ul>
+									
+									<div class="tab-content">
+										{% for language in languages %}
+										<div class="tab-pane" id="tab-language-{{ language.language_id }}">
+											<table class="table no-border">
+												<tr>
+													<td>{{ entry_menu_title }}</td>
+													<td>
+														<input class="form-control" name="megamenu_description[{{ language.language_id }}][title]" value="{{ menu_description[language.language_id] ? menu_description[language.language_id].title }}"/>
+													</td>
+												</tr>
+												<tr>
+													<td>{{ entry_description }}</td>
+													<td>
+														<textarea class="form-control" name="megamenu_description[{{ language.language_id }}][description]" value="">{{ menu_description[language.language_id] ? menu_description[language.language_id].description }}</textarea>
+													</td>
+												</tr>
+											</table>
+										</div>
+										{% endfor %}
+									</div>
+
+									<h4>{{ entry_menu_type }}</h4>
+									<input type="hidden" name="megamenu[item]" value="{{ menu.item }}" />
+									<table class="table">
+										<tr>
+											<td class="col-sm-3">{{ entry_publish }}</td>
+											<td class="col-sm-9">
+												<select class="form-control" type="list" name="megamenu[published]" >
+													{% for key, val in yesno %}
+													<option value="{{ key }}" {% if key== menu.published %} selected="selected" {% endif %}>{{ val }}</option>
+													{% endfor %}
+												</select>
+											</td>
+										</tr>
+										<tr class="bg-warning">
+											<td class="col-sm-3">{{ entry_type }}</td>
+											<td class="col-sm-9"> 
+												<select class="form-control" name="megamenu[type]" id="megamenutype">
+													{% for mt, val in megamenutypes %} 
+													<option value="{{ mt }}" {% if mt == menu.type %} selected="selected" {% endif %}>{{ val }}</option>
+													{% endfor %}
+												</select>
+											</td>
+										</tr>
+										<tr id="megamenutype-url" class="megamenutype">
+											<td class="col-sm-3">{{ entry_url }}</td>
+											<td class="col-sm-9">
+												<input type="text" class="form-control" name="megamenu[url]" value="{{ menu.url }}" size="50"/>
+											</td>
+										</tr>
+										<tr id="megamenutype-category" class="megamenutype">
+											<td class="col-sm-3">{{ entry_category }}</td>
+											<td class="col-sm-9">
+												<input type="text" class="form-control" name="path" value="{{ menu.megamenu_category }}" size="100" />
+												<i>{{ text_explain_input_auto }}</i>
+											</td>
+										</tr>
+										<tr id="megamenutype-product" class="megamenutype">
+											<td class="col-sm-3">{{ entry_product }}</td>
+											<td class="col-sm-9">
+												<input type="text" class="form-control" name="megamenu_product" value="{{ menu.megamenu_product }}" size="50"/>
+												<i>{{ text_explain_input_auto }}</i>
+											</td>
+										</tr>
+										<tr id="megamenutype-manufacturer" class="megamenutype">
+											<td class="col-sm-3">{{ entry_manufacturer }}</td>
+											<td class="col-sm-9">
+												<input type="text" class="form-control" name="megamenu_manufacturer" value="{{ menu.megamenu_manufacturer }}" size="50"/>
+												<i>{{ text_explain_input_auto }}</i>
+											</td>
+										</tr>
+										<tr id="megamenutype-information" class="megamenutype">
+											<td class="col-sm-3">{{ entry_information }}</td>
+											<td class="col-sm-9">
+												
+												<select class="form-control" type="text" name="megamenu_information" id="megamenu_information">
+													{% for info in informations %}
+													<option value="{{ info.information_id }}" {% if menu.megamenu_information == info.information_id %} selected="selected" {% endif %}>{{ info.title }}</option>
+													{% endfor %}
+												</select>
+												
+											</td>
+										</tr>
+
+									
+										<tr id="megamenutype-html" class="megamenutype">
+											<td class="col-sm-3">{{ entry_html }}</td>
+											<td class="col-sm-9">
+												<textarea type="text" name="megamenu[content_text]" class="form-control " id="content_text" size="50">{{ menu.content_text }}</textarea>
+												<i>{{ text_explain_input_html }}</i>
+											</td>
+										</tr>
+									</table>
+
+									<h4>{{ entry_menu_param }}</h4>	  
+									<table class="table">
+										<tr>
+											<td class="col-sm-3">{{ entry_parent_id }}</td>
+												
+											<td class="col-sm-9">
+												{{ menus }}
+											</td>
+										</tr>
+										<tr>
+											<td class="col-sm-2 control-label">{{ entry_image }}</td>
+											<td class="col-sm-10">
+												<a href="" id="thumb-img" data-toggle="image" class="img-thumbnail">
+													<img src="{% if thumb is empty %} {{ placeholder }} {% else %} {{ thumb }} {% endif %}" alt="" title="" data-placeholder="{{ placeholder }}" />
+												</a>
+												<input type="hidden" name="megamenu[image]" value="{{ menu.image }}" id="input-icon-menu" />
+											</td>
+										</tr>
+										<tr>
+											<td class="col-sm-2 control-label">{{ entry_icon }}</td>
+											<td class="col-sm-10">
+												<input type="text" class="form-control" name="verticalmenu[icon]" value="{{ menu.icon }}"/>
+												<i>{{ text_explain_input_icon }}</i>
+											</td>
+										</tr>
+										<tr>
+											<td class="col-sm-3">{{ entry_menuclass }}</td>
+											<td class="col-sm-9">
+												<input type="text" class="form-control" name="megamenu[menu_class]" value="{{ menu.menu_class }}"/>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="col-sm-3">{{ entry_badges }}</td>
+											<td class="col-sm-9">
+												<input type="text" class="form-control" name="megamenu[badges]" value="{{ menu.badges ? menu.badges }}"/>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="col-sm-3">{{ entry_showtitle }}</td>
+												
+											<td class="col-sm-9">
+												<select class="form-control" type="list" name="megamenu[show_title]" >
+													{% for key, val in yesno %}
+													<option value="{{ key }}" {% if key == menu.show_title %} selected="selected" {% endif %}>{{ val }}</option>
+													{% endfor %}
+												</select>
+											</td>
+										</tr>
+										<tr class="hide">
+											<td class="col-sm-3">{{ entry_isgroup }}</td>
+												
+											<td class="col-sm-9">
+												<select class="form-control" type="list" name="megamenu[is_group]" value="">
+													{% for key, val in yesno %}
+													<option value="{{ key }}" {% if key == menu.is_group %} selected="selected" {% endif %}>{{ val }}</option>
+													{% endfor %}
+												</select>
+												<i>{{ text_explain_group }}</i>
+											</td>
+										</tr>
+										<tr style="display:none">
+											<td class="col-sm-3">{{ entry_iscontent }}</td>
+											<td class="col-sm-9">
+												<select class="form-control" type="list" name="megamenu[is_content]">
+													{% for key, val in yesno %}
+													<option value="{{ key }}" {% if key == menu.is_content %} selected="selected" {% endif %}>{{ val }}</option>
+													{% endfor %}
+												</select>
+											</td>
+										</tr>
+										
+										
+										
+										<tr class="alert alert-danger">
+											<td class="col-sm-3">{{ entry_sub_menutype }}</td>
+											<td class="col-sm-9">
+												<select class="form-control" name="megamenu[type_submenu]" id="megamenu-type_submenu">
+													{% for stype, text in submenutypes %}
+													<option value="{{ stype }}" {% if stype == menu.type_submenu %} selected="selected" {% endif %}>{{ text }}</option>
+													{% endfor %}
+												</select>
+												<i>{{ text_explain_submenu_type }}</i>
+											</td>
+										</tr>
+										<tr class="type_submenu" id="type_submenu-html" style="display:none;">
+											<td class="col-sm-3">{{ entry_submenu_content }}</td>
+											<td class="col-sm-9">
+												<textarea name="megamenu[submenu_content]" id="submenu_content">{{ menu.submenu_content }}</textarea>
+											
+											</td>
+										<tr>
+										{% if blockbuilders %}
+										<tr id="type_submenu-blkbuilder" class="type_submenu" style="display: none">
+											<td class="col-sm-3">{{ entry_blockbuilder }}</td>
+											<td class="col-sm-9">
+												
+												<select class="form-control" name="megamenu[widget_id]">
+													{% for blockbuilder in blockbuilders %}
+													<option value="{{ blockbuilder.module_id }}" {% if menu.widget_id == blockbuilder.module_id %} selected="selected" {% endif %}>{{ blockbuilder.name }}</option>
+													{% endfor %}
+												</select>
+												<a href="#" class="edit-blockbuilder" data-href="{{blockbuilder_edit_url}}"><i class="fa fa-pencil"></i></a>
+											</td>
+										</tr>
+										{% endif %}
+										<tr>
+											<td class="col-sm-3">
+												{{ entry_submenu_width }}
+											</td>	
+											<td class="col-sm-9">
+												<input type="text" class="form-control" name="megamenu[submenu_width]" value="{{ menu.submenu_width }}"/>
+												<i>{{ entry_submenu_width_explain }}</i>
+											</td>
+										</tr>
+
+										<tr>
+
+											<td class="col-sm-3">
+												{{ entry_submenu_alignment }}
+											</td>	
+											<td class="col-sm-9">
+												<select class="form-control" name="megamenu[width]">
+													{% for key, align in width_aligns %}
+													<option value="{{ key }}" {% if menu.width == key %} selected="selected" {% endif %}>{{ align }}</option>
+													{% endfor %}
+												</select>
+												<i>{{ entry_submenu_alignment_explain }}</i>
+											</td>
+										</tr>
+
+									</table>
+									<input type="hidden" name="megamenu[megamenu_id]" value="{{ menu.megamenu_id }}"/>
+								</div>
+								{% endif %}
+
+								<script type="text/javascript"> 
+
+								$('.edit-blockbuilder').click( function(){ 
+									var id = $(this).parent().find('select' ).val(); 
+									var url = $(this).data('href').replace('MODULE_ID', id );
+									window.open(url , '_blank');
+									return false;
+								});	
+								$("#type_submenu-"+$("#megamenu-type_submenu").val()).show();
+								$("#megamenu-type_submenu").change( function(){
+									$(".type_submenu").hide();
+									$("#type_submenu-"+$(this).val()).show();
+								} );
+
+
+								$('#submenu_content').summernote({
+									height: 300
+								});
+
+								$('#content_text').summernote({
+									height: 300
+								});
+
+
+								$('#language-{{ module_row }} li:first-child a').tab('show');
+
+
+								$(".megamenutype").hide();
+								$("#megamenutype-"+ $("#megamenutype").val()).show();
+								$("#megamenutype").change( function(){
+									$(".megamenutype").hide();
+									$("#megamenutype-"+$(this).val()).show();
+								} );
+
+								   
+
+								$('input[name=\'megamenu_manufacturer\']').autocomplete({
+									delay: 500,
+									source: function(request, response) {		
+										$.ajax({
+											url: 'index.php?route=catalog/manufacturer/autocomplete&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request.term),
+											dataType: 'json',
+											success: function(json) {
+												json.unshift({
+													'manufacturer_id':  0,
+													'name':  '{{ text_none }}'
+												});
+												
+												response($.map(json, function(item) {
+													return {
+														label: item.name,
+														value: item.manufacturer_id
+													}
+												}));
+											}
+										});
+									},
+									select: function(event, ui) {
+										$('input[name=\'megamenu_manufacturer\']').val(ui.item.label);
+										$('input[name=\'megamenu[item]\']').val(ui.item.value);
+										
+										return false;
+									},
+									focus: function(event, ui) {
+										return false;
+									}
+								});
+
+								$("#megamenu-blockbuilder").change( function(){ 
+									$('input[name=\'megamenu[item]\']').val($(this).val());
+								} );
+
+								$("#megamenu_information").change( function(){ 
+									$('input[name=\'megamenu[item]\']').val($(this).val());
+								} );
+
+								$('input[name=\'megamenu_product\']').autocomplete({
+									delay: 500,
+									source: function(request, response) {		
+										$.ajax({
+											url: 'index.php?route=catalog/product/autocomplete&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request.term),
+											dataType: 'json',
+											success: function(json) {
+												json.unshift({
+													'product_id':  0,
+													'name':  '{{ text_none }}'
+												});
+												
+												response($.map(json, function(item) {
+													return {
+														label: item.name,
+														value: item.product_id
+													}
+												}));
+											}
+										});
+									},
+									select: function(event, ui) {
+										$('input[name=\'megamenu_product\']').val(ui.item.label);
+										$('input[name=\'megamenu[item]\']').val(ui.item.value);
+										
+										return false;
+									},
+									focus: function(event, ui) {
+										return false;
+									}
+								});
+
+								$('input[name=\'path\']').autocomplete({
+									delay: 500,
+									source: function(request, response) {		
+										$.ajax({
+											url: 'index.php?route=catalog/category/autocomplete&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request.term),
+											dataType: 'json',
+											success: function(json) {
+												json.unshift({
+													'category_id':  0,
+													'name':  '{{ text_none }}'
+												});
+												
+												response($.map(json, function(item) {
+													return {
+														label: item.name,
+														value: item.category_id
+													}
+												}));
+											}
+										});
+									},
+									select: function(event, ui) {
+										$('input[name=\'path\']').val(ui.item.label);
+										$('input[name=\'megamenu[item]\']').val(ui.item.value);
+										
+										return false;
+									},
+									focus: function(event, ui) {
+										return false;
+									}
+								});
+								</script>
+								</div>
+							</div>
+							<!-- end div.megamenu-form -->
+
+							<input type="hidden" value="" name="save_mode" id="save_mode"/>
+						</form>
+					</div><!-- div.panel > manage-menus -->
+
+
+				</div>
+			</div>
+
+		</div><!-- end div.panel panel-default -->
+		<div id="info" style="font-size:10px;color:#666"><p>Pav Mega Menu is free to use. it's released under GPL/V2. Powered By <a href="http://www.pavothemes.com">PavoThemes.Com</a></div>
+
+	</div><!-- container-fluid -->
+</div>
+
+ 	<!-- Modal Form-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	      	<div class="modal-content">
+		        <div class="modal-header">
+		          	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		          	<h4 class="modal-title">{{ text_preview_on_live_site }}</h4>
+		        </div>
+	        	<div class="modal-body"></div>
+		        <div class="modal-footer">
+		          	<button type="button" class="btn btn-default" data-dismiss="modal">{{ text_close }}</button>
+		        </div>
+	      	</div> 
+	    </div> 
+	</div>
+
+	<!-- Modal confirm dialog -->
+	<div id="cmodal" class="modal fade deleteTree-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog modal-sm">
+		    <div class="modal-content">
+		    	<div class="modal-body">
+		         	{{ message_delete_category }}
+		        </div>
+		     	<div class="modal-footer">
+		          	<button type="button" class="btn btn-default" data-dismiss="modal">{{ text_close }}</button>
+		          	<button type="button" class="btn btn-primary" id="btnDeleteTree">{{ button_save }}</button>
+		        </div>
+		        <input id="menuid" type="hidden" name="menuid" value="0"/>
+		    </div>
+	  	</div>
+	</div>
+  
+<script type="text/javascript"><!--
+	
+	// Drag and Drop menu Item
+	$('ol.sortable').nestedSortable({
+		forcePlaceholderSize: true,
+		handle: 'div',
+		helper:	'clone',
+		items: 'li',
+		opacity: .6,
+		placeholder: 'placeholder',
+		revert: 250,
+		tabSize: 25,
+		tolerance: 'pointer',
+		toleranceElement: '> div',
+		maxLevels: 4,
+
+		isTree: true,
+		expandOnHover: 700,
+		startCollapsed: true
+	});
+	
+	$('#serialize, .btn-updatetree').click(function(){
+			var serialized = $('ol.sortable').nestedSortable('serialize');
+			$.ajax({
+			async : false,
+			type: 'POST',
+			dataType:'json',
+			url: "{{ updateTree }}",
+			data : serialized, 
+			success : function (r) { 
+		
+				if ($('#msg-tree').length > 0 ) { 
+					$("#page-content").remove('#msg-tree');
+				} else {
+					var html = "<div id='msg-tree' class='alert alert-success'><i class='fa fa-check-circle'></i>{{ text_success_update_tree }}<button type='button' class='close' data-dismiss='alert'>×</button></div>";
+					$("#ajaxloading").before(html);
+					//Scroll up
+					$('html, body').animate({ scrollTop: 0 }, 'slow');
+				}
+			}
+		});
+	});
+
+	// Mutiple Store
+	$('#pavstores').bind('change', function () {
+		url = 'index.php?route=extension/module/pavmegamenu&user_token={{ user_token }}';
+		var id = $(this).val();
+		if (id) {
+			url += '&store=' + encodeURIComponent(id);
+		}
+		window.location = url;
+	});
+
+	// Modal delete tree categories
+	$('#btnDeleteTree').click(function() {
+		var id = $("#menuid").val();
+		if(id == 0) {
+			$("#save_mode").val('delete-categories');
+			$('#form').submit();	
+		} else {
+			window.location.href="{{ actionDel }}&id="+id;
+		}
+		
+	});
+
+	$(".quickdel").click(function(){
+		$('#cmodal .modal-body').html( "{{ message_delete }}" );
+		$('#cmodal').modal();
+		var id = $(this).attr("rel").replace("id_","");
+		$("#menuid").val(id);
+		return false;
+	});
+
+	// Ajax load
+	$(document).ajaxSend(function() {
+		$("#ajaxloading").show();
+	});
+	$(document).ajaxComplete(function() {
+		$("#ajaxloading").hide();
+	});
+
+	// Cookies tab
+	$('#grouptabs a').click( function(){
+		$.cookie("megaactived_tab", $(this).attr("href") );
+	});
+
+	if($.cookie("megaactived_tab") !="undefined"){
+		$('#grouptabs a').each( function(){
+			if( $(this).attr("href") ==  $.cookie("megaactived_tab")){
+				$(this).click();
+				return ;
+			}
+		});
+	}
+
+	// Modal Link guide
+	$("#btn-guide").click( function(){
+		$('#myModal .modal-dialog').css('width',980);
+		var a = $( '<span class="glyphicon glyphicon-refresh"></span><iframe frameborder="0" scrolling="no" src="'+$(this).attr('href')+'" style="width:100%;height:900px; display:none"/>'  );
+		$('#myModal .modal-body').html( a );
+			
+		$('#myModal').modal();
+		$('#myModal').attr('rel', $(this).attr('rel') );
+		$(a).load( function(){  
+			$('#myModal .modal-body .glyphicon-refresh').hide();
+	 		$('#myModal .modal-body iframe').show();
+		} );
+		return false;
+	});
+
+	// Modal Create widget
+	$(".btn-modal").click( function(){ 
+		$('#myModal .modal-dialog').css('width',980);
+		var a = $( '<span class="glyphicon glyphicon-refresh"></span><iframe frameborder="0" scrolling="no" src="'+$(this).attr('href')+'" style="width:100%;height:900px; display:none"/>'  );
+		$('#myModal .modal-body').html( a );
+			
+		$('#myModal').modal( );
+		$('#myModal').attr('rel', $(this).attr('rel') );
+		$(a).load( function(){  
+			$('#myModal .modal-body .glyphicon-refresh').hide();
+	 		$('#myModal .modal-body iframe').show();
+		});
+
+		return false;
+	});
+	$('#myModal').on('hidden.bs.modal', function () { 
+	 	 if( $(this).attr('rel') == 'refresh-page' ){
+	 	 	window.parent.location.reload();
+	 	 }
+	});
+//-->
+</script>
+
+{{ footer }}
