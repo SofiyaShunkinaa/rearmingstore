@@ -9,7 +9,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="sp">Your order</div>
+            <div class="sp"><strong>Your order</strong></div>
             <div class="chekedItems">
 			{% for product in products %}
               <div class="cItem">
@@ -59,9 +59,9 @@
 $(document).ready(function() {
     $(document).on('change', 'input.form-control', function() {
         if ($(this).val().trim() !== '') {
-            $(this).css('font-weight', 'bold');
+            $(this).css('color', 'rgba(15, 15, 15, 0.80)');
         } else {
-            $(this).css('font-weight', 'normal');
+            $(this).css('color', 'var(--40, rgba(0, 0, 0, 0.40))');
         }
     });
 });
