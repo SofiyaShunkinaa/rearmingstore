@@ -2959,7 +2959,7 @@ html .ui-button.ui-state-disabled:active,
 }
 
 .chekedItems {
-    margin-top: 48px;
+    margin-top: 25px;
     border-top: 1px solid rgba(15, 15, 15, 0.20);
 }
 
@@ -3535,6 +3535,15 @@ input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus{
 .img-thumbnail{
     background-color: transparent;
     border: none;
+}
+
+.payment-image{
+    height: 40px;
+    width: fit-content;
+}
+
+.payment-image img{
+    height: 100%;
 }
 
 @keyframes stickySlideDown {
