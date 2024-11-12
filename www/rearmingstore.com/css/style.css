@@ -3546,6 +3546,21 @@ input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus{
     height: 100%;
 }
 
+.payments-wrapper{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0 !important;
+}
+
+.payments-wrapper .form-group{
+    width: fit-content;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 @keyframes stickySlideDown {
     0% {
         opacity: 0.7;
