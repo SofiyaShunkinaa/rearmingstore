@@ -3537,27 +3537,50 @@ input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus{
     border: none;
 }
 
-.payment-image{
+.payment-image {
     height: 40px;
-    width: fit-content;
+
+    /* Кроссбраузерная ширина */
+    width: -moz-fit-content;   /* Firefox */
+    width: -webkit-fit-content; /* Safari */
+    width: fit-content;         /* Современные браузеры */
 }
 
-.payment-image img{
+.payment-image img {
     height: 100%;
 }
 
-.payments-wrapper{
-    display: flex;
+.payments-wrapper {
+    display: -webkit-box;       /* Для старых версий Safari */
+    display: -ms-flexbox;       /* Для IE 10-11 */
+    display: flex;              /* Современные браузеры */
+
     width: 100%;
+
+    /* Flex wrap */
+    -webkit-flex-wrap: wrap;    /* Для Safari */
+    -ms-flex-wrap: wrap;        /* Для IE 10 */
     flex-wrap: wrap;
+
     gap: 5px;
     padding: 0 !important;
 }
 
+
 .payments-wrapper .form-group{
-    width: fit-content;
+    width: -moz-fit-content;   /* Firefox */
+    width: -webkit-fit-content; /* Safari */
+    width: fit-content;         /* Современные браузеры */
+
+    /* Граница */
     border: 1px solid #ddd;
-    border-radius: 5px;
+
+    /* Радиус границы */
+    -webkit-border-radius: 5px; /* Для старых версий Safari */
+    -moz-border-radius: 5px;    /* Для старых версий Firefox */
+    border-radius: 5px;         /* Современные браузеры */
+
+    /* Внутренний отступ */
     padding: 5px;
 }
 
@@ -4248,8 +4271,10 @@ input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus{
     .text-wrapper-34 {
         position: relative;
         left: -15px;
-        max-width: 120px;
+        /* max-width: 120px; */
         white-space: normal;
+        text-align: end;
+        width: 100%;
     }
 
     .div-wrapper-7 {
@@ -4453,6 +4478,10 @@ input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus{
     .nav_panel.active .closefpanel {
         display: block;
     }
+
+    .topNavI span{
+        margin-bottom: 3px;
+    }
 }
 
 @media screen and (max-width:500px) {
@@ -4462,6 +4491,17 @@ input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus{
 	.topNavI span{
 		line-height: 3px;
 	}
+}
+
+@media screen and (max-width:425px){
+    .footer-text-container{
+        display: flex;
+        justify-content: end;
+    }
+
+    .text-wrapper-34{
+        max-width: 120px;
+    }
 }
 
 @media screen and (max-width:400px) {
